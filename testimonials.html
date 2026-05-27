@@ -38,26 +38,68 @@
 <header class="page-header">
   <div class="eyebrow">Testimonials</div>
   <h1>What clients actually say.</h1>
-  <p class="lede">Reviews pulled directly from Google. Real names, real transactions, real words.</p>
+  <p class="lede">Live reviews from our Google Business profile. Real names, real transactions, real words.</p>
 </header>
 
+<!-- ============================================================
+     OVERALL RATING (populated by Google Places API)
+     ============================================================ -->
+<section style="padding: 3.5rem 0; border-bottom: 1px solid rgba(4,26,16,0.1);">
+  <div class="container" id="gr-overall" style="display: none; text-align: center;">
+    <div style="display: inline-flex; align-items: baseline; gap: 1.25rem; flex-wrap: wrap; justify-content: center;">
+      <span id="gr-rating" style="font-family: var(--serif); font-size: 3.5rem; line-height: 1; color: var(--green-deepest);">—</span>
+      <span id="gr-stars" style="color: var(--brown-warm); letter-spacing: 0.25em; font-size: 1.25rem;"></span>
+      <span style="font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-warm);">
+        <span id="gr-count">—</span> reviews on Google
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED REVIEW — handpicked pull quote
+     Edit the text below to feature any review you like.
+     ============================================================ -->
+<section style="padding: clamp(4rem, 7vw, 6rem) 0; background: var(--off-white);">
+  <div class="container" style="max-width: 900px; text-align: center;">
+    <div class="eyebrow" style="margin-bottom: 2rem;">Featured</div>
+    <p style="font-family: var(--serif); font-style: italic; font-size: clamp(1.5rem, 2.75vw, 2.25rem); line-height: 1.4; font-weight: 300; color: var(--green-deepest); margin-bottom: 2rem;">
+      "Dawar and the team explained SSMUH to us in a way that finally made sense. We ended up co-developing our lot and the income from the new units is funding our retirement."
+    </p>
+    <div style="font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-warm);">
+      D. &amp; P. · Port Moody Homeowners
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     LIVE GOOGLE REVIEWS FEED
+     ============================================================ -->
 <section>
   <div class="container">
-
-    <!-- Google Reviews widget embed target -->
-    <div class="idx-placeholder" id="google-reviews" style="margin-bottom: 4rem;">
-      <h4>Google Reviews: Auto-Sync</h4>
-      <p style="margin: 0 auto; max-width: 56ch;">When connected, this section auto-populates from the Zada Group Google Business profile. Use a widget like Elfsight, Trustmary, or a custom embed via the Google Places API. See README.</p>
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;">
+      <div>
+        <div class="eyebrow">Recent on Google</div>
+        <h2 style="margin-top: 0.5rem;">From our clients.</h2>
+      </div>
+      <a id="gr-all-link" href="https://share.google/89EWl3rZFmPuiZ8yJ" target="_blank" rel="noopener" style="font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-warm);">Read all on Google →</a>
     </div>
 
-    <h2 style="margin-bottom: 3rem;">In the meantime, a sample of what we hear.</h2>
+    <!-- Loading state -->
+    <div id="gr-loading" style="text-align: center; padding: 3rem 0; color: var(--grey-warm); font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase;">
+      Loading reviews…
+    </div>
 
-    <div class="grid grid-2">
+    <!-- Live reviews grid (populated by JS) -->
+    <div id="gr-grid" class="grid grid-2" style="display: none;"></div>
+
+    <!-- Fallback / sample reviews shown if API isn't configured yet -->
+    <div id="gr-fallback" class="grid grid-2" style="display: none;">
 
       <div class="testimonial-card">
         <div class="stars">★ ★ ★ ★ ★</div>
         <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "They treated our family like their own. Patient, thorough, and never once did we feel like a transaction. We had a lot of questions as first-time buyers and not once did anyone make us feel like we were taking up too much time."
+          "They treated our family like their own. Patient, thorough, and never once did we feel like a transaction."
         </p>
         <div class="source">S. & M. · First-time Buyers · Burnaby</div>
       </div>
@@ -65,7 +107,7 @@
       <div class="testimonial-card">
         <div class="stars">★ ★ ★ ★ ★</div>
         <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "Liz Murphy walked us through selling my mother's home during one of the hardest years of our lives. She moved at our pace, explained things clearly, and never pushed. I cannot recommend her enough."
+          "Liz Murphy walked us through selling my mother's home during one of the hardest years of our lives."
         </p>
         <div class="source">The Henderson Family · Estate Sale · New Westminster</div>
       </div>
@@ -73,7 +115,7 @@
       <div class="testimonial-card">
         <div class="stars">★ ★ ★ ★ ★</div>
         <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "Randy understood exactly what we were looking for after one conversation. He didn't waste our time with houses we wouldn't like, and when ours came up he moved fast. Three offers in, we got it."
+          "Randy understood exactly what we were looking for. Three offers in, we got it."
         </p>
         <div class="source">J. · RCMP Member · Port Coquitlam</div>
       </div>
@@ -81,31 +123,15 @@
       <div class="testimonial-card">
         <div class="stars">★ ★ ★ ★ ★</div>
         <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "Dawar and the team explained SSMUH to us in a way that finally made sense. We ended up co-developing our lot and the income from the new units is funding our retirement. Truly life-changing."
-        </p>
-        <div class="source">D. & P. · Port Moody · Co-development</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "We were investor clients with very specific criteria. Randy understood the math, ran the numbers honestly, and steered us away from a property we would have bought on emotion. That kind of integrity is rare."
-        </p>
-        <div class="source">K. · Investor · Coquitlam</div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="stars">★ ★ ★ ★ ★</div>
-        <p style="font-style: italic; font-family: var(--serif); font-size: 1.2rem; line-height: 1.5;">
-          "Selling a luxury home in this market is more than putting a sign in the yard. Liz built a real marketing plan, brought the right buyers, and we sold over asking in a week. Worth every penny."
+          "Liz built a real marketing plan, brought the right buyers, and we sold over asking in a week."
         </p>
         <div class="source">Anonymous · Luxury Sale · West Vancouver</div>
       </div>
 
     </div>
 
-    <p style="margin-top: 3rem; text-align: center; opacity: 0.65; font-size: 0.85rem; max-width: 65ch; margin-left: auto; margin-right: auto;">
-      Sample testimonials shown above for illustration. Once the Google Reviews widget is connected, this section will display real, verified reviews directly from the Zada Group Google Business profile.
+    <p style="margin-top: 3rem; text-align: center; opacity: 0.55; font-size: 0.78rem; letter-spacing: 0.04em;" id="gr-attribution">
+      Reviews powered by Google.
     </p>
   </div>
 </section>
@@ -148,5 +174,133 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+
+<!-- ============================================================
+     GOOGLE REVIEWS — Places API integration
+     ============================================================
+
+     SETUP (one-time, ~10 minutes):
+
+     1. Get a Google Places API key
+        - Go to console.cloud.google.com
+        - Create a new project (or use existing)
+        - APIs & Services → Library → search "Places API" → enable it
+          (use the legacy "Places API", not "Places API (New)")
+        - APIs & Services → Credentials → Create Credentials → API Key
+        - Click the key → Application restrictions → HTTP referrers
+          Add: https://zadagroup.ca/* and https://*.netlify.app/*
+        - API restrictions → Restrict to "Places API" and "Maps JavaScript API"
+        - Copy the key
+
+     2. Find your Google Place ID
+        - Go to: https://developers.google.com/maps/documentation/places/web-service/place-id
+        - Search "Zada Group Stonehaus Realty"
+        - Click the result → copy the Place ID (looks like "ChIJ...")
+
+     3. Paste both below where it says PASTE_HERE.
+
+     4. Deploy. Reviews will appear automatically.
+
+     ============================================================ -->
+
+<script>
+  // ↓ EDIT THESE TWO LINES ↓
+  const GOOGLE_API_KEY = 'AIzaSyC5cDcMrBmDD0gJcXwOfc2khPBxvBoROPI';
+  const GOOGLE_PLACE_ID = 'ChIJWdKl7D95hlQRLTNOEzqCuHc';
+  // ↑ EDIT THESE TWO LINES ↑
+
+  // ============================================================
+  // No edits needed below this line
+  // ============================================================
+
+  (function() {
+    const isConfigured = GOOGLE_API_KEY !== 'PASTE_HERE' && GOOGLE_PLACE_ID !== 'PASTE_HERE';
+
+    if (!isConfigured) {
+      // Show fallback sample cards
+      document.getElementById('gr-loading').style.display = 'none';
+      document.getElementById('gr-fallback').style.display = '';
+      document.getElementById('gr-attribution').textContent = 'Sample reviews shown. Configure Google Places API in testimonials.html to show live reviews.';
+      return;
+    }
+
+    // Load Google Maps JS API
+    window.__grInit = function() {
+      const service = new google.maps.places.PlacesService(document.createElement('div'));
+      service.getDetails({
+        placeId: GOOGLE_PLACE_ID,
+        fields: ['reviews', 'rating', 'user_ratings_total', 'url']
+      }, (place, status) => {
+        const loading = document.getElementById('gr-loading');
+        if (status !== google.maps.places.PlacesServiceStatus.OK || !place) {
+          loading.textContent = 'Could not load reviews. Check API key and Place ID.';
+          document.getElementById('gr-fallback').style.display = '';
+          return;
+        }
+        renderOverall(place);
+        renderReviews(place.reviews || []);
+        if (place.url) document.getElementById('gr-all-link').href = place.url;
+        loading.style.display = 'none';
+        document.getElementById('gr-grid').style.display = '';
+      });
+    };
+
+    function renderOverall(place) {
+      if (typeof place.rating !== 'number') return;
+      const ratingEl = document.getElementById('gr-rating');
+      const starsEl = document.getElementById('gr-stars');
+      const countEl = document.getElementById('gr-count');
+      ratingEl.textContent = place.rating.toFixed(1);
+      starsEl.innerHTML = renderStars(place.rating);
+      countEl.textContent = place.user_ratings_total || '—';
+      document.getElementById('gr-overall').style.display = '';
+    }
+
+    function renderStars(rating) {
+      const full = Math.floor(rating);
+      const half = (rating - full) >= 0.5 ? 1 : 0;
+      const empty = 5 - full - half;
+      let html = '';
+      for (let i = 0; i < full; i++) html += '★ ';
+      if (half) html += '☆ ';
+      for (let i = 0; i < empty; i++) html += '☆ ';
+      return html.trim();
+    }
+
+    function escapeHTML(s) {
+      return String(s || '').replace(/[&<>"']/g, c => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      })[c]);
+    }
+
+    function renderReviews(reviews) {
+      const grid = document.getElementById('gr-grid');
+      if (!reviews.length) {
+        document.getElementById('gr-fallback').style.display = '';
+        return;
+      }
+      grid.innerHTML = reviews.map(r => `
+        <div class="testimonial-card">
+          <div class="stars">${renderStars(r.rating || 5)}</div>
+          <p style="font-style: italic; font-family: var(--serif); font-size: 1.15rem; line-height: 1.55;">
+            &ldquo;${escapeHTML(r.text)}&rdquo;
+          </p>
+          <div class="source" style="display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem;">
+            ${r.profile_photo_url ? `<img src="${escapeHTML(r.profile_photo_url)}" alt="" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;" />` : ''}
+            <span>${escapeHTML(r.author_name)} · ${escapeHTML(r.relative_time_description || '')}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Inject Google Maps JS API script
+    const s = document.createElement('script');
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(GOOGLE_API_KEY)}&libraries=places&callback=__grInit`;
+    s.async = true;
+    s.defer = true;
+    document.head.appendChild(s);
+  })();
+</script>
+
 </body>
 </html>
