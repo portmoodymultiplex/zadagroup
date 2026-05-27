@@ -1,4 +1,266 @@
 /* ==========================================================================
+   GUIDE PAGES — Sticky pin scroll layout (sellers + buyers)
+   ========================================================================== */
+.guide-hero {
+  background: var(--green-deepest);
+  color: var(--off-white);
+  padding: 8rem var(--gutter) 5rem;
+}
+.guide-hero-inner { max-width: var(--max); margin: 0 auto; }
+.guide-hero .eyebrow { color: var(--brown-warm); }
+.guide-hero h1 {
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  max-width: 18ch;
+  margin-top: 1.25rem;
+}
+.guide-hero .lede {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: rgba(232, 229, 226, 0.75);
+  max-width: 50ch;
+}
+
+/* The big record numbers row */
+.guide-records {
+  background: var(--off-white);
+  padding: clamp(4rem, 7vw, 7rem) var(--gutter);
+}
+.guide-records-inner { max-width: var(--max); margin: 0 auto; }
+.guide-records .eyebrow { display: block; margin-bottom: 0.75rem; }
+.guide-records h2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 3.5rem;
+  max-width: 22ch;
+}
+.records-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(4,26,16,0.12);
+  border-bottom: 1px solid rgba(4,26,16,0.12);
+}
+.record-cell {
+  padding: 2.5rem 1.5rem;
+  border-right: 1px solid rgba(4,26,16,0.12);
+  text-align: center;
+}
+.record-cell:last-child { border-right: 0; }
+.record-cell .num {
+  font-family: var(--serif);
+  font-size: clamp(1.85rem, 3vw, 2.5rem);
+  color: var(--green-deepest);
+  line-height: 1.1;
+  display: block;
+  font-weight: 300;
+}
+.record-cell .label {
+  margin-top: 0.85rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+}
+.record-cell .address {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--grey-warm);
+}
+
+/* Editorial pull-quote section */
+.guide-quote {
+  background: var(--paper);
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+  text-align: center;
+}
+.guide-quote-inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.guide-quote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.75vw, 2.25rem);
+  line-height: 1.45;
+  color: var(--green-deepest);
+}
+.guide-quote p + p { margin-top: 1.5rem; }
+
+/* Sticky pin spread — large left title pins while right column scrolls */
+.spread {
+  background: var(--green-deepest);
+  color: var(--off-white);
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+}
+.spread-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.spread-pin { position: sticky; top: 8rem; align-self: start; }
+.spread-pin .eyebrow { color: var(--brown-warm); display: block; margin-bottom: 1.25rem; }
+.spread-pin h2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1;
+  color: var(--off-white);
+}
+.spread-pin .pin-note {
+  margin-top: 1.75rem;
+  font-size: 0.95rem;
+  color: rgba(232,229,226,0.65);
+  max-width: 32ch;
+}
+.spread-points { display: flex; flex-direction: column; gap: 4rem; }
+.spread-point {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.spread-point:last-child { border-bottom: 0; }
+.spread-point .num {
+  font-family: var(--serif);
+  font-size: 3rem;
+  color: var(--brown-warm);
+  line-height: 1;
+  font-weight: 300;
+}
+.spread-point h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.5rem, 2.25vw, 2rem);
+  margin: 1rem 0 1.25rem;
+  color: var(--off-white);
+}
+.spread-point p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(232,229,226,0.78);
+  max-width: 48ch;
+}
+
+@media (max-width: 880px) {
+  .spread-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .spread-pin { position: static; }
+  .spread-points { gap: 2.5rem; }
+  .records-grid { grid-template-columns: 1fr 1fr; }
+  .record-cell:nth-child(2n) { border-right: 0; }
+  .record-cell { border-bottom: 1px solid rgba(4,26,16,0.12); padding: 2rem 1rem; }
+}
+
+/* Flipsnack embed container */
+.flipbook {
+  background: var(--paper);
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+}
+.flipbook-inner { max-width: var(--max); margin: 0 auto; text-align: center; }
+.flipbook .eyebrow { display: block; margin-bottom: 1rem; }
+.flipbook h2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2rem, 3.75vw, 3.25rem);
+  margin-bottom: 2.5rem;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+.flipbook-stage {
+  margin: 0 auto;
+  max-width: 1080px;
+  aspect-ratio: 4 / 3;
+  background: var(--cream-soft, #E8E0D4);
+  border: 1px solid rgba(4,26,16,0.08);
+  position: relative;
+  overflow: hidden;
+}
+.flipbook-stage iframe {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+.flipbook-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 3rem;
+  text-align: center;
+  color: var(--grey-warm);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.flipbook-placeholder strong { color: var(--green-deepest); display: block; margin-bottom: 0.5rem; }
+.flipbook-cta {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Where the money goes (buyers only) — soft community section */
+.community {
+  background: var(--off-white);
+  padding: clamp(5rem, 9vw, 9rem) var(--gutter);
+}
+.community-inner { max-width: var(--max); margin: 0 auto; }
+.community .eyebrow { display: block; margin-bottom: 0.75rem; }
+.community h2 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  margin-bottom: 1.5rem;
+  max-width: 26ch;
+}
+.community-lede {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  max-width: 60ch;
+  color: var(--green-deepest);
+  opacity: 0.85;
+  margin-bottom: 3rem;
+}
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.community-card {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(4,26,16,0.12);
+}
+.community-card h3,
+.community-card h4 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown-warm);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.community-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
    Zada Group — site stylesheet
    Palette per brand guide: deep greens, earthy browns, off-white
    Typography: Cormorant Garamond (Abigail substitute), Inter (Sweet Sans Pro substitute)
