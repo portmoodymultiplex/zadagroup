@@ -80,8 +80,8 @@
 }
 .contact-form .field { display: flex; flex-direction: column; }
 .contact-form label {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
   color: var(--brown-warm);
@@ -125,8 +125,8 @@
 }
 .contact-form button[type="submit"] {
   font-family: var(--sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 0.88rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 500;
   padding: 1.1rem 2.5rem;
@@ -184,13 +184,18 @@
 }
 .reveal-x.is-visible { opacity: 1; transform: translateX(0); }
 
-/* KEY-LOCK HERO — full-bleed video, doors part to reveal */
-.kl-hero {
+/* KEYHOLE HERO — scroll into the keyhole, through to the site */
+.kl-section {
   position: relative;
+  height: 280vh;          /* Extra scroll room to play the animation through */
+  background: #050505;
+}
+.kl-sticky {
+  position: sticky;
+  top: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  background: #050505;
 }
 .kl-video {
   position: absolute;
@@ -203,68 +208,35 @@
 .kl-vignette {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(circle at center, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%),
-    linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.75) 100%);
   z-index: 2;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.75) 100%);
 }
-.kl-door {
+
+/* The black SVG with a keyhole "hole" cut out — scales up on scroll */
+.kl-keyhole {
   position: absolute;
-  left: 0;
-  right: 0;
-  background: #050505;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 4;
-  transition: transform 1.4s cubic-bezier(0.76,0,0.24,1);
-}
-.kl-door.top { top: 0; height: 50%; transform: translateY(0); }
-.kl-door.bottom { bottom: 0; height: 50%; transform: translateY(0); }
-.kl-hero.unlocked .kl-door.top { transform: translateY(-100%); }
-.kl-hero.unlocked .kl-door.bottom { transform: translateY(100%); }
-
-/* Lock seal — sits centered while doors are closed */
-.kl-seal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
-  text-align: center;
-  color: var(--off-white);
-  transition: opacity 0.6s ease;
-}
-.kl-hero.unlocked .kl-seal { opacity: 0; pointer-events: none; }
-.kl-seal-mark {
-  font-family: var(--serif);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: 0.04em;
-  border: 1px solid rgba(159,129,99,0.5);
-  padding: 1.5rem 3rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-}
-.kl-seal-tag {
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(232,229,226,0.7);
+  pointer-events: none;
 }
 
-/* Hero content (visible once unlocked) */
+/* Hero content — fades in when keyhole opens enough */
 .kl-content {
   position: absolute;
   inset: 0;
-  z-index: 3;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: var(--gutter);
-  padding-bottom: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
   opacity: 0;
-  transition: opacity 1.4s ease 1.2s;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
 }
-.kl-hero.unlocked .kl-content { opacity: 1; }
+.kl-content.is-visible { opacity: 1; pointer-events: auto; }
 .kl-content-inner { max-width: var(--max); margin: 0 auto; width: 100%; color: var(--off-white); }
 .kl-content .eyebrow {
   color: var(--brown-warm);
@@ -287,43 +259,44 @@
   color: var(--brown-warm);
 }
 .kl-content .lede {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.6;
   max-width: 52ch;
-  color: rgba(232,229,226,0.85);
+  color: rgba(232,229,226,0.88);
   margin-bottom: 2.5rem;
 }
 .kl-content .actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-/* Scroll cue */
-.kl-scroll-cue {
+/* "Scroll to enter" cue — shown before keyhole opens */
+.kl-cue {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2.5rem;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4;
-  color: rgba(232,229,226,0.55);
-  font-size: 0.65rem;
+  z-index: 5;
+  color: rgba(232,229,226,0.7);
+  font-family: var(--sans);
+  font-size: 0.78rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  opacity: 0;
-  animation: kl-cue-fade 2s ease 2.4s forwards;
+  text-align: center;
+  font-weight: 500;
+  transition: opacity 0.4s ease;
 }
-@keyframes kl-cue-fade {
-  to { opacity: 1; }
-}
-.kl-scroll-cue::after {
+.kl-cue.is-hidden { opacity: 0; pointer-events: none; }
+.kl-cue::after {
   content: '';
   display: block;
   width: 1px;
-  height: 38px;
-  background: rgba(159,129,99,0.5);
-  margin: 0.75rem auto 0;
-  animation: kl-line-pulse 2s ease-in-out infinite;
+  height: 36px;
+  background: rgba(159,129,99,0.65);
+  margin: 1rem auto 0;
+  transform-origin: top;
+  animation: kl-cue-pulse 1.8s ease-in-out infinite;
 }
-@keyframes kl-line-pulse {
-  0%, 100% { transform: scaleY(0.4); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
+@keyframes kl-cue-pulse {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.4; }
+  50% { transform: scaleY(1); opacity: 1; }
 }
 
 /* Manifesto strip — dark, big serif, no photo */
@@ -520,8 +493,8 @@
   padding-top: 1.5rem;
 }
 .hp-ssmuh-card .step {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   font-weight: 500;
@@ -645,8 +618,8 @@
 }
 .hp-team-card:hover .portrait img { transform: scale(1.05); }
 .hp-team-card .role {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   margin-bottom: 0.5rem;
@@ -901,8 +874,8 @@
   margin-bottom: 1rem;
 }
 .az-ritual .copy .meta {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   margin-bottom: 0.75rem;
@@ -961,8 +934,8 @@
   padding-top: 1.5rem;
 }
 .az-crisis-card .when {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   font-weight: 500;
@@ -1315,8 +1288,8 @@
 .community-card h3,
 .community-card h4 {
   font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   font-weight: 500;
@@ -1385,9 +1358,9 @@ h4 { font-size: clamp(1.125rem, 1.5vw, 1.5rem); }
 
 .eyebrow {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--brown-warm);
   margin-bottom: 1.25rem;
