@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Zada Group | Real Estate in Metro Vancouver</title>
-<meta name="description" content="Zada Group is a boutique real estate team led by Dawar Zada PREC*, serving Metro Vancouver with strategy, integrity, and a deep commitment to community." />
+<title>Zada Group | Client Focused. Results Driven. Metro Vancouver Real Estate.</title>
+<meta name="description" content="Zada Group is a boutique Metro Vancouver real estate team led by Dawar Zada, PREC*. Record-breaking sales, below-market buys, and a practice built on 95% repeat clients." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -41,113 +41,65 @@
   </ul>
 </nav>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-media">
-    <div class="hero-slider">
-      <div class="hero-slide active"><img src="assets/images/hero-1.jpg" alt="" /></div>
-      <div class="hero-slide"><img src="assets/images/hero-2.jpg" alt="" /></div>
-      <div class="hero-slide"><img src="assets/images/hero-3.jpg" alt="" /></div>
+<!-- KEY-LOCK HERO with video -->
+<header class="kl-hero">
+  <!-- Drone footage. Drop your .mp4 at assets/video/hero.mp4 and it'll play here. -->
+  <video class="kl-video" autoplay muted loop playsinline poster="assets/images/listings/listing-seaview.jpg">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="kl-vignette"></div>
+
+  <!-- The "lock" — two doors that part on scroll/timeout -->
+  <div class="kl-door top"></div>
+  <div class="kl-door bottom"></div>
+
+  <!-- Seal — visible while doors are closed -->
+  <div class="kl-seal">
+    <div class="kl-seal-mark">Z</div>
+    <div class="kl-seal-tag">Zada Group · Est. Metro Vancouver</div>
+  </div>
+
+  <!-- Hero content — fades in after doors open -->
+  <div class="kl-content">
+    <div class="kl-content-inner">
+      <div class="eyebrow">Stonehaus Realty Corp · Metro Vancouver</div>
+      <h1>Client <strong>Focused.</strong><br/>Results <strong>Driven.</strong></h1>
+      <p class="lede">Boutique real estate, led by Dawar Zada, PREC*. Record-breaking sales. Below-market buys. A practice built on past clients and personal referrals — 95% of it, every year.</p>
+      <div class="actions">
+        <a href="sales.html" class="btn btn-filled">View Current Listings</a>
+        <a href="about/zada-group.html" class="btn btn-ghost-light">Our Story</a>
+      </div>
     </div>
   </div>
-  <div class="hero-inner">
-    <div class="eyebrow">Stonehaus Realty · Metro Vancouver</div>
-    <h1>Strategic real estate for people who plan past the next move.</h1>
-    <p class="lede">Zada Group is a boutique team led by Dawar Zada, PREC*, working with buyers, sellers, investors, and Port Moody homeowners exploring SSMUH.</p>
-    <div class="hero-actions">
-      <a href="sales.html" class="btn btn-filled">View Listings</a>
-      <a href="about/zada-group.html" class="btn btn-ghost-light">Meet the Team</a>
-    </div>
-  </div>
-  <div class="hero-indicators" aria-label="Hero slider">
-    <button class="active" aria-label="Slide 1"></button>
-    <button aria-label="Slide 2"></button>
-    <button aria-label="Slide 3"></button>
-  </div>
-  <div class="hero-marquee" aria-hidden="true">
-    <div class="hero-marquee-track">
-      <span>Family-First</span><span>Community-Driven</span><span>Top 1% Realtors</span><span>SSMUH Specialists</span><span>Missing-Middle Development</span><span>Boutique Service</span><span>Metro Vancouver</span><span>Family-First</span><span>Community-Driven</span><span>Top 1% Realtors</span><span>SSMUH Specialists</span><span>Missing-Middle Development</span><span>Boutique Service</span><span>Metro Vancouver</span>
-    </div>
-  </div>
+
+  <div class="kl-scroll-cue">Scroll</div>
 </header>
 
-<!-- STATS -->
-<div class="container">
-  <div class="stats">
-    <div class="stat"><span class="num" style="font-size: clamp(1.6rem, 2.4vw, 2.25rem); line-height: 1.1;">Master<br/>Medallion</span><span class="label">Metro Vancouver Sales</span></div>
-    <div class="stat"><span class="num">$261K</span><span class="label">Best ROI Delivered</span></div>
-    <div class="stat"><span class="num">MRP</span><span class="label">Military Certified</span></div>
-    <div class="stat"><span class="num">SRES</span><span class="label">Seniors Designated</span></div>
-  </div>
-</div>
-
-<!-- ABOUT TEASER (split) -->
-<section>
-  <div class="split">
-    <div class="split-media" style="background-image:url('assets/images/interior-1.jpg');"></div>
-    <div class="split-text">
-      <div class="eyebrow">About Zada Group</div>
-      <h2>A team built around the people we serve.</h2>
-      <p>We're a small boutique team operating across Metro Vancouver with deep local roots and a forward-looking approach to housing. Our agents come from different worlds, speak different languages, and have built their practices around the kinds of clients other realtors don't usually know how to take care of: people in law enforcement, government, and the military; seniors and their families during estates and downsizes; homeowners exploring SSMUH and missing-middle development on their own lots.</p>
-      <p>Between us we speak English, French, Vietnamese, and Farsi. We work with first-time buyers in their twenties and with luxury sellers above five million, and we work each one the same way: carefully, patiently, and with a strong opinion when one is asked for.</p>
-      <a href="about/zada-group.html" class="btn btn-ghost-dark">Our Story</a>
-    </div>
+<!-- MANIFESTO -->
+<section class="hp-manifesto">
+  <div class="hp-manifesto-inner">
+    <div class="eyebrow reveal">The Philosophy</div>
+    <h2 class="reveal delay-1">A practice built on the people, not the listings.</h2>
+    <p class="reveal delay-2">For more than a decade, the operating principle has stayed the same. Look after the clients first. The records, the referrals, and the repeat business follow. <strong>95% of our work arrives through people we've already worked for, or people they sent.</strong> That isn't a marketing achievement. It's the entire business model.</p>
   </div>
 </section>
 
-<!-- AGENTS -->
-<section class="section-dark">
-  <div class="container">
-    <div class="eyebrow">The Team</div>
-    <h2 style="margin-bottom: 3rem; max-width: 20ch;">Realtors who actually know your neighbourhood.</h2>
-    <div class="grid grid-3">
-      <div class="person-card">
-        <a href="about/dawar.html">
-          <img src="assets/images/dawar.jpg" alt="Dawar Zada" />
-          <div class="body">
-            <div class="role">Team Lead · PREC*</div>
-            <h3>Dawar Zada</h3>
-          </div>
-        </a>
-      </div>
-      <div class="person-card">
-        <a href="about/randy.html">
-          <img src="assets/images/randy.jpg" alt="Randy Quach" />
-          <div class="body">
-            <div class="role">Realtor · MRP</div>
-            <h3>Randy Quach</h3>
-          </div>
-        </a>
-      </div>
-      <div class="person-card">
-        <a href="about/liz.html">
-          <img src="assets/images/liz.jpg" alt="Liz Murphy" />
-          <div class="body">
-            <div class="role">Realtor · SRES</div>
-            <h3>Liz Murphy</h3>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED LISTINGS -->
-<section>
-  <div class="container">
-    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem; margin-bottom:3rem;">
+<!-- CURRENT LISTINGS -->
+<section class="hp-listings">
+  <div class="hp-listings-inner">
+    <div class="hp-listings-head reveal">
       <div>
-        <div class="eyebrow">Current Listings</div>
+        <div class="eyebrow">Currently On Market</div>
         <h2>Four active across Metro Vancouver.</h2>
       </div>
-      <a href="sales.html" class="btn btn-ghost-dark">View All</a>
+      <a href="sales.html" class="btn btn-ghost-light">View All Listings</a>
     </div>
 
     <div class="grid grid-3">
 
-      <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
+      <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card reveal">
         <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale</span>
+          <span class="badge">For Sale</span>
           <img src="assets/images/listings/listing-seaview.jpg" alt="218 Seaview Drive, Port Moody" />
         </div>
         <div class="body">
@@ -157,9 +109,9 @@
         </div>
       </a>
 
-      <a href="https://www.rew.ca/properties/613-721-anskar-court-coquitlam-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
+      <a href="https://www.rew.ca/properties/613-721-anskar-court-coquitlam-bc" target="_blank" rel="noopener" class="listing-card reveal delay-1">
         <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale · Open Sat</span>
+          <span class="badge">For Sale · Open Sat</span>
           <img src="assets/images/listings/listing-anskar.jpg" alt="613 - 721 Anskar Court, Coquitlam" />
         </div>
         <div class="body">
@@ -169,9 +121,9 @@
         </div>
       </a>
 
-      <a href="https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
+      <a href="https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc" target="_blank" rel="noopener" class="listing-card reveal delay-2">
         <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale</span>
+          <span class="badge">For Sale</span>
           <img src="assets/images/listings/listing-halifax.jpg" alt="119 - 4363 Halifax Street, Burnaby" />
         </div>
         <div class="body">
@@ -185,86 +137,162 @@
   </div>
 </section>
 
-<!-- SSMUH PROMO -->
-<section class="section-dark">
-  <div class="container split" style="display:grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
-    <div>
-      <div class="eyebrow">Small-Scale Multi-Unit Housing</div>
-      <h2>The new shape of the single-family lot.</h2>
-      <p>BC's SSMUH legislation changed what's possible on standard residential lots. Zada Group has been at the front of this conversation. We run education seminars in Port Moody, helping homeowners model whether co-development makes sense for their family, and connecting longtime residents with retirement income they didn't know was on the table.</p>
-      <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-        <a href="ssmuh.html" class="btn btn-ghost-light">Learn About SSMUH</a>
-        <a href="port-moody.html" class="btn btn-ghost-light">Port Moody Multiplex</a>
+<!-- FOR SELLERS — cinematic feature -->
+<section class="hp-feature">
+  <div class="bg-img" style="background-image: url('assets/images/listings/listing-seaview.jpg');"></div>
+  <div class="hp-feature-inner">
+    <div class="content reveal">
+      <div class="eyebrow">For Sellers</div>
+      <h2>Record-breaking sales aren't an accident.</h2>
+      <p>Highest sale in the building. Highest sale on the street. They've become a signature of how we work — but selling well is only half of it. We care just as much about where you're going next, and we match completion dates so the whole journey feels like one continuous move instead of two stressful ones.</p>
+      <div class="actions">
+        <a href="sellers.html" class="btn btn-filled">The Seller's Guide</a>
+        <a href="mailto:admin@zadagroup.ca?subject=Home%20Valuation" class="btn btn-ghost-light">Free Valuation</a>
       </div>
     </div>
-    <div>
-      <img src="assets/images/interior-2.webp" alt="" style="aspect-ratio: 4/5; object-fit: cover; width: 100%;" />
+    <div class="spacer"></div>
+  </div>
+</section>
+
+<!-- FOR BUYERS — cinematic feature, flipped -->
+<section class="hp-feature flip">
+  <div class="bg-img" style="background-image: url('assets/images/listings/listing-anskar.jpg');"></div>
+  <div class="hp-feature-inner">
+    <div class="content reveal">
+      <div class="eyebrow">For Buyers</div>
+      <h2>A long history of buying below market.</h2>
+      <p>Securing homes at prices well below the market average has become one of the defining patterns of this practice. First-time buyers we started with years ago are now closing on multi-million dollar homes, after a decade of buying and selling smart. We approach every buy as one step in a longer plan.</p>
+      <div class="actions">
+        <a href="buyers.html" class="btn btn-filled">The Buyer's Guide</a>
+        <a href="mailto:admin@zadagroup.ca?subject=Buyer%20Inquiry" class="btn btn-ghost-light">Start the Conversation</a>
+      </div>
+    </div>
+    <div class="spacer"></div>
+  </div>
+</section>
+
+<!-- SSMUH — Metro-wide, education-first -->
+<section class="hp-ssmuh">
+  <div class="hp-ssmuh-inner">
+    <div class="hp-ssmuh-head reveal">
+      <div>
+        <div class="eyebrow">Small-Scale Multi-Unit Housing</div>
+        <h2>The new shape of the single-family lot.</h2>
+      </div>
+      <p>British Columbia's SSMUH legislation rewrote what's possible on standard residential lots — across every municipality in Metro Vancouver. Dawar leads the missing-middle side of the practice, working with homeowners from West Vancouver to Surrey to model whether co-development, duplex conversion, or a small multiplex makes sense on their specific lot.</p>
+    </div>
+
+    <div class="hp-ssmuh-grid">
+      <div class="hp-ssmuh-card reveal">
+        <div class="step">01 · Site Analysis</div>
+        <h3>What your lot can actually do.</h3>
+        <p>Every lot has a different ceiling under SSMUH — depending on the municipality's bylaws, the lot size, the servicing, and the existing structure. We pull the numbers before you commit to anything.</p>
+      </div>
+      <div class="hp-ssmuh-card reveal delay-1">
+        <div class="step">02 · Financial Modelling</div>
+        <h3>The math, before the architect.</h3>
+        <p>Build cost, financing structure, sale or rental projections, holding strategy. We walk through whether the upside justifies the disruption — for your family, your timeline, and your tax position.</p>
+      </div>
+      <div class="hp-ssmuh-card reveal delay-2">
+        <div class="step">03 · The Right Team</div>
+        <h3>Architect, builder, lender, lawyer.</h3>
+        <p>SSMUH projects fail when one piece of the team is wrong. We've built relationships with architects, builders, lenders, and planning consultants across Metro Vancouver who do this work properly.</p>
+      </div>
+    </div>
+
+    <div class="hp-ssmuh-cta">
+      <p>Want a deeper look at SSMUH, or specifically Port Moody's three-to-six-unit multiplex rules? Two pages worth reading:</p>
+      <a href="ssmuh.html" class="btn btn-ghost-dark">What is SSMUH</a>
+      <a href="port-moody.html" class="btn btn-ghost-dark">Port Moody Multiplex</a>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL FEATURE -->
-<section>
-  <div class="container">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <div class="eyebrow">What Clients Say</div>
-      <p class="quote" style="margin: 0 auto;">"They treated our family like their own. Patient, thorough, and never once did we feel like a transaction."</p>
-      <div class="quote-attr">Google Review · 5 stars</div>
-      <a href="testimonials.html" class="btn btn-ghost-dark" style="margin-top: 3rem;">Read All Reviews</a>
-    </div>
-  </div>
-</section>
-
-<!-- BUYERS / SELLERS -->
-<section class="section-dark">
-  <div class="container">
-    <div class="grid grid-2">
-      <div>
-        <div class="eyebrow">For Buyers</div>
-        <h3 style="margin-bottom:1.25rem;">Looking for your next home?</h3>
-        <p style="color: rgba(232,229,226,0.75);">Our buyer's guide walks you through every step, from the financial prep through the offer strategy. No fluff. Built from the questions we actually get asked.</p>
-        <a href="buyers.html" class="btn btn-ghost-light" style="margin-top:1.75rem;">Buyer's Guide</a>
+<!-- TRACK RECORD -->
+<section class="hp-record">
+  <div class="hp-record-inner">
+    <div class="eyebrow reveal">The Track Record</div>
+    <h2 class="reveal delay-1">A decade of records, returns, and below-market buys.</h2>
+    <div class="hp-record-grid">
+      <div class="hp-record-cell reveal">
+        <div class="big">$363K</div>
+        <div class="label">Below asking · 1006 Westmount Dr · Highest-priced sale ever recorded in the neighbourhood.</div>
       </div>
-      <div>
-        <div class="eyebrow">For Sellers</div>
-        <h3 style="margin-bottom:1.25rem;">Thinking about selling?</h3>
-        <p style="color: rgba(232,229,226,0.75);">Our seller's guide covers pricing strategy, prep, marketing, and what the current market is actually doing. Written for owners, not for other realtors.</p>
-        <a href="sellers.html" class="btn btn-ghost-light" style="margin-top:1.75rem;">Seller's Guide</a>
+      <div class="hp-record-cell reveal delay-1">
+        <div class="big">$261K</div>
+        <div class="label">10-month return · Pre-construction in Abbotsford, sold at strong appreciation at completion.</div>
+      </div>
+      <div class="hp-record-cell reveal delay-2">
+        <div class="big">$178K</div>
+        <div class="label">6-month flip · Resold at the highest price ever recorded in the building.</div>
+      </div>
+      <div class="hp-record-cell reveal delay-3">
+        <div class="big">95%+</div>
+        <div class="label">Of business from past clients and personal referrals — every year, consistently.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG TEASER -->
-<section>
-  <div class="container">
-    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem; margin-bottom:2rem;">
-      <div>
-        <div class="eyebrow">Journal</div>
-        <h2>The Zada Group Blog</h2>
-      </div>
-      <a href="blog/index.html" class="btn btn-ghost-dark">All Posts</a>
+<!-- TEAM strip -->
+<section class="hp-team">
+  <div class="hp-team-inner">
+    <div class="hp-team-head reveal">
+      <div class="eyebrow">The Team</div>
+      <h2>One team lead. Two senior agents. Four languages.</h2>
     </div>
-    <div class="blog-card">
-      <div class="meta">Education · May 2026</div>
-      <div>
-        <a href="blog/what-is-ssmuh.html">
-          <h3>What is SSMUH? A plain-language guide for BC homeowners.</h3>
-          <p>BC's Small-Scale Multi-Unit Housing legislation quietly rewrote the rules for what you can build on a standard residential lot. Here's what it actually means for you, in language that doesn't require a planning degree.</p>
+    <div class="hp-team-grid">
+      <div class="hp-team-card reveal">
+        <a href="about/dawar.html">
+          <div class="portrait"><img src="assets/images/dawar.jpg" alt="Dawar Zada, Team Lead" /></div>
+          <div class="role">Team Lead · PREC*</div>
+          <h3>Dawar Zada</h3>
+        </a>
+      </div>
+      <div class="hp-team-card reveal delay-1">
+        <a href="about/randy.html">
+          <div class="portrait"><img src="assets/images/randy.jpg" alt="Randy Quach, Realtor" /></div>
+          <div class="role">Realtor · MRP</div>
+          <h3>Randy Quach</h3>
+        </a>
+      </div>
+      <div class="hp-team-card reveal delay-2">
+        <a href="about/liz.html">
+          <div class="portrait"><img src="assets/images/liz.jpg" alt="Liz Murphy, Realtor" /></div>
+          <div class="role">Realtor · SRES</div>
+          <h3>Liz Murphy</h3>
         </a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TESTIMONIAL -->
+<section class="hp-manifesto">
+  <div class="hp-manifesto-inner">
+    <div class="eyebrow reveal">What Clients Say</div>
+    <h2 class="reveal delay-1">"They treated our family like their own."</h2>
+    <p class="reveal delay-2">"Patient, thorough, and never once did we feel like a transaction. They earned every referral we've sent their way."</p>
+    <p class="reveal delay-3" style="margin-top: 2.5rem; font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-warm);">Google Review · 5 Stars</p>
+    <div class="reveal delay-3" style="margin-top: 2rem;">
+      <a href="testimonials.html" class="btn btn-ghost-light">Read All Reviews</a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="section-dark cta-banner" id="contact">
-  <div class="eyebrow">Get in Touch</div>
-  <h2>Let's talk about what you're looking for.</h2>
-  <p class="lede" style="margin: 1rem auto 0; color: rgba(232,229,226,0.7);">Coffee, a quick call, a long conversation about whether this is the right time. Whatever shape it takes, we're here.</p>
-  <div class="actions">
-    <a href="mailto:admin@zadagroup.ca" class="btn btn-filled">Email the Team</a>
-    <a href="tel:+16048083797" class="btn btn-ghost-light">Call Us</a>
+<section class="hp-feature" id="contact" style="min-height: 70vh;">
+  <div class="bg-img" style="background-image: url('assets/images/listings/listing-halifax.jpg');"></div>
+  <div class="hp-feature-inner" style="grid-template-columns: 1fr;">
+    <div class="content reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
+      <div class="eyebrow">Get in Touch</div>
+      <h2 style="max-width: 22ch; margin: 0 auto 2rem;">Coffee, a call, or a long conversation about whether this is the right time.</h2>
+      <p style="max-width: 56ch; margin: 0 auto 2.5rem;">Whatever shape it takes, we're here. Quiet, no follow-up calls, no pressure.</p>
+      <div class="actions" style="justify-content: center;">
+        <a href="mailto:admin@zadagroup.ca" class="btn btn-filled">Email the Team</a>
+        <a href="tel:+16048083797" class="btn btn-ghost-light">604.808.3797</a>
+      </div>
+    </div>
   </div>
 </section>
 
