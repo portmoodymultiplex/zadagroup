@@ -133,24 +133,80 @@
     <div class="eyebrow">Read the Full Guide</div>
     <h2>The Zada Group Seller's Guide.</h2>
     <div class="flipbook-stage">
-      <!-- FLIPSNACK EMBED: paste your Flipsnack iframe code below, replacing the placeholder div. -->
-      <!-- Example: <iframe src="https://www.flipsnack.com/widget/v2/widget.html?hash=YOUR_HASH_HERE" allowfullscreen></iframe> -->
-<iframe src="https://player.flipsnack.com?hash=NTVEQjVBNTU2OUIrdDk1YmxxaXVuZg==" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen allow="autoplay; clipboard-read; clipboard-write"></iframe>
-        Paste the iframe code from your Flipsnack seller's guide flipbook and this whole area will turn into a flippable book.
-      </div>
+      <iframe src="https://player.flipsnack.com?hash=NTVEQjVBNTU2OUIrdDk1YmxxaXVuZg==" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen allow="autoplay; clipboard-read; clipboard-write"></iframe>
     </div>
     <a href="mailto:admin@zadagroup.ca?subject=Send%20me%20the%20Seller's%20Guide%20PDF" class="flipbook-cta">Prefer a PDF? Email us and we'll send it over.</a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section-dark cta-banner">
-  <div class="eyebrow">Thinking about selling?</div>
-  <h2>Let's start with where you're going next.</h2>
-  <p class="lede" style="margin: 1rem auto 0; color: rgba(232,229,226,0.7); max-width: 60ch;">Free home valuation. A real conversation about the next move, not just this one. No follow-up calls unless you ask.</p>
-  <div class="actions">
-    <a href="mailto:admin@zadagroup.ca?subject=Seller%20Inquiry" class="btn btn-filled">Request a Valuation</a>
-    <a href="testimonials.html" class="btn btn-ghost-light">Read Reviews</a>
+<!-- BOOK A CONSULTATION BANNER -->
+<section class="consult-banner">
+  <div class="consult-banner-inner">
+    <div class="eyebrow">Book a Free Consultation</div>
+    <h2>Thirty minutes. Zero pressure.</h2>
+    <p>A real conversation about your home, your timeline, and where you're going next. We bring comparables, an honest read on the market, and zero sales pitch. No follow-up calls unless you ask.</p>
+    <div class="actions">
+      <a href="#contact-form" class="btn btn-filled">Book Your Consultation</a>
+      <a href="testimonials.html" class="btn btn-ghost-light">Read Reviews First</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact-form">
+  <div class="contact-section-inner">
+    <div class="eyebrow">Get in Touch</div>
+    <h2>Tell us about your home.</h2>
+    <p class="lede">Fill out whatever you feel like sharing. We'll get back to you within one business day with next steps and a time to talk.</p>
+
+    <form name="seller-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thanks.html">
+      <input type="hidden" name="form-name" value="seller-inquiry" />
+      <input type="hidden" name="inquiry-type" value="Sellers Guide Page" />
+      <p class="honeypot"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="s-name">Your Name</label>
+          <input type="text" id="s-name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="s-email">Email</label>
+          <input type="email" id="s-email" name="email" required />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="s-phone">Phone (optional)</label>
+          <input type="tel" id="s-phone" name="phone" />
+        </div>
+        <div class="field">
+          <label for="s-timeline">When are you thinking?</label>
+          <select id="s-timeline" name="timeline">
+            <option>Just exploring</option>
+            <option>Within 3 months</option>
+            <option>Within 6 months</option>
+            <option>Within a year</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="s-address">Property Address (optional)</label>
+        <input type="text" id="s-address" name="address" placeholder="If you're ready to share where the home is" />
+      </div>
+
+      <div class="field">
+        <label for="s-message">Anything else?</label>
+        <textarea id="s-message" name="message" placeholder="What you're hoping to do, where you're going next, any concerns we should know about."></textarea>
+      </div>
+
+      <div class="submit-row">
+        <p class="fine">Goes straight to admin@zadagroup.ca. We never share your info, and we don't add you to a mailing list.</p>
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
   </div>
 </section>
 

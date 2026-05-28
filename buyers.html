@@ -156,22 +156,86 @@
     <div class="eyebrow">Read the Full Guide</div>
     <h2>The Zada Group Buyer's Guide.</h2>
     <div class="flipbook-stage">
-      <!-- FLIPSNACK EMBED: paste your Flipsnack iframe code below, replacing the placeholder div. -->
-      <!-- Example: <iframe src="https://www.flipsnack.com/widget/v2/widget.html?hash=YOUR_HASH_HERE" allowfullscreen></iframe> -->
-   <iframe src="https://player.flipsnack.com?hash=NTVEQjVBNTU2OUIreGhwZTk1a2Qxag==" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen allow="autoplay; clipboard-read; clipboard-write"></iframe>
+      <iframe src="https://player.flipsnack.com?hash=NTVEQjVBNTU2OUIreGhwZTk1a2Qxag==" width="100%" height="480" seamless="seamless" scrolling="no" frameBorder="0" allowFullScreen allow="autoplay; clipboard-read; clipboard-write"></iframe>
     </div>
     <a href="mailto:admin@zadagroup.ca?subject=Send%20me%20the%20Buyer's%20Guide%20PDF" class="flipbook-cta">Prefer a PDF? Email us and we'll send it over.</a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="section-dark cta-banner">
-  <div class="eyebrow">Ready to start?</div>
-  <h2>Let's find the first one, or the next one.</h2>
-  <p class="lede" style="margin: 1rem auto 0; color: rgba(232,229,226,0.7); max-width: 60ch;">Send us what you're looking for. We'll send back a short-list, a budget sanity-check, and a no-pressure call.</p>
-  <div class="actions">
-    <a href="mailto:admin@zadagroup.ca?subject=Buyer%20Inquiry" class="btn btn-filled">Start the Conversation</a>
-    <a href="sales.html" class="btn btn-ghost-light">Browse Listings</a>
+<!-- BOOK A CONSULTATION BANNER -->
+<section class="consult-banner">
+  <div class="consult-banner-inner">
+    <div class="eyebrow">Book a Free Consultation</div>
+    <h2>Thirty minutes. Zero pressure.</h2>
+    <p>Tell us what you're looking for. We'll send back a curated short-list, a budget sanity-check, and a no-pressure call. The conversation is free. So is staying on our radar for as long as it takes.</p>
+    <div class="actions">
+      <a href="#contact-form" class="btn btn-filled">Book Your Consultation</a>
+      <a href="sales.html" class="btn btn-ghost-light">Browse Listings</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-section" id="contact-form">
+  <div class="contact-section-inner">
+    <div class="eyebrow">Get in Touch</div>
+    <h2>Tell us what you're looking for.</h2>
+    <p class="lede">Fill out whatever you feel like sharing. We'll get back to you within one business day with next steps and a time to talk.</p>
+
+    <form name="buyer-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" action="/thanks.html">
+      <input type="hidden" name="form-name" value="buyer-inquiry" />
+      <input type="hidden" name="inquiry-type" value="Buyers Guide Page" />
+      <p class="honeypot"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="b-name">Your Name</label>
+          <input type="text" id="b-name" name="name" required />
+        </div>
+        <div class="field">
+          <label for="b-email">Email</label>
+          <input type="email" id="b-email" name="email" required />
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="b-phone">Phone (optional)</label>
+          <input type="tel" id="b-phone" name="phone" />
+        </div>
+        <div class="field">
+          <label for="b-timeline">When are you thinking?</label>
+          <select id="b-timeline" name="timeline">
+            <option>Just exploring</option>
+            <option>Within 3 months</option>
+            <option>Within 6 months</option>
+            <option>Within a year</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row-2">
+        <div class="field">
+          <label for="b-area">Area You're Looking In</label>
+          <input type="text" id="b-area" name="area" placeholder="Port Moody, Burnaby, New West…" />
+        </div>
+        <div class="field">
+          <label for="b-budget">Budget (optional)</label>
+          <input type="text" id="b-budget" name="budget" placeholder="$ range you're working with" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="b-message">Anything else?</label>
+        <textarea id="b-message" name="message" placeholder="What you must have, what you can compromise on, whether you've been pre-approved, etc."></textarea>
+      </div>
+
+      <div class="submit-row">
+        <p class="fine">Goes straight to admin@zadagroup.ca. We never share your info, and we don't add you to a mailing list.</p>
+        <button type="submit">Send Message</button>
+      </div>
+    </form>
   </div>
 </section>
 
