@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- Reveal-on-scroll for elements with .reveal ---
-  const reveals = document.querySelectorAll('.reveal');
+  // --- Reveal-on-scroll for elements with .reveal or .reveal-x ---
+  const reveals = document.querySelectorAll('.reveal, .reveal-x');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
@@ -71,6 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => io.observe(el));
   } else {
     reveals.forEach(el => el.classList.add('is-visible'));
+  }
+
+  // --- Key-lock hero: auto-unlock the doors after a beat, or on first scroll ---
+  const kl = document.querySelector('.kl-hero');
+  if (kl) {
+    const unlock = () => kl.classList.add('unlocked');
+    // Open automatically after 1.6s so users see the seal first
+    const autoTimer = setTimeout(unlock, 1600);
+    // Also open immediately on first scroll/tap
+    const earlyOpen = () => { clearTimeout(autoTimer); unlock(); window.removeEventListener('scroll', earlyOpen); window.removeEventListener('touchstart', earlyOpen); };
+    window.addEventListener('scroll', earlyOpen, { passive: true, once: true });
+    window.addEventListener('touchstart', earlyOpen, { passive: true, once: true });
   }
 });
 
