@@ -43,16 +43,12 @@
   </ul>
 </nav>
 
-<!-- HERO — ambient background video, autoplay muted loop -->
+<!-- HERO — ambient background video, autoplay muted loop (native MP4) -->
 <header class="mk-hero">
   <div class="mk-hero-bg">
-    <!-- autoplay + mute required for browser autoplay; loop needs playlist=VIDEO_ID; ui chrome disabled -->
-    <iframe
-      src="https://www.youtube.com/embed/Akjab-w236A?autoplay=1&mute=1&loop=1&playlist=Akjab-w236A&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&fs=0"
-      title="Zada Group marketing reel"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen></iframe>
+    <video autoplay muted loop playsinline poster="assets/images/listings/listing-seaview.jpg">
+      <source src="assets/video/marketing-hero.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="mk-hero-overlay"></div>
   <div class="mk-hero-inner">
