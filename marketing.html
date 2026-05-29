@@ -43,15 +43,22 @@
   </ul>
 </nav>
 
-<!-- HERO with YouTube video -->
+<!-- HERO — ambient background video, autoplay muted loop -->
 <header class="mk-hero">
+  <div class="mk-hero-bg">
+    <!-- autoplay + mute required for browser autoplay; loop needs playlist=VIDEO_ID; ui chrome disabled -->
+    <iframe
+      src="https://www.youtube.com/embed/Akjab-w236A?autoplay=1&mute=1&loop=1&playlist=Akjab-w236A&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1&fs=0"
+      title="Zada Group marketing reel"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen></iframe>
+  </div>
+  <div class="mk-hero-overlay"></div>
   <div class="mk-hero-inner">
     <div class="eyebrow">Marketing</div>
     <h1>Marketing that <strong>moves homes.</strong></h1>
     <p class="lede">In real estate, your marketing is your reach. Every listing we bring to Port Moody, the Tri-Cities, and Metro Vancouver gets a strategy designed specifically for the property, the price point, and the buyer pool. This is what that looks like.</p>
-    <div class="mk-video-frame reveal">
-      <iframe src="https://www.youtube.com/embed/Akjab-w236A?si=e9qNUvqUB5KGGj-L" title="Zada Group marketing reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
   </div>
 </header>
 
