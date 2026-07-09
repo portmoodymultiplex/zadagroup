@@ -2518,7 +2518,31 @@ footer .container { padding: 0; }
 
 /* Two-up agent feature ----------------------------------------------- */
 .about-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; }
-.about-hero .img { background-size: cover; background-position: center; min-height: 50vh; }
+.about-hero .img { background-size: cover; background-position: center top; min-height: 50vh; }
+
+/* Agent switcher — cross-navigation between team member pages -------- */
+.agent-switch {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 1.75rem;
+  padding: 1.15rem clamp(1rem, 4vw, 3rem);
+  background: var(--green-deepest);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.agent-switch .label { color: var(--brown-warm); }
+.agent-switch a {
+  color: rgba(232,229,226,0.75);
+  text-decoration: none;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.agent-switch a:hover { color: #fff; border-bottom-color: var(--brown-warm); }
+.agent-switch a.current { color: #fff; border-bottom-color: var(--brown-warm); }
 .about-hero .text { padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem); background: var(--off-white); display: flex; flex-direction: column; justify-content: center; }
 .about-hero .eyebrow { margin-bottom: 1rem; }
 .about-hero h1 { font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1.5rem; }
