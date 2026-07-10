@@ -718,7 +718,7 @@
 /* KEYHOLE HERO — scroll into the keyhole, through to the site */
 .kl-section {
   position: relative;
-  height: 280vh;          /* Extra scroll room to play the animation through */
+  height: 100vh;
   background: #050505;
 }
 .kl-sticky {
@@ -740,7 +740,7 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.75) 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
 }
 
 /* The black SVG with a keyhole "hole" cut out — scales up on scroll */
@@ -763,11 +763,7 @@
   justify-content: flex-end;
   padding: var(--gutter);
   padding-bottom: clamp(5rem, 8vw, 8rem);
-  opacity: 0;
-  transition: opacity 0.8s ease;
-  pointer-events: none;
 }
-.kl-content.is-visible { opacity: 1; pointer-events: auto; }
 .kl-content-inner { max-width: var(--max); margin: 0 auto; width: 100%; color: var(--off-white); }
 .kl-content .eyebrow {
   color: var(--brown-warm);
@@ -2070,6 +2066,8 @@ section { padding: clamp(4rem, 8vw, 8rem) 0; }
 }
 
 .dropdown {
+  list-style: none;
+  margin: 0;
   position: absolute;
   top: 100%;
   left: -1.5rem;
@@ -2106,6 +2104,8 @@ section { padding: clamp(4rem, 8vw, 8rem) 0; }
 .has-dropdown:hover .dropdown li:nth-child(2) { transition-delay: 0.13s; }
 .has-dropdown:hover .dropdown li:nth-child(3) { transition-delay: 0.18s; }
 .has-dropdown:hover .dropdown li:nth-child(4) { transition-delay: 0.23s; }
+.has-dropdown:hover .dropdown li:nth-child(5) { transition-delay: 0.28s; }
+.has-dropdown:hover .dropdown li:nth-child(6) { transition-delay: 0.33s; }
 
 .dropdown a {
   display: block;
@@ -2565,6 +2565,9 @@ footer .container { padding: 0; }
   }
   .nav-menu.open { transform: translateY(0); }
   .nav-menu .has-dropdown .dropdown { position: static; opacity: 1; visibility: visible; transform: none; padding: 0.5rem 0 0 1rem; background: transparent; border: none; min-width: auto; }
+  .nav-menu .has-dropdown .dropdown li { opacity: 1; transform: none; }
+  .nav-menu .has-dropdown .dropdown { box-shadow: none; }
+  .dropdown a { padding: 0.55rem 0; }
   .split, .about-hero { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .blog-card { grid-template-columns: 1fr; }
@@ -2574,3 +2577,39 @@ footer .container { padding: 0; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
 }
+
+
+/* Homepage preloader — matches the listing-page treatment ------------- */
+#zg-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: #041A10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+#zg-loader.done { opacity: 0; visibility: hidden; }
+.zg-loader-mark { width: 64px; opacity: 0.9; }
+.zg-loader-msg {
+  color: var(--brown-warm);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.zg-loader-bar { width: 200px; height: 1px; background: rgba(159,129,99,0.25); overflow: hidden; }
+.zg-loader-bar i {
+  display: block; height: 100%; width: 100%;
+  background: var(--brown-warm);
+  transform: scaleX(0); transform-origin: left;
+  animation: zg-fill 2.4s ease forwards;
+}
+@keyframes zg-fill { to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { #zg-loader { display: none; } }

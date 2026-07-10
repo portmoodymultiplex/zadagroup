@@ -4,13 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Zada Group | Client Focused. Results Driven. Metro Vancouver Real Estate.</title>
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
 <meta name="description" content="Zada Group is a boutique Metro Vancouver real estate team led by Dawar Zada, PREC*. Record-breaking sales, below-market buys, and a practice built on 95% repeat clients." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Zada Group | Client Focused. Results Driven. Metro Vancouver Real Estate." />
+<meta property="og:description" content="Zada Group is a boutique Metro Vancouver real estate team led by Dawar Zada, PREC*. Record-breaking sales, below-market buys, and a practice built on 95% repeat clients." />
+<meta property="og:url" content="https://zadagroup.ca/" />
+<meta property="og:image" content="https://zadagroup.ca/assets/images/og-default.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="assets/css/style.css" />
+<noscript><style>.reveal,.reveal-x{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
+
+<!-- PRELOADER — the line below is the one to edit if you want different copy -->
+<div id="zg-loader" aria-hidden="true">
+  <img class="zg-loader-mark" src="assets/images/zada-submark.png" alt="" />
+  <div class="zg-loader-msg">Unlocking the Door</div>
+  <div class="zg-loader-bar"><i></i></div>
+</div>
 
 <nav class="nav">
   <a href="index.html" class="nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
@@ -18,19 +33,31 @@
   <ul class="nav-menu">
     <li><a href="buyers.html">For Buyers</a></li>
     <li><a href="sellers.html">For Sellers</a></li>
-    <li><a href="marketing.html">Marketing</a></li>
-    <li><a href="ssmuh.html">SSMUH</a></li>
     <li><a href="sales.html">Sales</a></li>
-    <li><a href="blog/index.html">Blog</a></li>
-    <li><a href="about/zada-group.html">About</a></li>
+    <li class="has-dropdown"><a href="ssmuh.html">Resources</a>
+      <ul class="dropdown">
+        <li><a href="ssmuh.html">SSMUH</a></li>
+        <li><a href="port-moody.html">Port Moody Multiplex</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href="about/zada-group.html">About</a>
+      <ul class="dropdown">
+        <li><a href="about/zada-group.html">Zada Group</a></li>
+        <li><a href="about/dawar.html">Dawar Zada</a></li>
+        <li><a href="about/randy.html">Randy Quach</a></li>
+        <li><a href="about/liz.html">Liz Murphy</a></li>
+        <li><a href="marketing.html">Marketing</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+      </ul>
+    </li>
     <li class="nav-cta-pair">
-      <a href="buyers.html#contact-form" class="nav-cta-ghost">Contact</a>
       <a href="buyers.html#contact-form" class="nav-cta">Book a Call</a>
     </li>
   </ul>
 </nav>
 
-<!-- KEYHOLE HERO with video — scroll grows the keyhole until you enter the site -->
+<!-- VIDEO HERO — opens directly, preloader handles the entrance -->
 <section class="kl-section">
   <div class="kl-sticky">
     <video class="kl-video" autoplay muted loop playsinline poster="assets/images/listings/listing-seaview.jpg">
@@ -38,20 +65,7 @@
     </video>
     <div class="kl-vignette"></div>
 
-    <!-- The black overlay with a keyhole hole cut out. Scrolls scales the keyhole up. -->
-    <svg class="kl-keyhole" viewBox="-50 -50 100 100" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <mask id="kl-mask">
-          <rect x="-200" y="-200" width="400" height="400" fill="white"/>
-          <g id="kl-keyhole-shape" transform="scale(1)">
-            <!-- Classic keyhole shape: circle on top, narrow trapezoid stem below -->
-            <circle cx="0" cy="-2.6" r="2.2" fill="black"/>
-            <polygon points="-1.1,-0.7 1.1,-0.7 1.9,3.2 -1.9,3.2" fill="black"/>
-          </g>
-        </mask>
-      </defs>
-      <rect x="-200" y="-200" width="400" height="400" fill="#050505" mask="url(#kl-mask)"/>
-    </svg>
+
 
     <!-- Hero content — fades in once the keyhole has opened past ~30% -->
     <div class="kl-content">
@@ -66,12 +80,7 @@
       </div>
     </div>
 
-    <div class="kl-cue">
-      Scroll to enter
-      <svg class="kl-cue-arrow" viewBox="0 0 16 24" aria-hidden="true">
-        <path d="M8 2 L8 22 M2 16 L8 22 L14 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </div>
+
   </div>
 </section>
 
@@ -100,7 +109,7 @@
       <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card reveal">
         <div class="media">
           <span class="badge">For Sale</span>
-          <img src="assets/images/listings/listing-seaview.jpg" alt="218 Seaview Drive, Port Moody" />
+          <img src="assets/images/listings/listing-seaview.jpg" alt="218 Seaview Drive, Port Moody" loading="lazy" />
         </div>
         <div class="body">
           <div class="specs">House · 7 Bed · 6 Bath · 4,548 sqft</div>
@@ -112,7 +121,7 @@
       <a href="https://www.rew.ca/properties/613-721-anskar-court-coquitlam-bc" target="_blank" rel="noopener" class="listing-card reveal delay-1">
         <div class="media">
           <span class="badge">For Sale · Open Sat</span>
-          <img src="assets/images/listings/listing-anskar.jpg" alt="613 - 721 Anskar Court, Coquitlam" />
+          <img src="assets/images/listings/listing-anskar.jpg" alt="613 - 721 Anskar Court, Coquitlam" loading="lazy" />
         </div>
         <div class="body">
           <div class="specs">Apt/Condo · 2 Bed · 2 Bath · 925 sqft</div>
@@ -124,7 +133,7 @@
       <a href="https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc" target="_blank" rel="noopener" class="listing-card reveal delay-2">
         <div class="media">
           <span class="badge">For Sale</span>
-          <img src="assets/images/listings/listing-halifax.jpg" alt="119 - 4363 Halifax Street, Burnaby" />
+          <img src="assets/images/listings/listing-halifax.jpg" alt="119 - 4363 Halifax Street, Burnaby" loading="lazy" />
         </div>
         <div class="body">
           <div class="specs">Apt/Condo · 2 Bed · 1 Bath · 862 sqft</div>
@@ -238,7 +247,7 @@
 <section class="hp-awards">
   <div class="hp-awards-inner">
     <figure class="reveal">
-      <img src="assets/images/community/awards.jpg" alt="Stonehaus Realty 2025 Top Team and Onyx Club awards presented to Zada Group" />
+      <img src="assets/images/community/awards.jpg" alt="Stonehaus Realty 2025 Top Team and Onyx Club awards presented to Zada Group" loading="lazy" />
     </figure>
     <div class="text reveal delay-1">
       <div class="eyebrow">2025 Recognition</div>
@@ -258,21 +267,21 @@
     <div class="hp-team-grid">
       <div class="hp-team-card reveal">
         <a href="about/dawar.html">
-          <div class="portrait"><img src="assets/images/dawar.jpg" alt="Dawar Zada, Team Lead" /></div>
+          <div class="portrait"><img src="assets/images/dawar.jpg" alt="Dawar Zada, Team Lead" loading="lazy" /></div>
           <div class="role">Team Lead · PREC*</div>
           <h3>Dawar Zada</h3>
         </a>
       </div>
       <div class="hp-team-card reveal delay-1">
         <a href="about/randy.html">
-          <div class="portrait"><img src="assets/images/randy.jpg" alt="Randy Quach, Realtor" /></div>
+          <div class="portrait"><img src="assets/images/randy.jpg" alt="Randy Quach, Realtor" loading="lazy" /></div>
           <div class="role">Realtor · MRP</div>
           <h3>Randy Quach</h3>
         </a>
       </div>
       <div class="hp-team-card reveal delay-2">
         <a href="about/liz.html">
-          <div class="portrait"><img src="assets/images/liz.jpg" alt="Liz Murphy, Realtor" /></div>
+          <div class="portrait"><img src="assets/images/liz.jpg" alt="Liz Murphy, Realtor" loading="lazy" /></div>
           <div class="role">Realtor · SRES</div>
           <h3>Liz Murphy</h3>
         </a>

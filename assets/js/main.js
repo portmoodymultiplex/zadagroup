@@ -73,31 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => el.classList.add('is-visible'));
   }
 
-  // --- Keyhole hero: scroll grows the keyhole until you "enter" the site ---
-  const klSection = document.querySelector('.kl-section');
-  const klShape = document.getElementById('kl-keyhole-shape');
-  const klContent = document.querySelector('.kl-content');
-  const klCue = document.querySelector('.kl-cue');
-  if (klSection && klShape) {
-    let ticking = false;
-    const onKlScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const rect = klSection.getBoundingClientRect();
-        const total = klSection.offsetHeight - window.innerHeight;
-        const progress = Math.max(0, Math.min(1, -rect.top / total));
-        // Scale keyhole from 1x at top to 80x by bottom (well past full screen)
-        const scale = 1 + Math.pow(progress, 1.3) * 80;
-        klShape.setAttribute('transform', `scale(${scale.toFixed(2)})`);
-        // Reveal headline + hide scroll cue once keyhole has opened past ~30%
-        if (klContent) klContent.classList.toggle('is-visible', progress > 0.3);
-        if (klCue) klCue.classList.toggle('is-hidden', progress > 0.08);
-        ticking = false;
-      });
-    };
-    window.addEventListener('scroll', onKlScroll, { passive: true });
-    onKlScroll();
+  // --- Homepage preloader: hold for the bar, then let the site in ---
+  const zgLoader = document.getElementById('zg-loader');
+  if (zgLoader) {
+    setTimeout(() => zgLoader.classList.add('done'), 2600);
   }
 });
 

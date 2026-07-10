@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>20619 123rd Avenue, Maple Ridge — Just Listed | Zada Group</title>
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
 <meta name="description" content="Just listed at $1,499,900. A brand-new 2026 build in Northwest Maple Ridge. 4 bed, 3 bath, 2,259 sqft on a 5,997 sqft lot. Presented by Dawar Zada, PREC.">
 
 <!-- ============================================================
@@ -241,6 +242,7 @@
   .brochure-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   @media (max-width: 760px) { .brochure-frame { aspect-ratio: 3 / 4; } }
 </style>
+<noscript><style>.reveal,.reveal-x{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 
@@ -257,7 +259,7 @@
 
 <!-- PRELOADER -->
 <div id="loader">
-  <img class="loader-mark" src="assets/zada-submark.png" alt="Zada Group">
+  <img class="loader-mark" src="assets/zada-submark.png" alt="Zada Group" loading="lazy" />
   <div class="loader-msg">Your Dream Home Is Loading</div>
   <div class="loader-bar"><i></i></div>
 </div>
@@ -415,7 +417,7 @@
   <div class="wrap">
     <div class="agent-grid">
       <div class="agent-photo reveal">
-        <img src="assets/dawar.jpg" alt="Dawar Zada, PREC">
+        <img src="assets/dawar.jpg" alt="Dawar Zada, PREC" loading="lazy" />
       </div>
       <div class="reveal d1">
         <span class="eyebrow">Listed By</span>
@@ -443,7 +445,9 @@
       <h2 class="h2 reveal d1" style="margin:0 auto;max-width:20ch">Come see 20619 123rd in person.</h2>
       <p class="reveal d1" style="max-width:52ch;margin:1rem auto 0;color:var(--green-deepest);opacity:.78">Private showings available daily. Send a note and we'll find a time that works. We reply personally, usually same day.</p>
     </div>
-    <form class="form reveal d1" id="form">
+    <form class="form reveal d1" id="form" name="listing-20619-showing" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+      <input type="hidden" name="form-name" value="listing-20619-showing" />
+      <p style="display:none"><label>Leave blank: <input name="bot-field" /></label></p>
       <div class="row2">
         <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Jane Doe" required></div>
         <div class="field"><label>Phone</label><input type="tel" name="phone" placeholder="604.000.0000"></div>
@@ -486,7 +490,7 @@
 <div class="lb" id="lb">
   <span class="lb-close" id="lbClose">&times;</span>
   <span class="lb-nav lb-prev" id="lbPrev">&#8249;</span>
-  <img id="lbImg" src="" alt="">
+  <img id="lbImg" src="" alt="" loading="lazy" />
   <span class="lb-nav lb-next" id="lbNext">&#8250;</span>
 </div>
 
@@ -561,6 +565,9 @@
   // Form
   document.getElementById('form').addEventListener('submit', function(e){
     e.preventDefault();
+    var f = e.target;
+    fetch('/', { method: 'POST', headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(new FormData(f)).toString() }).catch(function(){});
     var wrap = e.target.parentNode;
     var ok = document.createElement('div');
     ok.className = 'success reveal in';
