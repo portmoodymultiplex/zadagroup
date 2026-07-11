@@ -2481,48 +2481,56 @@ footer .container { padding: 0; }
 }
 .article h2 { border-top: 1px solid var(--hairline-dark); padding-top: 2.25rem; }
 
-/* Missing-middle scroll — one lot subdividing into four as you scroll */
-.mm-scroll { height: 320vh; background: var(--green-deepest); padding: 0; }
-.mm-sticky {
-  position: sticky; top: 0; height: 100vh;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 2.5rem; overflow: hidden; color: var(--off-white); padding: 0 var(--gutter);
-}
-.mm-kicker { color: var(--brown-warm); }
-.mm-lot {
-  position: relative;
-  width: min(58vh, 82vw); aspect-ratio: 4 / 3;
-  border: 1px solid var(--brown-40);
+/* Missing middle — interactive slider: drag to subdivide the lot */
+.mm2 { background: var(--green-deepest); color: var(--off-white); padding: var(--section-y-lg) var(--gutter); }
+.mm2-inner { max-width: 880px; margin: 0 auto; text-align: center; }
+.mm2 .eyebrow { display: block; margin-bottom: 1rem; }
+.mm2 h2 { color: var(--off-white); font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 3rem; }
+.mm2-lot {
+  position: relative; width: min(560px, 100%); aspect-ratio: 16 / 10;
+  margin: 0 auto 2.5rem; border: 1px solid var(--brown-40);
   background: rgba(232,229,226,0.03);
 }
-.mm-divider { position: absolute; background: var(--brown-warm); opacity: 0.9; }
-.mm-divider.v { left: 50%; top: 0; width: 1px; height: 100%; transform: scaleY(0); transform-origin: top; }
-.mm-divider.h { top: 50%; left: 0; height: 1px; width: 100%; transform: scaleX(0); transform-origin: left; }
-.mm-units { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
-.mm-unit {
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--brown-warm); opacity: 0; transform: translateY(10px);
-  transition: opacity 0.5s var(--ease-out-soft), transform 0.5s var(--ease-out-soft);
+.mm2-unit {
+  position: absolute; display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--brown-25); box-sizing: border-box;
+  font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--brown-warm);
+  opacity: 0; transition: all 0.65s var(--ease-out-soft);
 }
-.mm-unit.on { opacity: 1; transform: translateY(0); }
-.mm-one {
-  position: absolute; inset: 0; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 0.75rem;
-  transition: opacity 0.4s ease;
+.mm2-unit.on { opacity: 1; }
+.mm2-readout { display: flex; align-items: baseline; justify-content: center; gap: 1rem; margin-bottom: 2rem; min-height: 4.5rem; }
+.mm2-num { font-family: var(--serif); font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1; color: var(--brown-warm); }
+.mm2-lbl { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-on-dark-soft); text-align: left; max-width: 22ch; }
+.mm2-slider { width: min(420px, 100%); accent-color: var(--brown-warm); cursor: pointer; }
+.mm2-steps {
+  display: flex; justify-content: space-between; width: min(420px, 100%);
+  margin: 0.75rem auto 0; font-size: 0.66rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-on-dark-faint);
 }
-.mm-one .num { font-family: var(--serif); font-size: clamp(4rem, 10vh, 7rem); line-height: 1; color: var(--off-white); }
-.mm-one .lbl { font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--brown-warm); }
-.mm-caption { text-align: center; max-width: 46ch; }
-.mm-caption .mm-cap { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.2; transition: opacity 0.4s ease; position: absolute; left: 0; right: 0; }
-.mm-caption { position: relative; height: 5.5rem; width: 100%; }
-.mm-cap-2 { opacity: 0; }
-.mm-note { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-on-dark-faint); }
-@media (prefers-reduced-motion: reduce) {
-  .mm-scroll { height: auto; }
-  .mm-sticky { position: static; height: auto; padding: var(--section-y) var(--gutter); }
-  .mm-divider.v { transform: scaleY(1); } .mm-divider.h { transform: scaleX(1); }
-  .mm-unit { opacity: 1; transform: none; }
-  .mm-one, .mm-cap-1 { display: none; }
-  .mm-cap-2 { opacity: 1; position: static; }
+.mm2-note { margin: 2rem auto 0; font-size: 0.95rem; color: var(--ink-on-dark-soft); max-width: 52ch; }
+
+/* Port Moody — live site inside the MacBook mockup */
+.pmm-laptop { background: var(--black-cinema); color: var(--off-white); padding: var(--section-y-lg) var(--gutter); }
+.pmm-laptop-inner { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: 5fr 7fr; gap: 4rem; align-items: center; }
+.pmm-laptop .eyebrow { display: block; margin-bottom: 1.5rem; }
+.pmm-laptop h2 { color: var(--off-white); font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1.5rem; max-width: 16ch; }
+.pmm-laptop p { color: var(--ink-on-dark); margin-bottom: 1.25rem; max-width: 46ch; }
+.pmm-laptop .actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.site-embed { position: absolute; inset: 0; overflow: hidden; }
+.site-embed iframe { width: 1440px; height: 1000px; border: 0; transform-origin: top left; pointer-events: none; }
+.mk-macbook .mock-link { position: absolute; inset: 0; z-index: 5; }
+@media (max-width: 1024px) { .pmm-laptop-inner { grid-template-columns: 1fr; gap: 3rem; } }
+
+/* Photo bands: black protection (no green), quiet statement type */
+.photo-band { place-items: end center; min-height: 64vh; }
+.photo-band img { z-index: 0; }
+.photo-band::after { z-index: 1; }
+.photo-band::after { background: linear-gradient(to bottom, rgba(5,5,5,0.12) 0%, rgba(5,5,5,0.05) 45%, rgba(5,5,5,0.82) 100%); }
+.photo-band--bare { min-height: 46vh; }
+.photo-band--bare::after { background: linear-gradient(to bottom, rgba(5,5,5,0.18), rgba(5,5,5,0.05)); }
+.photo-band .statement { text-align: center; padding: 0 var(--gutter) 4rem; }
+.photo-band .statement .eyebrow { display: block; margin-bottom: 1.25rem; }
+.photo-band .statement h2 {
+  color: var(--off-white); font-size: clamp(1.9rem, 3.6vw, 3rem);
+  max-width: 24ch; margin: 0 auto; text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5);
 }
