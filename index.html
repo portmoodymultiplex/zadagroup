@@ -27,60 +27,46 @@
   <div class="zg-loader-bar"><i></i></div>
 </div>
 
-<nav class="nav">
-  <a href="index.html" class="nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
+<nav class="nav zg-hero-nav" aria-label="Main">
   <button class="nav-toggle" aria-label="Menu">☰</button>
-  <ul class="nav-menu">
-    <li><a href="buyers.html">For Buyers</a></li>
-    <li><a href="sellers.html">For Sellers</a></li>
-    <li><a href="sales.html">Sales</a></li>
-    <li class="has-dropdown"><a href="ssmuh.html">Resources</a>
-      <ul class="dropdown">
-        <li><a href="ssmuh.html">SSMUH</a></li>
-        <li><a href="port-moody.html">Port Moody Multiplex</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
-      </ul>
-    </li>
-    <li class="has-dropdown"><a href="about/zada-group.html">About</a>
-      <ul class="dropdown">
-        <li><a href="about/zada-group.html">Zada Group</a></li>
-        <li><a href="about/dawar.html">Dawar Zada</a></li>
-        <li><a href="about/randy.html">Randy Quach</a></li>
-        <li><a href="about/liz.html">Liz Murphy</a></li>
-        <li><a href="marketing.html">Marketing</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
-      </ul>
-    </li>
-    <li class="nav-cta-pair">
-      <a href="buyers.html#contact-form" class="nav-cta">Book a Call</a>
-    </li>
+  <ul class="zg-nav-links zg-nav-left">
+    <li><a href="index.html" aria-current="page">Home</a></li>
+    <li><a href="sales.html">Listings</a></li>
+    <li><a href="buyers.html">Buyers</a></li>
+  </ul>
+  <a href="index.html" class="zg-nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
+  <ul class="zg-nav-links zg-nav-right">
+    <li><a href="sellers.html">Sellers</a></li>
+    <li><a href="about/zada-group.html">About</a></li>
+    <li><a href="buyers.html#contact-form" class="zg-nav-contact">Contact</a></li>
+  </ul>
+  <ul class="nav-menu zg-mobile-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sales.html">Listings</a></li>
+    <li><a href="buyers.html">Buyers</a></li>
+    <li><a href="sellers.html">Sellers</a></li>
+    <li><a href="about/zada-group.html">About</a></li>
+    <li class="nav-cta-pair"><a href="buyers.html#contact-form" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
-<!-- VIDEO HERO — opens directly, preloader handles the entrance -->
-<section class="kl-section">
-  <div class="kl-sticky">
-    <video class="kl-video" autoplay muted loop playsinline poster="assets/images/listings/listing-seaview.jpg">
-      <source src="assets/video/hero.mp4" type="video/mp4">
-    </video>
-    <div class="kl-vignette"></div>
-
-
-
-    <!-- Hero content — fades in once the keyhole has opened past ~30% -->
-    <div class="kl-content">
-      <div class="kl-content-inner">
-        <div class="eyebrow">Stonehaus Realty Corp · Metro Vancouver</div>
-        <h1>Client <strong>Focused.</strong><br/>Results <strong>Driven.</strong></h1>
-        <p class="lede">A boutique team, led by Dawar Zada, PREC*. Over 90% of our business comes from past clients and personal referrals. There's a reason.</p>
-        <div class="actions">
-          <a href="sales.html" class="btn btn-filled">View Current Listings</a>
-          <a href="about/zada-group.html" class="btn btn-ghost-light">Our Story</a>
-        </div>
-      </div>
+<!-- VIDEO HERO — full viewport, brand spec -->
+<section class="zg-hero">
+  <video class="zg-hero-video" autoplay muted loop playsinline poster="assets/images/birchwood-brochure.jpg">
+    <source src="assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="zg-hero-shade"></div>
+  <div class="zg-hero-content">
+    <div class="zg-eyebrow hero-in">Metro Vancouver Real Estate</div>
+    <h1 class="zg-headline hero-in">The right move, made <strong>properly</strong>.</h1>
+    <p class="zg-subline hero-in">Over 90% of our business comes from past clients. There's a reason they come back.</p>
+    <div class="zg-hero-actions hero-in">
+      <a href="buyers.html" class="zg-btn zg-btn-filled">Why buy with us</a>
+      <a href="sellers.html" class="zg-btn zg-btn-ghost">Why sell with us</a>
     </div>
-
-
+  </div>
+  <div class="zg-scroll-cue" aria-hidden="true">Scroll
+    <svg viewBox="0 0 16 10" width="16" height="10"><path d="M1 1 L8 8.5 L15 1" fill="none" stroke="currentColor" stroke-width="1"/></svg>
   </div>
 </section>
 
@@ -148,7 +134,7 @@
 
 <!-- FOR SELLERS — cinematic feature -->
 <section class="hp-feature">
-  <div class="bg-img" style="background-image: url('assets/images/listings/listing-seaview.jpg');"></div>
+  <div class="bg-img" style="background-image: url('assets/images/birchwood-brochure.jpg');"></div>
   <div class="hp-feature-inner">
     <div class="content reveal">
       <div class="eyebrow">For Sellers</div>
