@@ -14,12 +14,15 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
 
-<nav class="nav solid">
+<nav class="nav">
   <a href="index.html" class="nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-menu">
@@ -49,14 +52,22 @@
   </ul>
 </nav>
 
-<!-- HERO -->
-<header class="guide-hero">
-  <div class="guide-hero-inner">
-    <div class="eyebrow">For Buyers</div>
-    <h1>The first home is rarely the last.<br/>We're in it for the whole journey.</h1>
-    <p class="lede">A buying practice built on below-market purchases, long-term wealth, and clients who became friends a decade ago.</p>
+<!-- VIDEO HERO — system hero recipe, interior left-aligned variant -->
+<section class="hero hero--left">
+  <video class="hero__media" autoplay muted loop playsinline poster="assets/images/for-buyers-poster.jpg">
+    <source src="assets/video/for-buyers.mp4" type="video/mp4">
+  </video>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="eyebrow">For Buyers</p>
+    <h1>The first home is rarely the last.<br/>We're in it for the whole <strong>journey</strong>.</h1>
+    <p class="hero__lede">A buying practice built on below-market purchases, long-term wealth, and clients who became friends a decade ago.</p>
   </div>
-</header>
+  <div class="hero__cue" aria-hidden="true">
+    <span class="cue">Scroll</span>
+    <svg viewBox="0 0 16 10" width="16" height="10"><path d="M1 1 L8 8.5 L15 1" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+  </div>
+</section>
 
 <!-- RECORDS -->
 <section class="guide-records">
@@ -104,7 +115,7 @@
       <div class="spread-point">
         <div class="num">01</div>
         <h3>Your real budget, not your pre-approval.</h3>
-        <p>Pre-approvals tell you what a lender will allow. They don't tell you what you should actually spend. We start with the full monthly picture, mortgage, taxes, strata, insurance, maintenance, and back into a number you can live with for ten years, not ten months.</p>
+        <p>Pre-approvals tell you what a lender will allow. They don't tell you what you should actually spend. We start with the full monthly picture: mortgage, taxes, strata, insurance, maintenance. Then we back into a number you can live with for ten years, not ten months.</p>
       </div>
       <div class="spread-point">
         <div class="num">02</div>
@@ -119,7 +130,7 @@
       <div class="spread-point">
         <div class="num">04</div>
         <h3>Below-market offers, structured properly.</h3>
-        <p>Price is one piece. Subject removal period, deposit size, completion date, included chattels, all of these change how attractive your offer looks to a seller, and all of them get used to land below asking when the situation allows. This is the part of the practice Dawar is known for.</p>
+        <p>Price is one piece. Subject removal period, deposit size, completion date, included chattels. All of these change how attractive your offer looks to a seller, and all of them get used to land below asking when the situation allows. This is the part of the practice Dawar is known for.</p>
       </div>
       <div class="spread-point">
         <div class="num">05</div>
@@ -129,7 +140,7 @@
       <div class="spread-point">
         <div class="num">06</div>
         <h3>We're still here after possession day.</h3>
-        <p>Most of our clients buy more than one home with us. That's not a sales pitch, it's the actual data. We stay in your contacts. We answer the texts five years later about whether to refinance or renovate or sell. The relationship doesn't end at possession.</p>
+        <p>Most of our clients buy more than one home with us. That's not a sales pitch. It's the actual data. We stay in your contacts. We answer the texts five years later about whether to refinance or renovate or sell. The relationship doesn't end at possession.</p>
       </div>
     </div>
   </div>

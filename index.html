@@ -14,13 +14,16 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/tokens.css" />
+<link rel="stylesheet" href="assets/css/base.css" />
+<link rel="stylesheet" href="assets/css/components.css" />
 <link rel="stylesheet" href="assets/css/style.css" />
 <noscript><style>.reveal,.reveal-x{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
 
-<!-- PRELOADER, the line below is the one to edit if you want different copy -->
+<!-- PRELOADER — the line below is the one to edit if you want different copy -->
 <div id="zg-loader" aria-hidden="true">
   <img class="zg-loader-mark" src="assets/images/zada-submark.png" alt="" />
   <div class="zg-loader-msg">Unlocking the Door</div>
@@ -29,16 +32,16 @@
 
 <nav class="nav zg-hero-nav" aria-label="Main">
   <button class="nav-toggle" aria-label="Menu">☰</button>
-  <ul class="zg-nav-links zg-nav-left">
+  <ul class="nav__links nav__links--left">
     <li><a href="index.html" aria-current="page">Home</a></li>
     <li><a href="sales.html">Listings</a></li>
     <li><a href="buyers.html">Buyers</a></li>
   </ul>
-  <a href="index.html" class="zg-nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
-  <ul class="zg-nav-links zg-nav-right">
+  <a href="index.html" class="nav__logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
+  <ul class="nav__links nav__links--right">
     <li><a href="sellers.html">Sellers</a></li>
     <li><a href="about/zada-group.html">About</a></li>
-    <li><a href="buyers.html#contact-form" class="zg-nav-contact">Contact</a></li>
+    <li><a href="buyers.html#contact-form" class="nav-cta">Contact</a></li>
   </ul>
   <ul class="nav-menu zg-mobile-menu">
     <li><a href="index.html">Home</a></li>
@@ -50,22 +53,23 @@
   </ul>
 </nav>
 
-<!-- VIDEO HERO, full viewport, brand spec -->
-<section class="zg-hero">
-  <video class="zg-hero-video" autoplay muted loop playsinline poster="assets/images/birchwood-brochure.jpg">
+<!-- VIDEO HERO — full viewport, system hero recipe -->
+<section class="hero">
+  <video class="hero__media" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
     <source src="assets/video/hero.mp4" type="video/mp4">
   </video>
-  <div class="zg-hero-shade"></div>
-  <div class="zg-hero-content">
-    <div class="zg-eyebrow hero-in">Metro Vancouver Real Estate</div>
-    <h1 class="zg-headline hero-in">The right move, made <strong>properly</strong>.</h1>
-    <p class="zg-subline hero-in">Over 90% of our business comes from past clients. There's a reason they come back.</p>
-    <div class="zg-hero-actions hero-in">
-      <a href="buyers.html" class="zg-btn zg-btn-filled">Why buy with us</a>
-      <a href="sellers.html" class="zg-btn zg-btn-ghost">Why sell with us</a>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="eyebrow">Metro Vancouver Real Estate</p>
+    <h1 class="display">The right move, made <strong>properly</strong>.</h1>
+    <p class="hero__lede">Over 90% of our business comes from past clients. There's a reason they come back.</p>
+    <div class="hero__actions">
+      <a href="buyers.html" class="btn btn-filled">Why buy with us</a>
+      <a href="sellers.html" class="btn btn-ghost-light">Why sell with us</a>
     </div>
   </div>
-  <div class="zg-scroll-cue" aria-hidden="true">Scroll
+  <div class="hero__cue" aria-hidden="true">
+    <span class="cue">Scroll</span>
     <svg viewBox="0 0 16 10" width="16" height="10"><path d="M1 1 L8 8.5 L15 1" fill="none" stroke="currentColor" stroke-width="1"/></svg>
   </div>
 </section>
@@ -90,7 +94,8 @@
       <a href="sales.html" class="btn btn-ghost-light">View All Listings</a>
     </div>
 
-    <div class="grid grid-3">
+    <!-- MyRealPage IDX: embed snippet replaces the static cards inside #idx-featured once the account is live -->
+    <div class="grid grid-3" id="idx-featured">
 
       <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card reveal">
         <div class="media">
@@ -132,7 +137,7 @@
   </div>
 </section>
 
-<!-- FOR SELLERS, cinematic feature -->
+<!-- FOR SELLERS — cinematic feature -->
 <section class="hp-feature">
   <div class="bg-img" style="background-image: url('assets/images/birchwood-brochure.jpg');"></div>
   <div class="hp-feature-inner">
@@ -149,7 +154,7 @@
   </div>
 </section>
 
-<!-- FOR BUYERS, cinematic feature, flipped -->
+<!-- FOR BUYERS — cinematic feature, flipped -->
 <section class="hp-feature flip">
   <div class="bg-img" style="background-image: url('assets/images/listings/listing-anskar.jpg');"></div>
   <div class="hp-feature-inner">
@@ -166,7 +171,7 @@
   </div>
 </section>
 
-<!-- SSMUH, Metro-wide, education-first -->
+<!-- SSMUH — Metro-wide, education-first -->
 <section class="hp-ssmuh">
   <div class="hp-ssmuh-inner">
     <div class="hp-ssmuh-head reveal">
@@ -174,7 +179,7 @@
         <div class="eyebrow">Small-Scale Multi-Unit Housing</div>
         <h2>The new shape of the single-family lot.</h2>
       </div>
-      <p>British Columbia's SSMUH legislation rewrote what's possible on standard residential lots, across every municipality in Metro Vancouver. Dawar leads the missing-middle side of the practice, working with homeowners from West Vancouver to Surrey to model whether co-development, duplex conversion, or a small multiplex makes sense on their specific lot.</p>
+      <p>British Columbia's SSMUH legislation rewrote what's possible on standard residential lots across every municipality in Metro Vancouver. Dawar leads the missing-middle side of the practice, working with homeowners from West Vancouver to Surrey to model whether co-development, duplex conversion, or a small multiplex makes sense on their specific lot.</p>
     </div>
 
     <div class="hp-ssmuh-grid">
@@ -203,7 +208,7 @@
   </div>
 </section>
 
-<!-- TRACK RECORD, team-wide, no individual designations or specific dollar amounts -->
+<!-- TRACK RECORD — team-wide, no individual designations or specific dollar amounts -->
 <section class="hp-record">
   <div class="hp-record-inner">
     <div class="eyebrow reveal">The Practice</div>
@@ -229,7 +234,7 @@
   </div>
 </section>
 
-<!-- AWARDS, quiet trust marker -->
+<!-- AWARDS — quiet trust marker -->
 <section class="hp-awards">
   <div class="hp-awards-inner">
     <figure class="reveal">
@@ -238,7 +243,7 @@
     <div class="text reveal delay-1">
       <div class="eyebrow">2025 Recognition</div>
       <h2>Stonehaus Realty Top Team. Two years running.</h2>
-      <p>Hardware is nice. Repeat clients are better. We hold both, the kind of recognition that takes a year of records to earn, and the kind of business that quietly builds across decades.</p>
+      <p>Hardware is nice. Repeat clients are better. We hold both: the kind of recognition that takes a year of records to earn, and the kind of business that quietly builds across decades.</p>
     </div>
   </div>
 </section>
