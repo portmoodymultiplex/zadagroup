@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Other pages: nav has solid background from the start (.nav.solid is set in HTML).
   const nav = document.querySelector('.nav');
   const hero = document.querySelector('.hero');
-  if (nav && hero && !nav.classList.contains('solid')) {
+  if (nav && !nav.classList.contains('solid')) {
     const onScroll = () => {
       if (window.scrollY > 60) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
@@ -75,8 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Homepage preloader: hold for the bar, then let the site in ---
   const zgLoader = document.getElementById('zg-loader');
+  const zgHero = document.querySelector('.zg-hero');
+  const heroIn = () => { if (zgHero) zgHero.classList.add('is-in'); };
   if (zgLoader) {
-    setTimeout(() => zgLoader.classList.add('done'), 2600);
+    setTimeout(() => { zgLoader.classList.add('done'); heroIn(); }, 2600);
+  } else {
+    requestAnimationFrame(heroIn);
   }
 });
 
