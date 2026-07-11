@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<nav class="nav solid">
+<nav class="nav">
   <a href="../index.html" class="nav-logo"><img src="../assets/images/logo-white.png" alt="Zada Group" /></a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-menu">
@@ -52,20 +52,28 @@
   </ul>
 </nav>
 
-<!-- HERO -->
-<header class="az-hero">
-  <div class="az-hero-inner">
-    <div class="eyebrow">About Zada Group</div>
+<!-- VIDEO HERO -->
+<section class="hero hero--left">
+  <video class="hero__media" autoplay muted loop playsinline poster="../assets/images/hero-poster.jpg">
+    <source src="../assets/video/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="eyebrow">About Zada Group</p>
     <h1>Client <strong>Focused.</strong><br/>Results <strong>Driven.</strong></h1>
-    <div class="slogan">Boutique real estate · Metro Vancouver · Stonehaus Realty Corp.</div>
+    <p class="hero__lede">Boutique real estate. Metro Vancouver. Stonehaus Realty Corp.</p>
   </div>
-</header>
+  <div class="hero__cue" aria-hidden="true">
+    <span class="cue">Scroll</span>
+    <svg viewBox="0 0 16 10" width="16" height="10"><path d="M1 1 L8 8.5 L15 1" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+  </div>
+</section>
 
 <!-- MANIFESTO -->
 <section class="az-manifesto">
   <div class="az-manifesto-inner">
-    <div class="eyebrow">The Philosophy</div>
-    <p class="kicker">There's a reason our clients work with us again and again and again.</p>
+    <div class="eyebrow reveal">The Philosophy</div>
+    <p class="kicker reveal delay-1">There's a reason our clients work with us again and again and again.</p>
     <p>Over 90% of our business comes from past clients and personal referrals. <strong>That number didn't happen by accident.</strong> It's the result of showing up the same way, every time, for every client, long after the deal closes.</p>
     <p>The right agent matters. The right strategy matters more. Our clients come back because both have delivered for over a decade.</p>
   </div>
@@ -74,22 +82,22 @@
 <!-- BIG NUMBERS — the practice, the principles -->
 <section class="az-numbers">
   <div class="az-numbers-inner">
-    <div class="eyebrow">The Practice</div>
-    <h2>Built for the long game.</h2>
+    <div class="eyebrow reveal">The Practice</div>
+    <h2 class="reveal delay-1">Built for the long game.</h2>
     <div class="az-numbers-grid">
-      <div class="az-num-cell">
+      <div class="az-num-cell reveal">
         <div class="big">10+</div>
         <div class="label">Years of Christmas gifts hand-delivered to past clients. Same tradition, every December.</div>
       </div>
-      <div class="az-num-cell">
+      <div class="az-num-cell reveal delay-1">
         <div class="big">200+</div>
         <div class="label">Gifts delivered last holiday season alone. Sourced from small, Canadian-owned businesses.</div>
       </div>
-      <div class="az-num-cell">
+      <div class="az-num-cell reveal delay-2">
         <div class="big">$0</div>
         <div class="label">Spent on bus benches and billboards. We'd rather put that budget into our clients and community.</div>
       </div>
-      <div class="az-num-cell">
+      <div class="az-num-cell reveal delay-3">
         <div class="big">90%+</div>
         <div class="label">Of our business comes from past clients and personal referrals. Every year, consistently.</div>
       </div>
@@ -100,7 +108,7 @@
 <!-- EDITORIAL PHOTO WALL -->
 <section class="az-wall">
   <div class="az-wall-inner">
-    <div class="az-wall-head">
+    <div class="az-wall-head reveal">
       <div>
         <div class="eyebrow">Where The Money Goes</div>
         <h2>Clients. Community. Always.</h2>
@@ -108,35 +116,35 @@
       <p class="lede-right">Community carnivals. Private movie screenings. Welcome-home baskets on possession day. Holiday mailouts that show up in February, March, May, October, December. Closing gifts that took weeks to put together. Most of it never makes it to social media. This is some of it.</p>
     </div>
     <div class="az-grid">
-      <figure class="t1">
+      <figure class="t1 reveal">
         <img src="../assets/images/community/event-screening.jpg" alt="Private movie screening for Zada Group clients" loading="lazy" />
         <figcaption>Private Movie Screening · Clients & Family</figcaption>
       </figure>
-      <figure class="t2">
+      <figure class="t2 reveal delay-1">
         <img src="../assets/images/community/carnival-arch.jpg" alt="Zada Group community carnival balloon arch" loading="lazy" />
         <figcaption>First Annual Community Carnival</figcaption>
       </figure>
-      <figure class="t3">
+      <figure class="t3 reveal delay-2">
         <img src="../assets/images/community/carnival-clown.jpg" alt="Carnival entertainment for past clients and neighbours" loading="lazy" />
         <figcaption>Carnival · Past Clients & Neighbours</figcaption>
       </figure>
-      <figure class="t4">
+      <figure class="t4 reveal">
         <img src="../assets/images/community/carnival-doughnuts.jpg" alt="Branded mini doughnut bags at the Zada carnival" loading="lazy" />
         <figcaption>Mini Doughnuts · On the House</figcaption>
       </figure>
-      <figure class="t5">
+      <figure class="t5 reveal delay-1">
         <img src="../assets/images/community/carnival-water.jpg" alt="Custom-labelled water bottles for the Zada Group community event" loading="lazy" />
         <figcaption>Custom-Labelled Water · Every Detail</figcaption>
       </figure>
-      <figure class="t6">
+      <figure class="t6 reveal delay-2">
         <img src="../assets/images/community/carnival-bouncy.jpg" alt="Bouncy castles and games at the Zada community carnival" loading="lazy" />
         <figcaption>Inflatables · Kids of All Sizes</figcaption>
       </figure>
-      <figure class="t7">
+      <figure class="t7 reveal">
         <img src="../assets/images/community/event-santa-team.jpg" alt="Dawar and Sheri Zada with Santa at the Zada Group holiday event" loading="lazy" />
         <figcaption>Holiday Event · The Whole Team Shows Up</figcaption>
       </figure>
-      <figure class="t8">
+      <figure class="t8 reveal delay-1">
         <img src="../assets/images/community/gift-closing-basket.jpg" alt="Closing gift basket from Zada Group" loading="lazy" />
         <figcaption>Closing Gift · Hand-Assembled</figcaption>
       </figure>
@@ -147,14 +155,14 @@
 <!-- RITUALS — sticky scroll -->
 <section class="az-rituals">
   <div class="az-rituals-inner">
-    <div class="az-rituals-pin">
+    <div class="az-rituals-pin reveal">
       <div class="eyebrow">How We Show Up</div>
       <h2>The rituals.</h2>
       <p>Not a campaign. The things we do every year, on the same dates, for the people who built the business. Most of our clients can predict what's coming in the mailbox before it arrives.</p>
     </div>
     <div class="az-rituals-list">
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">Every December · 10+ Years</span>
           <h3>The Christmas gift.</h3>
@@ -165,7 +173,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">December</span>
           <h3>Photos with Santa.</h3>
@@ -176,7 +184,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">February</span>
           <h3>Valentines for the people who built the business.</h3>
@@ -187,7 +195,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">March</span>
           <h3>St. Patrick's Day scratch tickets.</h3>
@@ -198,7 +206,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">Mother's Day</span>
           <h3>Coffee on Dawar.</h3>
@@ -209,7 +217,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">Fall</span>
           <h3>The community carnival.</h3>
@@ -220,7 +228,7 @@
         </figure>
       </div>
 
-      <div class="az-ritual">
+      <div class="az-ritual reveal">
         <div class="copy">
           <span class="meta">Year-Round</span>
           <h3>Private movie screenings.</h3>
@@ -238,21 +246,21 @@
 <!-- CRISIS RESPONSE -->
 <section class="az-crisis">
   <div class="az-crisis-inner">
-    <div class="eyebrow">When The Community Needs Us</div>
-    <h2>We move first. Paperwork second.</h2>
+    <div class="eyebrow reveal">When The Community Needs Us</div>
+    <h2 class="reveal delay-1">We move first. Paperwork second.</h2>
     <p class="lede">When something happens close to home, we show up. A few times that's mattered:</p>
     <div class="az-crisis-grid">
-      <div class="az-crisis-card">
+      <div class="az-crisis-card reveal">
         <div class="when">November 2021</div>
         <h3>Abbotsford flooding.</h3>
         <p>The atmospheric river hit. The Sumas Prairie was underwater within 48 hours. We donated immediately, before the news cycle had caught up. Our Fraser Valley clients still talk about it.</p>
       </div>
-      <div class="az-crisis-card">
+      <div class="az-crisis-card reveal delay-1">
         <div class="when">March 2020</div>
         <h3>The first weeks of COVID.</h3>
         <p>When seniors' care homes locked down, we donated to local long-term care so the residents had something extra during the hardest stretch. We had family in that demographic. So did our clients.</p>
       </div>
-      <div class="az-crisis-card">
+      <div class="az-crisis-card reveal delay-2">
         <div class="when">Ongoing</div>
         <h3>Share Food Bank.</h3>
         <p>We've run a community fundraiser for Share Food Bank as part of one of our events, and the team has been quietly contributing for years. Hunger in our community is not something we're willing to be neutral about.</p>
@@ -264,13 +272,13 @@
 <!-- MADE IN CANADA -->
 <section class="az-canada">
   <div class="az-canada-inner">
-    <div>
+    <div class="reveal">
       <div class="eyebrow">Made In Canada</div>
       <h2>Sourced from small. Always.</h2>
       <p>Every client gift, every event favour, every closing basket follows one rule: source it from a small Canadian business if at all possible. Local makers, family-run shops, BC vineyards, Canadian-owned brands.</p>
       <p>It's our way of giving back while supporting local craftsmanship. The dollars we spend on gifts move through the local economy instead of out of it.</p>
     </div>
-    <figure>
+    <figure class="reveal delay-1">
       <img src="../assets/images/community/christmas-gift-contents.jpg" alt="Inside the Zada Group Christmas gift: Chez Christophe chocolates and Canadian-made salt soaks" loading="lazy" />
     </figure>
   </div>
@@ -278,7 +286,7 @@
 
 <!-- TEAM IDEOLOGY -->
 <section class="az-team">
-  <div class="az-team-inner">
+  <div class="az-team-inner reveal">
     <div class="eyebrow">The Team</div>
     <h2>One team lead. Two senior agents. Four languages.</h2>
     <p>Zada Group is built deliberately small. Led by Dawar Zada, PREC, a Master Medallion Club REALTOR® with over a decade in Metro Vancouver. Working alongside him: Randy Quach (Military Relocation Professional), and Liz Murphy (Seniors Real Estate Specialist), both senior agents who've been part of the team for years.</p>

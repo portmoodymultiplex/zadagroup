@@ -119,9 +119,9 @@
       <div class="mk-macbook">
         <a class="mock-link" href="https://www.portmoodymultiplex.ca" target="_blank" rel="noopener" aria-label="Open portmoodymultiplex.ca"></a>
         <div class="mk-macbook-screen">
-          <div class="site-embed">
-            <iframe src="https://www.portmoodymultiplex.ca" title="portmoodymultiplex.ca front page" loading="lazy" tabindex="-1"></iframe>
-          </div>
+          <video autoplay muted loop playsinline poster="assets/images/pmm-poster.jpg">
+            <source src="assets/video/pmm-hero.mp4" type="video/mp4">
+          </video>
         </div>
         <div class="mk-macbook-base"></div>
       </div>
@@ -176,15 +176,5 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
-<script>
-(function () {
-  var screen = document.querySelector('.mk-macbook-screen');
-  var frame = document.querySelector('.site-embed iframe');
-  if (!screen || !frame) return;
-  function fit() { frame.style.transform = 'scale(' + (screen.clientWidth / 1440) + ')'; }
-  fit();
-  window.addEventListener('resize', fit, { passive: true });
-})();
-</script>
 </body>
 </html>

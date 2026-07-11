@@ -2516,8 +2516,7 @@ footer .container { padding: 0; }
 .pmm-laptop h2 { color: var(--off-white); font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1.5rem; max-width: 16ch; }
 .pmm-laptop p { color: var(--ink-on-dark); margin-bottom: 1.25rem; max-width: 46ch; }
 .pmm-laptop .actions { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
-.site-embed { position: absolute; inset: 0; overflow: hidden; }
-.site-embed iframe { width: 1440px; height: 1000px; border: 0; transform-origin: top left; pointer-events: none; }
+.mk-macbook-screen video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .mk-macbook .mock-link { position: absolute; inset: 0; z-index: 5; }
 @media (max-width: 1024px) { .pmm-laptop-inner { grid-template-columns: 1fr; gap: 3rem; } }
 
@@ -2534,3 +2533,23 @@ footer .container { padding: 0; }
   color: var(--off-white); font-size: clamp(1.9rem, 3.6vw, 3rem);
   max-width: 24ch; margin: 0 auto; text-shadow: 0 2px 28px rgba(0,0,0,0.7), 0 1px 6px rgba(0,0,0,0.5);
 }
+
+/* Pacing pass — slower, more patient reveals sitewide; wider tracked labels */
+:root {
+  --dur-reveal: 1.5s;
+  --reveal-stagger: 0.22s;
+  --reveal-distance: 52px;
+}
+.reveal, .reveal-x {
+  transition-duration: var(--dur-reveal), var(--dur-reveal);
+}
+.eyebrow { letter-spacing: 0.28em; }
+.nav-menu a { letter-spacing: 0.26em; }
+.nav__links a { letter-spacing: 0.24em; }
+
+/* About page — polish on the az system */
+.az-manifesto { padding-top: clamp(7rem, 12vw, 12rem); }
+.az-wall .az-grid figure { box-shadow: 0 20px 40px rgba(0,0,0,0.10); }
+.az-ritual figure img { transition: transform 1.2s ease; }
+.az-ritual:hover figure img { transform: scale(1.03); }
+.hp-manifesto .actions { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
