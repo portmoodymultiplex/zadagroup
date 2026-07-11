@@ -62,7 +62,7 @@
   <div class="container">
     <div class="eyebrow">Active Listings</div>
     <h2 style="margin-bottom: 0.5rem;">On the market now.</h2>
-    <p class="lede" style="margin-bottom: 3rem;">Four active listings across Coquitlam, Port Moody, New Westminster, and Burnaby.</p>
+    <p class="lede" style="margin-bottom: 3rem;" id="idx-count">Active listings across Metro Vancouver, updated weekly from the live market.</p>
 
     <!-- MyRealPage IDX: embed snippet replaces the static cards inside #idx-listings once the account is live -->
     <div class="grid grid-3" id="idx-listings">
@@ -115,7 +115,7 @@
         </div>
       </a>
 
-      <a href="https://www.rew.ca/agents/51431/dawar-zada/listings" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit; background: var(--green-deepest); display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; min-height: 320px;">
+      <a href="https://www.rew.ca/agents/51431/dawar-zada/listings" target="_blank" rel="noopener" id="idx-listings-cta" class="listing-card" style="text-decoration: none; color: inherit; background: var(--green-deepest); display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; min-height: 320px;">
         <div>
           <div style="color: var(--brown-warm); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Search All BC Listings</div>
           <div style="color: var(--off-white); font-family: var(--serif); font-size: 1.5rem; line-height: 1.3; margin-bottom: 1.5rem;">Open the live MLS search on REW.</div>
@@ -126,6 +126,20 @@
     </div>
 
     <p style="margin-top: 2.5rem; text-align: center; font-size: 0.85rem; color: var(--grey-warm);">Photos and full details on REW. Click any listing.</p>
+  </div>
+</section>
+
+
+<!-- RECENTLY SOLD — auto-filled weekly from assets/data/listings.json (no sold prices, board rules) -->
+<section style="background: var(--off-white);">
+  <div class="container">
+    <div class="eyebrow">Recently Sold</div>
+    <h2 style="margin-bottom: 0.5rem;">Recently sold across Metro Vancouver.</h2>
+    <p class="lede" style="margin-bottom: 3rem;">A running record of Zada Group sales. Click any property for the full details on REW.</p>
+    <div class="grid grid-3" id="past-sales"></div>
+    <p style="margin-top: 3rem; text-align: center;">
+      <a href="https://www.rew.ca/agents/51431/dawar-zada/past-sales" target="_blank" rel="noopener" class="btn btn-ghost-dark">All Past Sales on REW</a>
+    </p>
   </div>
 </section>
 
@@ -222,5 +236,6 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/listings.js"></script>
 </body>
 </html>

@@ -2408,3 +2408,121 @@ footer .container { padding: 0; }
 }
 @keyframes zg-fill { to { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { #zg-loader { display: none; } }
+
+/* ==========================================================================
+   2026-07 revision — hero legibility, live listings, video sections,
+   editorial blog, missing-middle scroll
+   ========================================================================== */
+
+/* Hero legibility: heavier protection gradient + type shadows */
+.hero__scrim {
+  background:
+    linear-gradient(to bottom, rgba(4,26,16,0.58) 0%, rgba(4,26,16,0.36) 45%, rgba(4,26,16,0.82) 100%),
+    radial-gradient(ellipse at 50% 60%, rgba(4,26,16,0.38) 0%, rgba(4,26,16,0) 68%);
+}
+.hero__content .eyebrow { text-shadow: 0 1px 12px rgba(0,0,0,0.6); }
+.hero__content h1 { text-shadow: 0 2px 28px rgba(0,0,0,0.55), 0 1px 6px rgba(0,0,0,0.4); }
+.hero__lede { color: var(--off-white); text-shadow: 0 1px 12px rgba(0,0,0,0.65); }
+.hero__actions .btn-ghost-light { backdrop-filter: blur(2px); background: rgba(4,26,16,0.18); }
+
+/* Sold cards — brand SOLD treatment, no prices (board rules) */
+.listing-card .badge.badge-sold {
+  background: var(--brown-warm);
+  color: var(--green-deepest);
+  border-color: var(--brown-warm);
+}
+.sold-card .media { aspect-ratio: 4 / 3; background: var(--green-deepest); }
+.sold-tile {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.6rem; padding: 2rem; text-align: center;
+  background: radial-gradient(circle at 30% 20%, var(--green-deep), var(--green-deepest));
+  border: 1px solid var(--brown-15);
+}
+.sold-tile .serif { font-family: var(--serif); font-size: 1.5rem; color: var(--off-white); line-height: 1.15; }
+.sold-tile span:last-child { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-warm); }
+.sold-when {
+  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--brown-warm);
+}
+
+/* Homepage SSMUH section — video background variant */
+.hp-ssmuh--video { position: relative; overflow: hidden; background: var(--green-deepest); color: var(--off-white); }
+.hp-ssmuh-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hp-ssmuh-scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(4,26,16,0.93), rgba(4,26,16,0.82)); }
+.hp-ssmuh--video .hp-ssmuh-inner { position: relative; z-index: 2; }
+.hp-ssmuh--video h2, .hp-ssmuh--video .hp-ssmuh-card h3 { color: var(--off-white); }
+.hp-ssmuh--video .hp-ssmuh-head p, .hp-ssmuh--video .hp-ssmuh-card p, .hp-ssmuh--video .hp-ssmuh-cta p { color: var(--ink-on-dark); opacity: 1; }
+.hp-ssmuh--video .hp-ssmuh-cta { border-top-color: var(--brown-25); }
+.hp-ssmuh--video .btn-ghost-dark { color: var(--off-white); border-color: var(--off-white); }
+.hp-ssmuh--video .btn-ghost-dark:hover { background: var(--off-white); color: var(--green-deepest); }
+
+/* Marketing — video inside the brochure/mockup frame */
+.mk-brochure-inner video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Blog — editorial index */
+.blog-card { padding: 3rem 0; gap: 2.5rem; align-items: start; }
+.blog-card .meta { padding-top: 0.5rem; }
+.blog-card h3 { font-size: clamp(1.6rem, 2.6vw, 2.3rem); line-height: 1.12; transition: color var(--dur-fast) ease; }
+.blog-card p { color: var(--grey-warm); max-width: 58ch; }
+.blog-card .more {
+  display: inline-block; margin-top: 1.25rem;
+  font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--brown-warm); border-bottom: 1px solid var(--brown-40); padding-bottom: 0.3rem;
+}
+.blog-card a:hover { opacity: 1; }
+.blog-card a:hover h3 { color: var(--brown-warm); }
+
+/* Blog — long-form article polish */
+.article > p:first-of-type::first-letter {
+  font-family: var(--serif);
+  font-size: 3.4em; float: left; line-height: 0.82;
+  padding: 0.06em 0.14em 0 0; color: var(--brown-warm);
+}
+.article h2 { border-top: 1px solid var(--hairline-dark); padding-top: 2.25rem; }
+
+/* Missing-middle scroll — one lot subdividing into four as you scroll */
+.mm-scroll { height: 320vh; background: var(--green-deepest); padding: 0; }
+.mm-sticky {
+  position: sticky; top: 0; height: 100vh;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2.5rem; overflow: hidden; color: var(--off-white); padding: 0 var(--gutter);
+}
+.mm-kicker { color: var(--brown-warm); }
+.mm-lot {
+  position: relative;
+  width: min(58vh, 82vw); aspect-ratio: 4 / 3;
+  border: 1px solid var(--brown-40);
+  background: rgba(232,229,226,0.03);
+}
+.mm-divider { position: absolute; background: var(--brown-warm); opacity: 0.9; }
+.mm-divider.v { left: 50%; top: 0; width: 1px; height: 100%; transform: scaleY(0); transform-origin: top; }
+.mm-divider.h { top: 50%; left: 0; height: 1px; width: 100%; transform: scaleX(0); transform-origin: left; }
+.mm-units { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.mm-unit {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.66rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--brown-warm); opacity: 0; transform: translateY(10px);
+  transition: opacity 0.5s var(--ease-out-soft), transform 0.5s var(--ease-out-soft);
+}
+.mm-unit.on { opacity: 1; transform: translateY(0); }
+.mm-one {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 0.75rem;
+  transition: opacity 0.4s ease;
+}
+.mm-one .num { font-family: var(--serif); font-size: clamp(4rem, 10vh, 7rem); line-height: 1; color: var(--off-white); }
+.mm-one .lbl { font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--brown-warm); }
+.mm-caption { text-align: center; max-width: 46ch; }
+.mm-caption .mm-cap { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.2; transition: opacity 0.4s ease; position: absolute; left: 0; right: 0; }
+.mm-caption { position: relative; height: 5.5rem; width: 100%; }
+.mm-cap-2 { opacity: 0; }
+.mm-note { font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-on-dark-faint); }
+@media (prefers-reduced-motion: reduce) {
+  .mm-scroll { height: auto; }
+  .mm-sticky { position: static; height: auto; padding: var(--section-y) var(--gutter); }
+  .mm-divider.v { transform: scaleY(1); } .mm-divider.h { transform: scaleX(1); }
+  .mm-unit { opacity: 1; transform: none; }
+  .mm-one, .mm-cap-1 { display: none; }
+  .mm-cap-2 { opacity: 1; position: static; }
+}

@@ -1,0 +1,91 @@
+{
+  "updated": "2026-07-11",
+  "source": "rew.ca agent pages (interim until MLS reciprocity)",
+  "active": [
+    {
+      "address": "29 - 19141 124th Avenue",
+      "city": "Pitt Meadows",
+      "price": "$734,800",
+      "specs": "Townhouse · 3 Bed · 3 Bath · 1,546 sqft",
+      "badge": "Open Sun",
+      "url": "https://www.rew.ca/properties/29-19141-124-avenue-pitt-meadows-bc",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263162701/00_5eabbf747eb4369c61ea737263cfc710.jpeg"
+    },
+    {
+      "address": "20619 123rd Avenue",
+      "city": "Maple Ridge",
+      "price": "$1,499,900",
+      "specs": "House · 4 Bed · 3 Bath · 2,259 sqft",
+      "badge": "Open Sat",
+      "url": "listings/20619-123rd-ave/",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263159912/00_daccc42c935c60828298fd0613682a5e.jpeg"
+    },
+    {
+      "address": "218 Seaview Drive",
+      "city": "Port Moody",
+      "price": "$2,098,000",
+      "specs": "House · 7 Bed · 6 Bath · 4,548 sqft",
+      "badge": "For Sale",
+      "url": "https://www.rew.ca/properties/218-seaview-drive-port-moody-bc",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263164959/00_eeecf7863819b6ef063617a1c74ce369.jpeg"
+    },
+    {
+      "address": "613 - 721 Anskar Court",
+      "city": "Coquitlam",
+      "price": "$788,000",
+      "specs": "Apt/Condo · 2 Bed · 2 Bath · 925 sqft",
+      "badge": "For Sale",
+      "url": "listings/anskar-court/",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263164132/00_416369eda9c308d2f43e498586464459.jpeg"
+    },
+    {
+      "address": "451 E Eighth Avenue",
+      "city": "New Westminster",
+      "price": "$1,198,000",
+      "specs": "House · 5 Bed · 3 Bath · 3,150 sqft",
+      "badge": "For Sale",
+      "url": "https://www.rew.ca/properties/451-e-eighth-avenue-new-westminster-bc",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263037022/00_00a2da1c3bd006424d60020b6a0382fb.jpeg"
+    },
+    {
+      "address": "119 - 4363 Halifax Street",
+      "city": "Burnaby",
+      "price": "$499,000",
+      "specs": "Apt/Condo · 2 Bed · 1 Bath · 862 sqft",
+      "badge": "Open Sat",
+      "url": "https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc",
+      "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263147932/00_b5e6c66149e1f26992dde926605d399a.jpeg"
+    },
+    {
+      "address": "3130 Kingsley Street",
+      "city": "Saanich",
+      "price": "$949,000",
+      "specs": "House · 3 Bed · 2 Bath · 1,256 sqft",
+      "badge": "Virtual Tour",
+      "url": "https://www.rew.ca/properties/3130-kingsley-street-saanich-bc",
+      "photo": "https://assets-listings.rew.ca/listing/crea_ddf/29814007/00_9ef6b56f88fcd11b7ab4690d85e51cf4.jpg"
+    }
+  ],
+  "sold": [
+    { "address": "304 - 425 Ash Street", "city": "New Westminster", "specs": "Condo · 2 Bed · 2 Bath · 861 sqft", "date": "May 2026", "url": "https://www.rew.ca/insights/222688/304-425-ash-street-new-westminster-bc", "photo": "https://assets-listings.rew.ca/listing/brc_idx_rew/263116198/00_288e65797effb8441bc180ddade29d32.jpeg" },
+    { "address": "211 - 500 Royal Avenue", "city": "New Westminster", "specs": "Condo · 2 Bed · 1 Bath · 800 sqft", "date": "May 2026", "url": "https://www.rew.ca/insights/706432/211-500-royal-avenue-new-westminster-bc", "photo": null },
+    { "address": "317 Gloucester Court", "city": "Coquitlam", "specs": "House · 4 Bed · 3 Bath · 2,398 sqft", "date": "March 2026", "url": "https://www.rew.ca/insights/311475/317-gloucester-court-coquitlam-bc", "photo": null },
+    { "address": "129 - 1331 Olmsted Street", "city": "Coquitlam", "specs": "Condo · 4 Bed · 3 Bath · 1,537 sqft", "date": "March 2026", "url": "https://www.rew.ca/agents/51431/dawar-zada/past-sales", "photo": null },
+    { "address": "24 - 19141 124th Avenue", "city": "Pitt Meadows", "specs": "Condo · 4 Bed · 3 Bath · 1,511 sqft", "date": "March 2026", "url": "https://www.rew.ca/insights/590733/24-19141-124th-avenue-pitt-meadows-bc", "photo": null },
+    { "address": "32495 Mcrae Avenue", "city": "Mission", "specs": "House · 3 Bed · 2 Bath · 1,041 sqft", "date": "March 2026", "url": "https://www.rew.ca/insights/2329559/32495-mcrae-avenue-mission-bc", "photo": null },
+    { "address": "3320 Abbey Lane", "city": "Coquitlam", "specs": "House · 6 Bed · 4 Bath · 4,156 sqft", "date": "March 2026", "url": "https://www.rew.ca/insights/333251/3320-abbey-lane-coquitlam-bc", "photo": null },
+    { "address": "1241 Nestor Street", "city": "Coquitlam", "specs": "House · 3 Bed · 3 Bath · 1,910 sqft", "date": "February 2026", "url": "https://www.rew.ca/insights/333562/1241-nestor-street-coquitlam-bc", "photo": null },
+    { "address": "3382 Fairland Court", "city": "Burnaby", "specs": "House · 4 Bed · 3 Bath · 2,740 sqft", "date": "February 2026", "url": "https://www.rew.ca/insights/304354/3382-fairland-court-burnaby-bc", "photo": null },
+    { "address": "306 - 1250 W 12th Avenue", "city": "Vancouver", "specs": "Condo · 1 Bed · 1 Bath · 764 sqft", "date": "January 2026", "url": "https://www.rew.ca/insights/100730/306-1250-w-12th-avenue-vancouver-bc", "photo": null },
+    { "address": "13 - 10151 240th Street", "city": "Maple Ridge", "specs": "Condo · 3 Bed · 3 Bath · 1,821 sqft", "date": "January 2026", "url": "https://www.rew.ca/insights/708445/13-10151-240th-street-maple-ridge-bc", "photo": null },
+    { "address": "8260 Kudo Drive", "city": "Mission", "specs": "House · 4 Bed · 2 Bath · 2,346 sqft", "date": "November 2025", "url": "https://www.rew.ca/insights/2324876/8260-kudo-drive-mission-bc", "photo": null },
+    { "address": "7259 Barnet Road", "city": "Burnaby", "specs": "House · 4 Bed · 2 Bath · 1,575 sqft", "date": "October 2025", "url": "https://www.rew.ca/insights/256984/7259-barnet-road-burnaby-bc", "photo": null },
+    { "address": "1504 Eighth Avenue", "city": "New Westminster", "specs": "House · 6 Bed · 3 Bath · 2,758 sqft", "date": "September 2025", "url": "https://www.rew.ca/insights/223174/1504-eighth-avenue-new-westminster-bc", "photo": null },
+    { "address": "401 - 1185 Quayside Drive", "city": "New Westminster", "specs": "Condo · 4 Bed · 2 Bath · 1,582 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/214307/401-1185-quayside-drive-new-westminster-bc", "photo": null },
+    { "address": "405 - 4400 Buchanan Street", "city": "Burnaby", "specs": "Condo · 1 Bed · 1 Bath · 833 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/663199/405-4400-buchanan-street-burnaby-bc", "photo": null },
+    { "address": "2 - 1221 Rocklin Street", "city": "Coquitlam", "specs": "Condo · 3 Bed · 3 Bath · 1,616 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/9257274/2-1221-rocklin-street-coquitlam-bc", "photo": null },
+    { "address": "3187 Mariner Way", "city": "Coquitlam", "specs": "House · 3 Bed · 2 Bath · 3,232 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/325127/3187-mariner-way-coquitlam-bc", "photo": null },
+    { "address": "1 - 1222 Cameron Street", "city": "New Westminster", "specs": "Condo · 4 Bed · 4 Bath · 1,624 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/222455/1-1222-cameron-street-new-westminster-bc", "photo": null },
+    { "address": "101 - 3525 Chandler Street", "city": "Coquitlam", "specs": "Condo · 3 Bed · 3 Bath · 1,465 sqft", "date": "August 2025", "url": "https://www.rew.ca/insights/3474843/101-3525-chandler-street-coquitlam-bc", "photo": null }
+  ]
+}

@@ -58,6 +58,27 @@
   <p class="lede">The legislation that quietly changed what BC homeowners can build.</p>
 </header>
 
+<!-- MISSING MIDDLE — scroll: one lot becomes four homes -->
+<section class="mm-scroll" aria-label="One lot becomes four homes">
+  <div class="mm-sticky">
+    <div class="eyebrow mm-kicker">The Missing Middle</div>
+    <div class="mm-lot">
+      <div class="mm-one"><span class="num">1</span><span class="lbl">Single-Family Home</span></div>
+      <div class="mm-divider v"></div>
+      <div class="mm-divider h"></div>
+      <div class="mm-units">
+        <div class="mm-unit">Home 01</div><div class="mm-unit">Home 02</div>
+        <div class="mm-unit">Home 03</div><div class="mm-unit">Home 04</div>
+      </div>
+    </div>
+    <div class="mm-caption">
+      <p class="mm-cap mm-cap-1">One lot. One home. The way it's been for seventy years.</p>
+      <p class="mm-cap mm-cap-2">The same lot. Up to four homes. Six near frequent transit.</p>
+    </div>
+    <div class="mm-note">Keep scrolling</div>
+  </div>
+</section>
+
 <section>
   <div class="container article">
     <p>SSMUH stands for <strong>Small-Scale Multi-Unit Housing</strong>. It's BC legislation from late 2023 (Bill 44) that requires most municipalities to allow more units on lots previously zoned for a single home. Most rollout happened through 2024.</p>
@@ -131,5 +152,28 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var wrap = document.querySelector('.mm-scroll'); if (!wrap) return;
+  var v = wrap.querySelector('.mm-divider.v'), h = wrap.querySelector('.mm-divider.h'),
+      units = wrap.querySelectorAll('.mm-unit'), one = wrap.querySelector('.mm-one'),
+      c1 = wrap.querySelector('.mm-cap-1'), c2 = wrap.querySelector('.mm-cap-2');
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  function onScroll() {
+    var r = wrap.getBoundingClientRect();
+    var total = r.height - window.innerHeight;
+    var p = Math.min(1, Math.max(0, -r.top / total));
+    var d = Math.min(1, p * 2);
+    v.style.transform = 'scaleY(' + d + ')';
+    h.style.transform = 'scaleX(' + d + ')';
+    one.style.opacity = String(Math.max(0, 1 - p * 2.2));
+    c1.style.opacity = p < 0.5 ? '1' : '0';
+    c2.style.opacity = p < 0.5 ? '0' : '1';
+    units.forEach(function (u, i) { u.classList.toggle('on', p > 0.5 + i * 0.09); });
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+})();
+</script>
 </body>
 </html>
