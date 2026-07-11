@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<nav class="nav solid">
+<nav class="nav">
   <a href="index.html" class="nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-menu">
@@ -52,11 +52,22 @@
   </ul>
 </nav>
 
-<header class="page-header">
-  <div class="eyebrow">Port Moody Multiplex Initiative</div>
-  <h1>Helping Port Moody residents see what's possible.</h1>
-  <p class="lede">Education seminars, co-development planning, and a path to retirement income for longtime homeowners.</p>
-</header>
+<!-- VIDEO HERO -->
+<section class="hero hero--left">
+  <video class="hero__media" autoplay muted loop playsinline>
+    <source src="assets/video/pmm-hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero__scrim"></div>
+  <div class="hero__content">
+    <p class="eyebrow">Port Moody Multiplex Initiative</p>
+    <h1>Helping Port Moody residents see what's <strong>possible</strong>.</h1>
+    <p class="hero__lede">Education seminars, co-development planning, and a path to retirement income for longtime homeowners.</p>
+  </div>
+  <div class="hero__cue" aria-hidden="true">
+    <span class="cue">Scroll</span>
+    <svg viewBox="0 0 16 10" width="16" height="10"><path d="M1 1 L8 8.5 L15 1" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+  </div>
+</section>
 
 <section>
   <div class="container article">
@@ -66,24 +77,61 @@
 
     <h2>What we do here.</h2>
 
-    <h3>Community education seminars.</h3>
-    <p>Free, in-person, open to anyone. Built to answer questions, not generate leads. Email us to be added to the next invite list.</p>
-
-    <h3>Downsizing without leaving.</h3>
-    <p>If you love your block but the house is too much, the new rules often let you redevelop the lot into something smaller for you plus income-generating units. We model the numbers: cost, yield, timeline.</p>
-
-    <h3>Co-development.</h3>
-    <p>If you don't want to manage construction, you can partner with a builder. You contribute the land, they contribute capital and execution, and proceeds get split per a pre-agreed structure. We have builders we trust and can introduce.</p>
-
-    <h3>Retirement income.</h3>
-    <p>For long-term owners with low or no mortgage, the new zoning can fund retirement. You live in one of the new units, the rest are rental income for life. The math has to work, but when it does, it really does.</p>
+    <div class="community-grid" style="margin-top: 2.5rem;">
+      <div class="community-card">
+        <h3>Community Education Seminars</h3>
+        <p>Free, in-person, open to anyone. Built to answer questions, not generate leads. Email us to be added to the next invite list.</p>
+      </div>
+      <div class="community-card">
+        <h3>Downsizing Without Leaving</h3>
+        <p>If you love your block but the house is too much, the new rules often let you redevelop the lot into something smaller for you plus income-generating units. We model the numbers: cost, yield, timeline.</p>
+      </div>
+      <div class="community-card">
+        <h3>Co-Development</h3>
+        <p>If you don't want to manage construction, you can partner with a builder. You contribute the land, they contribute capital and execution, and proceeds get split per a pre-agreed structure. We have builders we trust and can introduce.</p>
+      </div>
+      <div class="community-card">
+        <h3>Retirement Income</h3>
+        <p>For long-term owners with low or no mortgage, the new zoning can fund retirement. You live in one of the new units, the rest are rental income for life. The math has to work, but when it does, it really does.</p>
+      </div>
+    </div>
 
     <div style="margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;">
       <a href="https://www.portmoodymultiplex.ca" target="_blank" rel="noopener" class="btn btn-filled">Visit PortMoodyMultiplex.ca</a>
       <a href="ssmuh.html" class="btn btn-ghost-dark">Learn About SSMUH</a>
     </div>
 
-    <div style="margin-top: 4rem; padding: 2.5rem; background: var(--off-white); border-left: 2px solid var(--brown-warm);">
+  </div>
+</section>
+
+<!-- THE DEDICATED SITE — live front page inside a laptop -->
+<section class="pmm-laptop">
+  <div class="pmm-laptop-inner">
+    <div class="reveal">
+      <div class="eyebrow">The Dedicated Resource</div>
+      <h2>portmoodymultiplex.ca</h2>
+      <p>Everything we know about Port Moody's multiplex framework lives on its own site: neighbourhood guides, permit data, seminar dates, and a plain-language walkthrough of the rules.</p>
+      <div class="actions">
+        <a href="https://www.portmoodymultiplex.ca" target="_blank" rel="noopener" class="btn btn-filled">Visit the Site</a>
+      </div>
+    </div>
+    <div class="reveal delay-1">
+      <div class="mk-macbook">
+        <a class="mock-link" href="https://www.portmoodymultiplex.ca" target="_blank" rel="noopener" aria-label="Open portmoodymultiplex.ca"></a>
+        <div class="mk-macbook-screen">
+          <div class="site-embed">
+            <iframe src="https://www.portmoodymultiplex.ca" title="portmoodymultiplex.ca front page" loading="lazy" tabindex="-1"></iframe>
+          </div>
+        </div>
+        <div class="mk-macbook-base"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container article">
+    <div style="padding: 2.5rem; background: var(--off-white); border-left: 2px solid var(--brown-warm);">
       <div class="eyebrow">For Port Moody Neighbours</div>
       <p style="margin-top: 0.5rem;">If you'd like a one-on-one conversation about your specific property, or to be added to the seminar invite list, send us a note. Coffee on us.</p>
       <a href="mailto:admin@zadagroup.ca?subject=Port%20Moody%20Inquiry" class="btn btn-ghost-dark" style="margin-top: 1.5rem;">Get in Touch</a>
@@ -128,5 +176,15 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script>
+(function () {
+  var screen = document.querySelector('.mk-macbook-screen');
+  var frame = document.querySelector('.site-embed iframe');
+  if (!screen || !frame) return;
+  function fit() { frame.style.transform = 'scale(' + (screen.clientWidth / 1440) + ')'; }
+  fit();
+  window.addEventListener('resize', fit, { passive: true });
+})();
+</script>
 </body>
 </html>
