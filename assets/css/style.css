@@ -2566,3 +2566,8 @@ footer .container { padding: 0; }
 .mrp-brand img { border-radius: 0 !important; }
 /* Board rules: sold prices never shown */
 #past-sales [class*="price"], #past-sales [class*="Price"] { display: none !important; }
+
+/* MRP: no sold items in the active widget; no prices on sold cards anywhere */
+#idx-listings .showcase-thumb-container > *:has(.SOLD-BANNER) { display: none !important; }
+.mrp-brand .showcase-thumb-container > *:has(.SOLD-BANNER) .price { display: none !important; }
+.mrp-brand .item-ribbon { font-family: var(--font-sans) !important; letter-spacing: 0.18em !important; }
