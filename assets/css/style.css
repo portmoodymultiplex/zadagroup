@@ -2553,3 +2553,16 @@ footer .container { padding: 0; }
 .az-ritual figure img { transition: transform 1.2s ease; }
 .az-ritual:hover figure img { transform: scale(1.03); }
 .hp-manifesto .actions { margin-top: 2.5rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+/* MyRealPage showcase widgets - brand layer, scoped to .mrp-brand */
+.mrp-brand, .mrp-brand * { font-family: var(--font-sans) !important; }
+.mrp-brand a { color: var(--green-deepest) !important; text-decoration: none !important; }
+.mrp-brand a:hover { color: var(--brown-warm) !important; }
+.mrp-brand [class*="price"], .mrp-brand [class*="Price"] { font-family: var(--font-serif) !important; color: var(--green-deepest) !important; background: transparent !important; }
+.mrp-brand [class*="address"], .mrp-brand [class*="Address"], .mrp-brand h3, .mrp-brand h4 { font-family: var(--font-serif) !important; color: var(--green-deepest) !important; font-weight: 400 !important; }
+.mrp-brand [class*="status"], .mrp-brand [class*="banner"], .mrp-brand [class*="ribbon"], .mrp-brand [class*="Status"], .mrp-brand [class*="Banner"] { background: var(--brown-warm) !important; color: var(--green-deepest) !important; border: none !important; }
+.mrp-brand button, .mrp-brand .btn, .mrp-brand [class*="button"] { background: var(--brown-warm) !important; color: var(--green-deepest) !important; border: 1px solid var(--brown-warm) !important; border-radius: var(--radius-sm) !important; text-transform: uppercase !important; letter-spacing: 0.14em !important; font-size: 0.75rem !important; }
+.mrp-brand select, .mrp-brand input[type="text"] { font-family: var(--font-sans) !important; border: 1px solid rgba(4,26,16,0.18) !important; border-radius: var(--radius-sm) !important; padding: 0.5rem 0.75rem !important; color: var(--green-deepest) !important; }
+.mrp-brand img { border-radius: 0 !important; }
+/* Board rules: sold prices never shown */
+#past-sales [class*="price"], #past-sales [class*="Price"] { display: none !important; }
