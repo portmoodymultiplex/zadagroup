@@ -2593,3 +2593,7 @@ footer .container { padding: 0; }
 .mrp-brand .showcase-info .listed-by { order: 6; font-size: 0.62rem !important; letter-spacing: 0.16em !important; text-transform: uppercase !important; color: var(--grey-soft) !important; white-space: normal !important; overflow: visible !important; margin: 0.75rem 0 0 !important; }
 @media (max-width: 1024px) { .mrp-brand .showcase-thumb-container { grid-template-columns: repeat(2, 1fr) !important; } }
 @media (max-width: 640px) { .mrp-brand .showcase-thumb-container { grid-template-columns: 1fr !important; } }
+
+/* grid clearfix + ribbon wrapper cleanup */
+.mrp-brand .showcase-thumb-container::before, .mrp-brand .showcase-thumb-container::after { content: none !important; display: none !important; }
+.mrp-brand .ribbon-outer { background: transparent !important; border: none !important; box-shadow: none !important; }
