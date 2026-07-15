@@ -33,23 +33,23 @@
 <nav class="nav zg-hero-nav" aria-label="Main">
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav__links nav__links--left">
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="sales.html">Listings</a></li>
-    <li><a href="buyers.html">Buyers</a></li>
+    <li><a aria-current='page' href='/'>Home</a></li>
+    <li><a href='/sales'>Listings</a></li>
+    <li><a href='/buyers'>Buyers</a></li>
   </ul>
-  <a href="index.html" class="nav__logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
+  <a class='nav__logo' href='/'><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
   <ul class="nav__links nav__links--right">
-    <li><a href="sellers.html">Sellers</a></li>
-    <li><a href="about/zada-group.html">About</a></li>
-    <li><a href="buyers.html#contact-form" class="nav-cta">Contact</a></li>
+    <li><a href='/sellers'>Sellers</a></li>
+    <li><a href='/about/zada-group'>About</a></li>
+    <li><a class='nav-cta' href='/buyers#contact-form'>Contact</a></li>
   </ul>
   <ul class="nav-menu zg-mobile-menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="sales.html">Listings</a></li>
-    <li><a href="buyers.html">Buyers</a></li>
-    <li><a href="sellers.html">Sellers</a></li>
-    <li><a href="about/zada-group.html">About</a></li>
-    <li class="nav-cta-pair"><a href="buyers.html#contact-form" class="nav-cta">Contact</a></li>
+    <li><a href='/'>Home</a></li>
+    <li><a href='/sales'>Listings</a></li>
+    <li><a href='/buyers'>Buyers</a></li>
+    <li><a href='/sellers'>Sellers</a></li>
+    <li><a href='/about/zada-group'>About</a></li>
+    <li class="nav-cta-pair"><a class='nav-cta' href='/buyers#contact-form'>Contact</a></li>
   </ul>
 </nav>
 
@@ -64,8 +64,8 @@
     <h1 class="display">The right move, made <strong>properly</strong>.</h1>
     <p class="hero__lede">Over 90% of our business comes from past clients. There's a reason they come back.</p>
     <div class="hero__actions">
-      <a href="buyers.html" class="btn btn-filled">Why buy with us</a>
-      <a href="sellers.html" class="btn btn-ghost-light">Why sell with us</a>
+      <a class='btn btn-filled' href='/buyers'>Why buy with us</a>
+      <a class='btn btn-ghost-light' href='/sellers'>Why sell with us</a>
     </div>
   </div>
   <div class="hero__cue" aria-hidden="true">
@@ -81,7 +81,7 @@
     <h2 class="reveal delay-1">There's a reason our clients work with us again and again.</h2>
     <p class="reveal delay-2">Over 90% of our business comes from past clients and personal referrals. <strong>We've been making quiet micro-market moves all year</strong>, turning condo owners into townhouse owners, and townhouse owners into homeowners. The right agent matters. The right strategy matters more.</p>
     <div class="actions reveal delay-3">
-      <a href="about/zada-group.html" class="btn btn-ghost-light">What Sets Us Apart</a>
+      <a class='btn btn-ghost-light' href='/about/zada-group'>What Sets Us Apart</a>
     </div>
   </div>
 </section>
@@ -94,48 +94,11 @@
         <div class="eyebrow">Currently On Market</div>
         <h2>Active across Metro Vancouver.</h2>
       </div>
-      <a href="sales.html" class="btn btn-ghost-light">View All Listings</a>
+      <a class='btn btn-ghost-light' href='/sales'>View All Listings</a>
     </div>
 
-    <!-- MyRealPage IDX: embed snippet replaces the static cards inside #idx-featured once the account is live -->
-    <div class="grid grid-3" id="idx-featured">
-
-      <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card reveal">
-        <div class="media">
-          <span class="badge">For Sale</span>
-          <img src="assets/images/listings/listing-seaview.jpg" alt="218 Seaview Drive, Port Moody" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">House · 7 Bed · 6 Bath · 4,548 sqft</div>
-          <div class="price">$2,288,000</div>
-          <div class="address">218 Seaview Drive · Port Moody</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/properties/613-721-anskar-court-coquitlam-bc" target="_blank" rel="noopener" class="listing-card reveal delay-1">
-        <div class="media">
-          <span class="badge">For Sale · Open Sat</span>
-          <img src="assets/images/listings/listing-anskar.jpg" alt="613 - 721 Anskar Court, Coquitlam" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">Apt/Condo · 2 Bed · 2 Bath · 925 sqft</div>
-          <div class="price">$799,999</div>
-          <div class="address">613 - 721 Anskar Court · Coquitlam</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc" target="_blank" rel="noopener" class="listing-card reveal delay-2">
-        <div class="media">
-          <span class="badge">For Sale</span>
-          <img src="assets/images/listings/listing-halifax.jpg" alt="119 - 4363 Halifax Street, Burnaby" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">Apt/Condo · 2 Bed · 1 Bath · 862 sqft</div>
-          <div class="price">$499,000</div>
-          <div class="address">119 - 4363 Halifax Street · Burnaby</div>
-        </div>
-      </a>
-
+    <div id="idx-featured" class="mrp-brand">
+      <script src="https://idx.myrealpage.com/wps/rest/67292/l/showcase/v2/129834/in.js" async id="mrp-showcase-script-129834-home"></script>
     </div>
   </div>
 </section>
@@ -149,8 +112,8 @@
       <h2>SOLD. Strategy and preparation matter.</h2>
       <p>Highest sale on the street. Highest in the building. Record-setting results, even in a shifting market. While other listings sit stagnant, our strategic approach delivers. We sell strong, then help you move up.</p>
       <div class="actions">
-        <a href="sellers.html" class="btn btn-filled">The Seller's Guide</a>
-        <a href="sellers.html#contact-form" class="btn btn-ghost-light">Request a Valuation</a>
+        <a class='btn btn-filled' href='/sellers'>The Seller's Guide</a>
+        <a class='btn btn-ghost-light' href='/sellers#contact-form'>Request a Valuation</a>
       </div>
     </div>
     <div class="spacer"></div>
@@ -166,8 +129,8 @@
       <h2>A long history of buying below market.</h2>
       <p>When the right home hits the market, we move quickly. Strategic offers, fast action, real negotiation. The first-time buyers we started with years ago are now closing on multi-million dollar homes. We're in it for the whole journey, not the single deal.</p>
       <div class="actions">
-        <a href="buyers.html" class="btn btn-filled">The Buyer's Guide</a>
-        <a href="buyers.html#contact-form" class="btn btn-ghost-light">Start the Conversation</a>
+        <a class='btn btn-filled' href='/buyers'>The Buyer's Guide</a>
+        <a class='btn btn-ghost-light' href='/buyers#contact-form'>Start the Conversation</a>
       </div>
     </div>
     <div class="spacer"></div>
@@ -209,8 +172,8 @@
 
     <div class="hp-ssmuh-cta">
       <p>Want a deeper look at SSMUH, or specifically Port Moody's three-to-six-unit multiplex rules? Two pages worth reading:</p>
-      <a href="ssmuh.html" class="btn btn-ghost-dark">What is SSMUH</a>
-      <a href="port-moody.html" class="btn btn-ghost-dark">Port Moody Multiplex</a>
+      <a class='btn btn-ghost-dark' href='/ssmuh'>What is SSMUH</a>
+      <a class='btn btn-ghost-dark' href='/port-moody'>Port Moody Multiplex</a>
     </div>
   </div>
 </section>
@@ -264,21 +227,21 @@
     </div>
     <div class="hp-team-grid">
       <div class="hp-team-card reveal">
-        <a href="about/dawar.html">
+        <a href='/about/dawar'>
           <div class="portrait"><img src="assets/images/dawar.jpg" alt="Dawar Zada, Team Lead" loading="lazy" /></div>
           <div class="role">Team Lead · PREC</div>
           <h3>Dawar Zada</h3>
         </a>
       </div>
       <div class="hp-team-card reveal delay-1">
-        <a href="about/randy.html">
+        <a href='/about/randy'>
           <div class="portrait"><img src="assets/images/randy.jpg" alt="Randy Quach, Realtor" loading="lazy" /></div>
           <div class="role">Realtor · MRP</div>
           <h3>Randy Quach</h3>
         </a>
       </div>
       <div class="hp-team-card reveal delay-2">
-        <a href="about/liz.html">
+        <a href='/about/liz'>
           <div class="portrait"><img src="assets/images/liz.jpg" alt="Liz Murphy, Realtor" loading="lazy" /></div>
           <div class="role">Realtor · SRES</div>
           <h3>Liz Murphy</h3>
@@ -296,7 +259,7 @@
     <p class="reveal delay-2">"Patient, thorough, and never once did we feel like a transaction. We've already sent them three referrals."</p>
     <p class="reveal delay-3" style="margin-top: 2.5rem; font-size: 0.88rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brown-warm);">Google Review · 5 Stars</p>
     <div class="reveal delay-3" style="margin-top: 2rem;">
-      <a href="testimonials.html" class="btn btn-ghost-light">Read All Reviews</a>
+      <a class='btn btn-ghost-light' href='/testimonials'>Read All Reviews</a>
     </div>
   </div>
 </section>
@@ -310,8 +273,8 @@
       <h2 style="max-width: 22ch; margin: 0 auto 2rem;">Send us a message. We'll handle it from there.</h2>
       <p style="max-width: 56ch; margin: 0 auto 2.5rem;">Buying, selling, building, or just thinking out loud. We're here. No pressure, no follow-up calls unless you ask.</p>
       <div class="actions" style="justify-content: center;">
-        <a href="buyers.html#contact-form" class="btn btn-filled">Contact Us</a>
-        <a href="sales.html" class="btn btn-ghost-light">Browse Listings</a>
+        <a class='btn btn-filled' href='/buyers#contact-form'>Contact Us</a>
+        <a class='btn btn-ghost-light' href='/sales'>Browse Listings</a>
       </div>
     </div>
   </div>
@@ -327,20 +290,20 @@
       <div class="footer-col">
         <h5>About</h5>
         <ul>
-          <li><a href="about/zada-group.html">Zada Group</a></li>
-          <li><a href="about/dawar.html">Dawar Zada</a></li>
-          <li><a href="about/randy.html">Randy Quach</a></li>
-          <li><a href="about/liz.html">Liz Murphy</a></li>
+          <li><a href='/about/zada-group'>Zada Group</a></li>
+          <li><a href='/about/dawar'>Dawar Zada</a></li>
+          <li><a href='/about/randy'>Randy Quach</a></li>
+          <li><a href='/about/liz'>Liz Murphy</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h5>Resources</h5>
         <ul>
-          <li><a href="buyers.html">Buyer's Guide</a></li>
-          <li><a href="sellers.html">Seller's Guide</a></li>
-          <li><a href="ssmuh.html">SSMUH</a></li>
-          <li><a href="port-moody.html">Port Moody Multiplex</a></li>
-          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href='/buyers'>Buyer's Guide</a></li>
+          <li><a href='/sellers'>Seller's Guide</a></li>
+          <li><a href='/ssmuh'>SSMUH</a></li>
+          <li><a href='/port-moody'>Port Moody Multiplex</a></li>
+          <li><a href='/blog/'>Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -362,6 +325,5 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
-<script src="assets/js/listings.js"></script>
 </body>
 </html>

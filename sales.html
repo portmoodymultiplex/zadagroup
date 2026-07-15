@@ -23,31 +23,31 @@
 <body>
 
 <nav class="nav solid">
-  <a href="index.html" class="nav-logo"><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
+  <a class='nav-logo' href='/'><img src="assets/images/logo-white.png" alt="Zada Group" /></a>
   <button class="nav-toggle" aria-label="Menu">☰</button>
   <ul class="nav-menu">
-    <li><a href="buyers.html">For Buyers</a></li>
-    <li><a href="sellers.html">For Sellers</a></li>
-    <li><a href="sales.html">Sales</a></li>
-    <li class="has-dropdown"><a href="ssmuh.html">Resources</a>
+    <li><a href='/buyers'>For Buyers</a></li>
+    <li><a href='/sellers'>For Sellers</a></li>
+    <li><a href='/sales'>Sales</a></li>
+    <li class="has-dropdown"><a href='/ssmuh'>Resources</a>
       <ul class="dropdown">
-        <li><a href="ssmuh.html">SSMUH</a></li>
-        <li><a href="port-moody.html">Port Moody Multiplex</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href='/ssmuh'>SSMUH</a></li>
+        <li><a href='/port-moody'>Port Moody Multiplex</a></li>
+        <li><a href='/blog/'>Blog</a></li>
       </ul>
     </li>
-    <li class="has-dropdown"><a href="about/zada-group.html">About</a>
+    <li class="has-dropdown"><a href='/about/zada-group'>About</a>
       <ul class="dropdown">
-        <li><a href="about/zada-group.html">Zada Group</a></li>
-        <li><a href="about/dawar.html">Dawar Zada</a></li>
-        <li><a href="about/randy.html">Randy Quach</a></li>
-        <li><a href="about/liz.html">Liz Murphy</a></li>
-        <li><a href="marketing.html">Marketing</a></li>
-        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href='/about/zada-group'>Zada Group</a></li>
+        <li><a href='/about/dawar'>Dawar Zada</a></li>
+        <li><a href='/about/randy'>Randy Quach</a></li>
+        <li><a href='/about/liz'>Liz Murphy</a></li>
+        <li><a href='/marketing'>Marketing</a></li>
+        <li><a href='/testimonials'>Testimonials</a></li>
       </ul>
     </li>
     <li class="nav-cta-pair">
-      <a href="buyers.html#contact-form" class="nav-cta">Book a Call</a>
+      <a class='nav-cta' href='/buyers#contact-form'>Book a Call</a>
     </li>
   </ul>
 </nav>
@@ -64,29 +64,23 @@
     <h2 style="margin-bottom: 0.5rem;">On the market now.</h2>
     <p class="lede" style="margin-bottom: 3rem;">Live MLS® listings, straight from the board.</p>
 
-    <!-- MyRealPage IDX: embed snippet replaces the static cards inside #idx-listings once the account is live -->
-    <div id="idx-listings">
-      <!-- MyRealPage IDX — live MLS listings -->
-      <script id="mrpscript" src="https://idx.myrealpage.com/wps/rest/67292/l/idx2/mylistings/tmpl~v2,noframe~true,sort~price_desc/-/mylistings.def/in.js" async></script>
+    <div id="idx-listings" class="mrp-brand">
+      <script src="https://idx.myrealpage.com/wps/rest/67292/l/showcase/v2/129834/in.js" async id="mrp-showcase-script-129834"></script>
     </div>
 
-    <p style="margin-top: 2.5rem; text-align: center;">
-      <a href="https://www.rew.ca/agents/51431/dawar-zada/listings" target="_blank" rel="noopener" class="btn btn-ghost-dark">Also on REW</a>
-    </p>
   </div>
 </section>
 
 
-<!-- RECENTLY SOLD — auto-filled weekly from assets/data/listings.json (no sold prices, board rules) -->
+<!-- RECENTLY SOLD - MyRealPage showcase, live MLS data -->
 <section style="background: var(--off-white);">
   <div class="container">
     <div class="eyebrow">Recently Sold</div>
     <h2 style="margin-bottom: 0.5rem;">Recently sold across Metro Vancouver.</h2>
-    <p class="lede" style="margin-bottom: 3rem;">A running record of Zada Group sales. Click any property for the full details on REW.</p>
-    <div class="grid grid-3" id="past-sales"></div>
-    <p style="margin-top: 3rem; text-align: center;">
-      <a href="https://www.rew.ca/agents/51431/dawar-zada/past-sales" target="_blank" rel="noopener" class="btn btn-ghost-dark">All Past Sales on REW</a>
-    </p>
+    <p class="lede" style="margin-bottom: 3rem;">A running record of Zada Group sales, straight from the board.</p>
+    <div id="past-sales" class="mrp-brand">
+      <script src="https://idx.myrealpage.com/wps/rest/67292/l/showcase/v2/129835/in.js" async id="mrp-showcase-script-129835"></script>
+    </div>
   </div>
 </section>
 
@@ -161,16 +155,16 @@
         <p style="font-size:0.9rem; opacity:0.7; max-width: 32ch;">Boutique real estate across Metro Vancouver. Licensed with Stonehaus Realty Corp.</p>
       </div>
       <div class="footer-col"><h5>About</h5><ul>
-        <li><a href="about/zada-group.html">Zada Group</a></li>
-        <li><a href="about/dawar.html">Dawar Zada</a></li>
-        <li><a href="about/randy.html">Randy Quach</a></li>
-        <li><a href="about/liz.html">Liz Murphy</a></li>
+        <li><a href='/about/zada-group'>Zada Group</a></li>
+        <li><a href='/about/dawar'>Dawar Zada</a></li>
+        <li><a href='/about/randy'>Randy Quach</a></li>
+        <li><a href='/about/liz'>Liz Murphy</a></li>
       </ul></div>
       <div class="footer-col"><h5>Resources</h5><ul>
-        <li><a href="buyers.html">Buyer's Guide</a></li>
-        <li><a href="sellers.html">Seller's Guide</a></li>
-        <li><a href="ssmuh.html">SSMUH</a></li>
-        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href='/buyers'>Buyer's Guide</a></li>
+        <li><a href='/sellers'>Seller's Guide</a></li>
+        <li><a href='/ssmuh'>SSMUH</a></li>
+        <li><a href='/blog/'>Blog</a></li>
       </ul></div>
       <div class="footer-col"><h5>Contact</h5><ul>
         <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
@@ -183,6 +177,5 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/listings.js"></script>
 </body>
 </html>
