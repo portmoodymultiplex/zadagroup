@@ -2571,3 +2571,6 @@ footer .container { padding: 0; }
 #idx-listings .showcase-thumb-container > *:has(.SOLD-BANNER) { display: none !important; }
 .mrp-brand .showcase-thumb-container > *:has(.SOLD-BANNER) .price { display: none !important; }
 .mrp-brand .item-ribbon { font-family: var(--font-sans) !important; letter-spacing: 0.18em !important; }
+
+/* Our section headings do the talking; hide MRP widget titles */
+.mrp-brand .mrp-showcase-title { display: none !important; }
