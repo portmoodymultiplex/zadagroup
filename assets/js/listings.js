@@ -82,15 +82,7 @@
       if (featured && data.active && data.active.length) {
         paint(featured, data.active.slice(0, 3).map(activeCard));
       }
-      var all = document.getElementById('idx-listings');
-      if (all && data.active && data.active.length) {
-        var cta = document.getElementById('idx-listings-cta'); // grab before repaint clears it
-        var cards = data.active.map(activeCard);
-        paint(all, cards);
-        if (cta) all.appendChild(cta);
-        var count = document.getElementById('idx-count');
-        if (count) count.textContent = data.active.length + ' active listings, updated weekly from the live market.';
-      }
+      // #idx-listings is now the MyRealPage IDX embed; do not touch it.
       var sold = document.getElementById('past-sales');
       if (sold && data.sold && data.sold.length) {
         paint(sold, data.sold.map(soldCard));

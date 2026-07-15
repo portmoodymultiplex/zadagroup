@@ -62,70 +62,17 @@
   <div class="container">
     <div class="eyebrow">Active Listings</div>
     <h2 style="margin-bottom: 0.5rem;">On the market now.</h2>
-    <p class="lede" style="margin-bottom: 3rem;" id="idx-count">Active listings across Metro Vancouver, updated weekly from the live market.</p>
+    <p class="lede" style="margin-bottom: 3rem;">Live MLS® listings, straight from the board.</p>
 
     <!-- MyRealPage IDX: embed snippet replaces the static cards inside #idx-listings once the account is live -->
-    <div class="grid grid-3" id="idx-listings">
-
-      <a href="https://www.rew.ca/properties/613-721-anskar-court-coquitlam-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
-        <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale · Open Sat</span>
-          <img src="assets/images/listings/listing-anskar.jpg" alt="613 - 721 Anskar Court, Coquitlam" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">Apt/Condo · 2 Bed · 2 Bath · 925 sqft</div>
-          <div class="price">$799,999</div>
-          <div class="address">613 - 721 Anskar Court · Coquitlam West, Coquitlam</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/properties/218-seaview-drive-port-moody-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
-        <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale</span>
-          <img src="assets/images/listings/listing-seaview.jpg" alt="218 Seaview Drive, Port Moody" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">House · 7 Bed · 6 Bath · 4,548 sqft</div>
-          <div class="price">$2,288,000</div>
-          <div class="address">218 Seaview Drive · College Park, Port Moody</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/properties/451-e-eighth-avenue-new-westminster-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
-        <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale</span>
-          <img src="assets/images/listings/listing-eighth.jpg" alt="451 E Eighth Avenue, New Westminster" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">House · 5 Bed · 3 Bath · 3,150 sqft</div>
-          <div class="price">$1,198,000</div>
-          <div class="address">451 E Eighth Avenue · Sapperton, New Westminster</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/properties/119-4363-halifax-street-burnaby-bc" target="_blank" rel="noopener" class="listing-card" style="text-decoration: none; color: inherit;">
-        <div class="media">
-          <span class="badge" style="background: var(--brown-warm); color: var(--green-deepest);">For Sale</span>
-          <img src="assets/images/listings/listing-halifax.jpg" alt="119 - 4363 Halifax Street, Burnaby" loading="lazy" />
-        </div>
-        <div class="body">
-          <div class="specs">Apt/Condo · 2 Bed · 1 Bath · 862 sqft</div>
-          <div class="price">$499,000</div>
-          <div class="address">119 - 4363 Halifax Street · Brentwood Park, Burnaby</div>
-        </div>
-      </a>
-
-      <a href="https://www.rew.ca/agents/51431/dawar-zada/listings" target="_blank" rel="noopener" id="idx-listings-cta" class="listing-card" style="text-decoration: none; color: inherit; background: var(--green-deepest); display: flex; align-items: center; justify-content: center; padding: 3rem 2rem; text-align: center; min-height: 320px;">
-        <div>
-          <div style="color: var(--brown-warm); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem;">Search All BC Listings</div>
-          <div style="color: var(--off-white); font-family: var(--serif); font-size: 1.5rem; line-height: 1.3; margin-bottom: 1.5rem;">Open the live MLS search on REW.</div>
-          <div style="color: var(--brown-warm); font-size: 0.85rem;">View on REW →</div>
-        </div>
-      </a>
-
+    <div id="idx-listings">
+      <!-- MyRealPage IDX — live MLS listings -->
+      <script id="mrpscript" src="https://idx.myrealpage.com/wps/rest/67292/l/idx2/mylistings/tmpl~v2,noframe~true,sort~price_desc/-/mylistings.def/in.js" async></script>
     </div>
 
-    <p style="margin-top: 2.5rem; text-align: center; font-size: 0.85rem; color: var(--grey-warm);">Photos and full details on REW. Click any listing.</p>
+    <p style="margin-top: 2.5rem; text-align: center;">
+      <a href="https://www.rew.ca/agents/51431/dawar-zada/listings" target="_blank" rel="noopener" class="btn btn-ghost-dark">Also on REW</a>
+    </p>
   </div>
 </section>
 
