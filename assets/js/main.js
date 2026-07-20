@@ -87,3 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
 // MLS / IDX integration hook
 // When the user signs up with an IDX provider (REW, Realtyna, Showcase IDX, etc.),
 // drop the provider's embed snippet into elements with id="idx-featured" or id="idx-listings".
+
+// Designer's mark - appended to every footer, quiet by design
+document.addEventListener('DOMContentLoaded', function () {
+  var fb = document.querySelector('.footer-bottom');
+  if (fb && !document.querySelector('.site-credit')) {
+    var s = document.createElement('span');
+    s.className = 'site-credit';
+    s.innerHTML = 'Designed by <span class="name">Sheri Zada</span> &middot; Communications &amp; Community Relations, Zada Group';
+    fb.parentNode.insertBefore(s, fb.nextSibling);
+  }
+});
