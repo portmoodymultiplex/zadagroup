@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (fb && !document.querySelector('.site-credit')) {
     var s = document.createElement('span');
     s.className = 'site-credit';
-    s.innerHTML = 'Designed by <span class="name">Sheri Zada</span> &middot; Communications &amp; Community Relations, Zada Group';
+    s.innerHTML = 'Site by <span class="name">Sheri Zada</span> &middot; Zada Group Communications &amp; Community Relations';
     fb.parentNode.insertBefore(s, fb.nextSibling);
   }
 });
