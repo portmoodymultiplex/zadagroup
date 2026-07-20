@@ -2597,3 +2597,8 @@ footer .container { padding: 0; }
 /* grid clearfix + ribbon wrapper cleanup */
 .mrp-brand .showcase-thumb-container::before, .mrp-brand .showcase-thumb-container::after { content: none !important; display: none !important; }
 .mrp-brand .ribbon-outer { background: transparent !important; border: none !important; box-shadow: none !important; }
+
+/* Designer's mark - quiet until you look for it */
+.site-credit { display: block; width: 100%; margin-top: 1.25rem; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.32; transition: opacity 0.5s ease; text-align: center; }
+.site-credit:hover { opacity: 0.9; }
+.site-credit .name { font-family: var(--serif-text); font-style: italic; text-transform: none; font-size: 0.95rem; letter-spacing: 0.03em; color: var(--brown-warm); }
