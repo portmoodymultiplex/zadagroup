@@ -7,6 +7,10 @@
 <title>Zada Group · Content Command Centre</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@font-face{font-family:'Abigail';src:url('/assets/fonts/Abigail.otf') format('opentype');font-weight:400;font-display:swap;}
+@font-face{font-family:'Sweet Sans Pro';src:url('/assets/fonts/SweetSansPro-Light.otf') format('opentype');font-weight:300;font-display:swap;}
+@font-face{font-family:'Sweet Sans Pro';src:url('/assets/fonts/SweetSansPro-Regular.otf') format('opentype');font-weight:400;font-display:swap;}
+@font-face{font-family:'Sweet Sans Pro';src:url('/assets/fonts/SweetSansPro-Medium.otf') format('opentype');font-weight:500;font-display:swap;}
 :root{
   --green:#2F4A3E; --green-dark:#24382F; --cream:#F5F0E6; --gold:#B08D57;
   --ink:#2a2a26; --muted:#6b6b62; --card:#ffffff; --line:#e4ddd0;
@@ -71,7 +75,8 @@ tr.weekrow td{background:#ece5d6;font-weight:700;font-size:12px;letter-spacing:.
   <button class="active" data-tab="calendar">Calendar</button>
   <button data-tab="justlisted">Just Listed</button>
   <button data-tab="sold">Sold Posts</button>
-  <button data-tab="templates">Templates</button>
+  <button data-tab="soldgen">Sold Caption Generator</button>
+  <button data-tab="listgen">Listing Description Generator</button>
   <button data-tab="print">Print Materials</button>
 </nav>
 <main>
@@ -120,126 +125,90 @@ tr.weekrow td{background:#ece5d6;font-weight:700;font-size:12px;letter-spacing:.
   <div class="note"><strong>How to use this:</strong> once the Zada Group page is connected (see Meta Setup tab), open Meta Business Suite → Planner, and schedule each post on its date with the caption copied from this hub. Cross-post FB + Instagram in one step. One sitting of about an hour loads all 18 posts, then nobody thinks about it again until September.</div>
 </section>
 
+
 <!-- ============ JUST LISTED ============ -->
 <section class="tab" id="justlisted">
   <h2>Just Listed, ready to post</h2>
-  <p class="lede">Every current listing, pulled live from our feed. Each one comes with the graphic (main photo, badge top left) and a caption built from the listing description. Download the graphic, copy the caption, post. When a new listing goes live, it shows up here on its own.</p>
+  <p class="lede">Every current listing, live from the feed. The graphic follows the brand card: photo, floating badge, deep green panel with the details. The caption is the listing description with the offered line at the end, the way our posts read. Download, copy, post.</p>
   <div id="jl-grid"><div class="note">Listings load when this page is viewed at zadagroup.ca/team.</div></div>
 </section>
 
 <!-- ============ SOLD POSTS ============ -->
 <section class="tab" id="sold">
   <h2>Sold posts</h2>
-  <p class="lede">Every sold from the feed, already made into a graphic. Grab the one you need, then use the caption builder below: drop in the little details that made the deal (days on market, over asking, the story) and it fills the caption in our voice.</p>
+  <p class="lede">Every sold from the feed as a finished brand graphic. Download the one you need, then write the caption in the Sold Caption Generator tab with the deal's story.</p>
   <div id="sold-grid"><div class="note">Sold graphics load when this page is viewed at zadagroup.ca/team.</div></div>
+</section>
 
-  <h2>Caption builder</h2>
+<!-- ============ SOLD CAPTION GENERATOR ============ -->
+<section class="tab" id="soldgen">
+  <h2>Sold caption generator</h2>
+  <p class="lede">Built on how our sold posts actually read: the opener, the deal story with the real numbers, a line about how we work, and a soft ask. Drop in the story, pick the pieces, copy.</p>
   <div class="card">
-    <div id="live-picker" style="display:none;">
-      <div class="label">Pick from the live feed (auto-fills everything)</div>
-      <select id="g-pick" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';"><option value="">Loading listings...</option></select>
-    </div>
     <div class="grid2">
       <div>
-        <div class="label">Template</div>
-        <select id="g-type" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-          <option value="sold">Just Sold (listing side)</option>
-          <option value="bought">Just Bought (buyer side)</option>
-          <option value="listed">Just Listed</option>
+        <div class="label">Who was it for</div>
+        <select id="sg-side" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+          <option value="sellers">Our sellers</option>
+          <option value="buyers">Our buyers</option>
+          <option value="invest">Investment clients</option>
         </select>
-        <div class="label">Agent</div>
-        <select id="g-agent" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-          <option>Dawar Zada PREC</option><option>Randy Quach</option><option>Liz Murphy</option>
-        </select>
-        <div class="label">Address</div>
-        <input id="g-addr" placeholder="613-721 Anskar Court" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-        <div class="label">Neighbourhood, City</div>
-        <input id="g-hood" placeholder="Coquitlam West, Coquitlam" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-        <div class="label">Price (as shown, e.g. $788,000)</div>
-        <input id="g-price" placeholder="$788,000" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <div class="label">The deal story (the numbers, the timeline, what made it work)</div>
+        <textarea id="sg-story" rows="4" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="Through strategic negotiations, we secured the property for $15,000 below the asking price, well below the last comparable sale."></textarea>
+        <div class="label">City (for the hashtag)</div>
+        <input id="sg-city" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="Maple Ridge">
       </div>
       <div>
-        <div class="label">Beds / Baths / Sqft</div>
-        <input id="g-specs" placeholder="2 beds, 2 baths, 925 square feet" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-        <div class="label">The little info blob that matters</div>
-        <input id="g-hook" placeholder="e.g. Sold in 6 days with multiple offers" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-        <div class="label">Below asking amount (bought only, optional)</div>
-        <input id="g-below" placeholder="$53,300" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
-        <button id="g-go" style="margin-top:18px;width:100%;padding:12px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:14px;letter-spacing:.06em;cursor:pointer;">Generate caption</button>
+        <div class="label">How-we-work line</div>
+        <select id="sg-phil" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+          <option value="1">Long-term plan, first purchase to forever home</option>
+          <option value="2">Right strategy makes all the difference</option>
+          <option value="3">Over 90 percent from past clients and referrals</option>
+          <option value="0">None</option>
+        </select>
+        <div class="label">Closing ask</div>
+        <select id="sg-cta" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+          <option value="1">Virtual Sellers Guide</option>
+          <option value="2">Buyers or Sellers Guide</option>
+          <option value="3">Contact us to discuss</option>
+          <option value="0">None</option>
+        </select>
+        <button id="sg-go" style="margin-top:18px;width:100%;padding:12px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:14px;letter-spacing:.06em;cursor:pointer;">Generate caption</button>
       </div>
     </div>
     <div class="label">Caption</div>
-    <div class="copyblock"><button class="copybtn">Copy</button><pre id="g-out">Pick a listing above or fill the fields, then generate.</pre></div>
-    <div id="graphic-panel" style="display:none;">
-      <div class="label">Graphic</div>
-      <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
-        <img id="g-preview" style="width:300px;border:1px solid var(--line);border-radius:6px;" alt="Post graphic preview">
-        <div><button id="g-download" style="padding:11px 20px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:13px;letter-spacing:.06em;cursor:pointer;">Download PNG</button></div>
-      </div>
-      <canvas id="g-canvas" width="1080" height="1080" style="display:none;"></canvas>
-    </div>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre id="sg-out">Fill in the story and generate.</pre></div>
   </div>
 </section>
 
-<!-- ============ TEMPLATES ============ -->
-<section class="tab" id="templates">
-  <h2>Just Listed / Just Sold, on demand</h2>
-  <p class="lede">These are the fill-in-the-blank versions the whole team can use. The workflow: whoever has the deal drops the listing sheet (or just the address, price, and one detail worth mentioning) into the shared Dropbox folder or straight into a Claude session, says "just listed" or "just sold," and gets the finished caption back. Nobody writes from scratch again.</p>
-
+<!-- ============ LISTING DESCRIPTION GENERATOR ============ -->
+<section class="tab" id="listgen">
+  <h2>Listing description generator</h2>
+  <p class="lede">Pick a listing and the caption assembles itself from the MLS description, ending with the offered line, the way our listing posts read. Add an opening hook if the home deserves one.</p>
   <div class="card">
-    <h3>Just Listed template</h3>
-    <div class="copyblock"><button class="copybtn">Copy</button><pre>On the market. [ADDRESS], [NEIGHBOURHOOD], [CITY].
-
-[BEDS] beds, [BATHS] baths, [SQFT] square feet. [ONE LINE ON THE HOME'S BEST FEATURE, WRITTEN LIKE YOU'D SAY IT TO A FRIEND.]
-
-[ONE LINE ON THE NEIGHBOURHOOD: what's walkable, what locals know.]
-
-$[PRICE]. Full details at zadagroup.ca or on REW.[ IF OPEN HOUSE: Open house [DAY] [TIME].]
-
-[AGENT NAME] · Zada Group · Stonehaus Realty Corp
-
-#[city] #[neighbourhood] #zadagroup #forsale #tricitiesrealestate #metrovancouver</pre></div>
-  </div>
-
-  <div class="card">
-    <h3>Just Sold template (listing side)</h3>
-    <div class="copyblock"><button class="copybtn">Copy</button><pre>Sold. [ADDRESS], [NEIGHBOURHOOD], [CITY].
-
-[THE ONE NUMBER OR FACT THAT MATTERS: days on market, over asking, a record, multiple offers. One sentence.]
-
-[OPTIONAL SECOND BEAT: what made it work, one sentence, no adjectives.]
-
-Congratulations to our sellers on the next chapter.
-
-[AGENT NAME] · Zada Group · Stonehaus Realty Corp
-
-#justsold #[city] #[neighbourhood] #zadagroup #tricitiesrealestate</pre></div>
-  </div>
-
-  <div class="card">
-    <h3>Just Bought template (buyer side)</h3>
-    <div class="copyblock"><button class="copybtn">Copy</button><pre>Bought. [ADDRESS], [NEIGHBOURHOOD], [CITY].
-
-Secured for our buyers at $[PRICE][ IF BELOW ASKING: , which is $[AMOUNT] below asking].
-
-[ONE LINE ON THE STORY: the negotiation, the timing, the thing that almost didn't happen.]
-
-Welcome home to our clients.
-
-[AGENT NAME] · Zada Group · Stonehaus Realty Corp
-
-#[city] #zadagroup #buyersagent #tricitiesrealestate #metrovancouver</pre></div>
-  </div>
-
-  <div class="note">
-    <strong>Template rules, so every post sounds like us:</strong> numbers over adjectives, always. No "stunning," "dream home," "must-see," "luxurious," or "act now." No em dashes. Canadian spelling. One exclamation mark maximum, and only on celebration posts. Hashtags lowercase. Every post names the agent, Zada Group, and Stonehaus Realty Corp.
-  </div>
-
-  <div class="card">
-    <h3>The Dropbox trigger, phased honestly</h3>
-    <p style="font-size:14px;margin-bottom:10px;"><strong>Phase 1 (works today):</strong> the team drops a listing sheet or MLS data sheet into the Dropbox folder, then whoever's posting opens a Claude session, attaches it, and says "just listed" or "just sold." The templates above plus your voice rules produce the finished caption in one pass. Total human effort: one drag, two words.</p>
-    <p style="font-size:14px;margin-bottom:10px;"><strong>Phase 2 (worth building once posting is habitual):</strong> a Make.com or Zapier scenario watches two Dropbox folders, "01 Just Listed" and "02 Just Sold." A new file triggers a draft: the automation reads the sheet, fills the template, and creates a scheduled draft in Meta Business Suite via the Facebook Pages connection. You approve drafts in the Planner rather than writing anything.</p>
-    <p style="font-size:14px;"><strong>My suggestion:</strong> run Phase 1 for a month. If the team actually uses the folders, Phase 2 is a one-afternoon build and I can spec the whole scenario with you.</p>
+    <div id="live-picker" style="display:none;">
+      <div class="label">Pick from the live feed</div>
+      <select id="lg-pick" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';"><option value="">Loading listings...</option></select>
+    </div>
+    <div class="grid2">
+      <div>
+        <div class="label">Opening hook (optional)</div>
+        <input id="lg-hook" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="Every room glows!">
+        <div class="label">Address</div>
+        <input id="lg-addr" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="317 Gloucester Court">
+        <div class="label">City</div>
+        <input id="lg-city" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="Coquitlam">
+      </div>
+      <div>
+        <div class="label">Offered at</div>
+        <input id="lg-price" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="$1,579,900">
+        <div class="label">Description (auto-fills from the feed)</div>
+        <textarea id="lg-desc" rows="5" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';" placeholder="Tucked into a quiet cul-de-sac..."></textarea>
+        <button id="lg-go" style="margin-top:18px;width:100%;padding:12px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:14px;letter-spacing:.06em;cursor:pointer;">Generate caption</button>
+      </div>
+    </div>
+    <div class="label">Caption</div>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre id="lg-out">Pick a listing or fill the fields, then generate.</pre></div>
   </div>
 </section>
 
@@ -287,64 +256,92 @@ function wireCopy(scope){
   });
 }
 wireCopy();
-const SIG='Zada Group · Stonehaus Realty Corp';
-const CITY_TAGS={"port moody":"#portmoody","coquitlam":"#coquitlam","burnaby":"#burnaby","new westminster":"#newwestminster","maple ridge":"#mapleridge","pitt meadows":"#pittmeadows","north vancouver":"#northvancouver","abbotsford":"#abbotsford"};
-const cityTag=c=>CITY_TAGS[(c||'').toLowerCase()]||'#metrovancouver';
 
+// ---- Brand graphic: ListingCard treatment on canvas ----
+const GREEN='#041A10', BROWN='#9F8163', OFF='#E8E5E2';
+let LOGO=null;
+function loadLogo(){return LOGO?Promise.resolve(LOGO):new Promise(res=>{const i=new Image();i.crossOrigin='anonymous';i.onload=()=>{LOGO=i;res(i)};i.onerror=()=>res(null);i.src='/assets/images/logo-white.png';});}
+async function brandFonts(){
+  try{await Promise.all([
+    document.fonts.load('64px Abigail'),
+    document.fonts.load('300 30px "Sweet Sans Pro"'),
+    document.fonts.load('500 26px "Sweet Sans Pro"')
+  ]);}catch(e){}
+}
 async function graphicURL(l,label){
   const r=await fetch('/.netlify/functions/listings?img='+encodeURIComponent(l.photo));
   if(!r.ok)throw 0;
   const bmp=await createImageBitmap(await r.blob());
+  await brandFonts(); const logo=await loadLogo();
   const c=document.createElement('canvas');c.width=1080;c.height=1080;
   const x=c.getContext('2d');
-  const s=Math.min(bmp.width,bmp.height);
+  // photo: top 690, cover
+  x.fillStyle=GREEN;x.fillRect(0,0,1080,1080);
+  const ph=690, ratio=Math.max(1080/bmp.width, ph/bmp.height);
+  const dw=bmp.width*ratio, dh=bmp.height*ratio;
+  x.save();x.beginPath();x.rect(0,0,1080,ph);x.clip();
   x.imageSmoothingQuality='high';
-  x.drawImage(bmp,(bmp.width-s)/2,(bmp.height-s)/2,s,s,0,0,1080,1080);
-  x.font='500 30px "DM Sans", sans-serif';
-  if('letterSpacing' in x)x.letterSpacing='7px';
+  x.drawImage(bmp,(1080-dw)/2,(ph-dh)/2,dw,dh);
+  x.restore();
+  // floating badge (overlay recipe)
+  x.font='500 28px "Sweet Sans Pro", "DM Sans", sans-serif';
+  if('letterSpacing' in x)x.letterSpacing='6px';
   const tw=x.measureText(label).width;
-  const padX=30,padY=19,bx=48,by=48,bw=tw+padX*2,bh=30+padY*2;
-  if(label==='JUST SOLD'||label==='JUST BOUGHT'){
-    x.fillStyle='#9F8163';x.fillRect(bx,by,bw,bh);x.fillStyle='#041A10';
-  }else{
-    x.fillStyle='rgba(10,10,10,0.85)';x.fillRect(bx,by,bw,bh);
-    x.strokeStyle='rgba(159,129,99,0.4)';x.lineWidth=2;x.strokeRect(bx+1,by+1,bw-2,bh-2);
-    x.fillStyle='#9F8163';
-  }
-  x.textBaseline='middle';x.fillText(label,bx+padX,by+bh/2+2);
+  const bx=48,by=48,bw=tw+56,bh=64;
+  x.fillStyle='rgba(10,10,10,0.85)';x.fillRect(bx,by,bw,bh);
+  x.strokeStyle='rgba(159,129,99,0.4)';x.lineWidth=2;x.strokeRect(bx+1,by+1,bw-2,bh-2);
+  x.fillStyle=BROWN;x.textBaseline='middle';x.fillText(label,bx+28,by+bh/2+2);
+  // panel content
+  if('letterSpacing' in x)x.letterSpacing='4px';
+  x.strokeStyle='rgba(159,129,99,0.35)';x.lineWidth=1.5;
+  x.beginPath();x.moveTo(64,738);x.lineTo(1016,738);x.stroke();
+  const specs=[l.beds?l.beds+' BED':'',l.baths?l.baths+' BATH':'',(l.sqft||'').replace(' sq. ft.',' SQFT').toUpperCase(),(l.city||'').toUpperCase()].filter(Boolean).join('   ·   ');
+  x.font='500 25px "Sweet Sans Pro", "DM Sans", sans-serif';
+  x.fillStyle=BROWN;x.textBaseline='alphabetic';
+  x.fillText(specs,64,806);
+  if('letterSpacing' in x)x.letterSpacing='0px';
+  x.font='64px Abigail, "Cormorant Garamond", serif';
+  x.fillStyle=OFF;
+  const main=(label==='JUST LISTED'&&l.price)?l.price:l.addr;
+  x.fillText(main,64,890);
+  x.font='300 29px "Sweet Sans Pro", "DM Sans", sans-serif';
+  x.fillStyle='rgba(232,229,226,0.72)';
+  const sub=(label==='JUST LISTED'&&l.price)?`${l.addr}${l.subarea?' · '+l.subarea:''} · ${l.city}`:`${l.subarea?l.subarea+' · ':''}${l.city}`;
+  x.fillText(sub,64,946);
+  if(logo){const lw=176,lh=lw*(logo.height/logo.width);x.globalAlpha=.95;x.drawImage(logo,1016-lw,1012-lh,lw,lh);x.globalAlpha=1;}
   return c.toDataURL('image/png');
 }
 function dl(url,name){const a=document.createElement('a');a.download=name;a.href=url;a.click();}
+function listedCaption(l){
+  return `${(l.description||'').trim()}\n\n${l.addr}, ${l.city} · Offered at ${l.price}`;
+}
 
 let LIVE=[];
 fetch('/.netlify/functions/listings').then(r=>r.ok?r.json():Promise.reject()).then(async d=>{
   LIVE=d.listings||[];
   if(!LIVE.length)return;
-  // picker
-  const sel=document.getElementById('g-pick');
+  // Listing generator picker (actives first)
+  const sel=document.getElementById('lg-pick');
   sel.innerHTML='<option value="">Choose a listing...</option>'+LIVE.map((l,i)=>`<option value="${i}">${l.status==='SOLD'?'SOLD':'ACTIVE'} · ${l.addr}, ${l.city} · ${l.price}</option>`).join('');
   document.getElementById('live-picker').style.display='block';
   sel.addEventListener('change',()=>{
     const l=LIVE[sel.value]; if(!l)return;
-    document.getElementById('g-addr').value=l.addr;
-    document.getElementById('g-hood').value=(l.subarea?l.subarea+', ':'')+l.city;
-    document.getElementById('g-price').value=l.price;
-    document.getElementById('g-specs').value=`${l.beds} beds, ${l.baths} baths, ${l.sqft}`.replace(' sq. ft.',' square feet');
-    document.getElementById('g-type').value=l.status==='SOLD'?'sold':'listed';
-    updateGenGraphic(l);
+    document.getElementById('lg-addr').value=l.addr;
+    document.getElementById('lg-city').value=l.city;
+    document.getElementById('lg-price').value=l.price;
+    document.getElementById('lg-desc').value=(l.description||'').trim();
   });
   // Just Listed grid
   const actives=LIVE.filter(l=>l.status==='ACTIVE');
   const jl=document.getElementById('jl-grid');jl.innerHTML='';
   for(const l of actives){
-    const cap=`On the market. ${l.addr}, ${l.subarea?l.subarea+', ':''}${l.city}.\n\n${(l.description||'').trim()}\n\n${l.price}. Full details at zadagroup.ca or on REW.\n\nDawar Zada PREC · ${SIG}\n\n${cityTag(l.city)} #zadagroup #forsale #tricitiesrealestate #metrovancouver`.replace(/\n{3,}/g,'\n\n');
     const card=document.createElement('div');card.className='card';
     card.innerHTML=`<div class="meta"><span class="pill listed">Just Listed</span><span class="slug">${l.addr} · ${l.city} · ${l.price}</span></div>
       <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;">
-        <div style="flex:0 0 260px;"><img style="width:260px;border:1px solid var(--line);border-radius:6px;" alt="${l.addr}"><p style="margin-top:8px;"><button class="dlbtn" style="padding:9px 16px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:12px;letter-spacing:.05em;cursor:pointer;">Download graphic</button></p></div>
+        <div style="flex:0 0 280px;"><img style="width:280px;border:1px solid var(--line);border-radius:6px;" alt="${l.addr}"><p style="margin-top:8px;"><button class="dlbtn" style="padding:9px 16px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:12px;letter-spacing:.05em;cursor:pointer;">Download graphic</button></p></div>
         <div style="flex:1;min-width:280px;"><div class="copyblock"><button class="copybtn">Copy</button><pre></pre></div></div>
       </div>`;
-    card.querySelector('pre').innerText=cap;
+    card.querySelector('pre').innerText=listedCaption(l);
     jl.appendChild(card);
     graphicURL(l,'JUST LISTED').then(u=>{card.querySelector('img').src=u;card.querySelector('.dlbtn').onclick=()=>dl(u,l.addr.replace(/\s+/g,'-').toLowerCase()+'-just-listed.png');}).catch(()=>{});
   }
@@ -363,41 +360,35 @@ fetch('/.netlify/functions/listings').then(r=>r.ok?r.json():Promise.reject()).th
   }
 }).catch(()=>{});
 
-async function updateGenGraphic(l){
-  if(!l||!l.photo){document.getElementById('graphic-panel').style.display='none';return;}
-  const t=document.getElementById('g-type').value;
-  const label=t==='sold'?'JUST SOLD':(t==='bought'?'JUST BOUGHT':'JUST LISTED');
-  try{
-    const u=await graphicURL(l,label);
-    document.getElementById('g-preview').src=u;
-    document.getElementById('graphic-panel').style.display='block';
-    document.getElementById('g-download').onclick=()=>dl(u,l.addr.replace(/\s+/g,'-').toLowerCase()+'-'+label.toLowerCase().replace(' ','-')+'.png');
-  }catch(e){document.getElementById('graphic-panel').style.display='none';}
-}
+// ---- Sold caption generator ----
+const OPENERS={sellers:'SOLD! Congratulations to our sellers.',buyers:'SOLD. We are pleased to announce the successful purchase of this property for our buyers.',invest:'SOLD. Another project wrapped for our investment clients.'};
+const PHIL={1:'Real estate should always be approached with a long-term plan. We work with our clients to build smart strategies that grow their wealth and move them from first purchase to forever home.',
+2:'In today’s competitive market, the right strategy makes all the difference. Whether you are looking to buy or sell, our expertise ensures you maximize your opportunities and secure the best possible outcome.',
+3:'The right agent matters. There’s a reason over 90 percent of our business comes from past clients and personal referrals.'};
+const CTA={1:'If you’re curious how we help people make smart, profitable moves, ask us for a copy of our Virtual Sellers Guide. We’d love to help you create a game plan that works for you.',
+2:'Ask us for our Buyers or Sellers Guide, where we share our record-breaking sales, client investment success stories, and the proven strategies that help our clients turn real estate into generational wealth.',
+3:'Contact us to discuss how we can help you achieve your real estate goals with confidence.'};
+document.getElementById('sg-go').addEventListener('click',()=>{
+  const side=document.getElementById('sg-side').value;
+  const story=document.getElementById('sg-story').value.trim();
+  const city=document.getElementById('sg-city').value.trim();
+  const phil=PHIL[document.getElementById('sg-phil').value]||'';
+  const cta=CTA[document.getElementById('sg-cta').value]||'';
+  const tag=city?`#${city.replace(/\s+/g,'')}RealEstate #ZadaGroup #GuidingYouHome`:'#ZadaGroup #GuidingYouHome';
+  const out=[OPENERS[side],story,phil,cta,tag].filter(Boolean).join('\n\n');
+  document.getElementById('sg-out').innerText=out;
+});
 
-document.getElementById('g-go').addEventListener('click',()=>{
-  const t=document.getElementById('g-type').value;
-  const agent=document.getElementById('g-agent').value;
-  const addr=document.getElementById('g-addr').value.trim();
-  const hood=document.getElementById('g-hood').value.trim();
-  const price=document.getElementById('g-price').value.trim();
-  const specs=document.getElementById('g-specs').value.trim();
-  const hook=document.getElementById('g-hook').value.trim();
-  const below=document.getElementById('g-below').value.trim();
-  const city=(hood.split(',').pop()||'').trim();
-  const ct=cityTag(city);
-  const sig=`${agent} · ${SIG}`;
-  let out='';
-  if(t==='listed'){
-    out=`On the market. ${addr}, ${hood}.\n\n${specs?specs+'. ':''}${hook?hook+'.':''}\n\n${price}. Full details at zadagroup.ca or on REW.\n\n${sig}\n\n${ct} #zadagroup #forsale #tricitiesrealestate #metrovancouver`;
-  }else if(t==='sold'){
-    out=`Sold. ${addr}, ${hood}.\n\n${hook?hook+'.':''}${!hook&&specs?specs+'.':''}\n\nCongratulations to our clients on the next chapter.\n\n${sig}\n\n#justsold ${ct} #zadagroup #tricitiesrealestate`;
-  }else{
-    out=`Bought. ${addr}, ${hood}.\n\nSecured for our buyers at ${price}${below?', which is '+below+' below asking':''}.\n\n${hook?hook+'.':''}\n\nWelcome home to our clients.\n\n${sig}\n\n${ct} #zadagroup #buyersagent #tricitiesrealestate #metrovancouver`;
-  }
-  document.getElementById('g-out').innerText=out.replace(/\n{3,}/g,'\n\n');
-  const sel=document.getElementById('g-pick');
-  if(LIVE.length&&sel&&LIVE[sel.value])updateGenGraphic(LIVE[sel.value]);
+// ---- Listing description generator ----
+document.getElementById('lg-go').addEventListener('click',()=>{
+  const hook=document.getElementById('lg-hook').value.trim();
+  const addr=document.getElementById('lg-addr').value.trim();
+  const city=document.getElementById('lg-city').value.trim();
+  const price=document.getElementById('lg-price').value.trim();
+  const desc=document.getElementById('lg-desc').value.trim();
+  const body=hook?hook+' '+desc:desc;
+  const out=`${body}\n\n${addr}, ${city} · Offered at ${price}`;
+  document.getElementById('lg-out').innerText=out;
 });
 </script>
 </body>
