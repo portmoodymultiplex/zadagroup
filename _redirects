@@ -1,0 +1,36 @@
+# Netlify redirects for zadagroup.ca
+# Maps old WordPress URLs (still in Google's index) to live pages.
+# Drop this file in the site root (same level as index.html). One rule per line.
+# Netlify handles trailing-slash variants automatically.
+
+# --- Port Moody (old hub children -> new hub page) ---
+/port-moody-real-estate/port-moody-houses-for-sale/*     /port-moody-real-estate  301!
+/port-moody-real-estate/port-moody-townhouses-for-sale/* /port-moody-real-estate  301!
+/port-moody-real-estate/port-moody-condos-for-sale/*     /port-moody-real-estate  301!
+/port-moody-real-estate/*                                /port-moody-real-estate  301!
+
+# --- Coquitlam (redirect to listings until a Coquitlam hub page exists,
+#     then change these to /coquitlam-real-estate) ---
+/coquitlam-real-estate/*        /sales  301!
+/port-coquitlam-real-estate/*   /sales  301!
+
+# --- Old listing / search pages ---
+/featured/*             /sales  301!
+/featured-past-sales/*  /sales  301!
+/property-search/*      /sales  301!
+/listings/*             /sales  301!
+/condos/*               /sales  301!
+/townhouses/*           /sales  301!
+/detached-homes/*       /sales  301!
+/acreages/*             /sales  301!
+
+# --- Old blog posts and WordPress taxonomy pages ---
+/real-estate/*  /blog/  301!
+/category/*     /blog/  301!
+/tag/*          /blog/  301!
+/author/*       /blog/  301!
+
+# --- WordPress leftovers ---
+/wp-content/*  /  301!
+/wp-json/*     /  301!
+/feed/*        /blog/  301!
