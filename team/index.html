@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Zada Group · Content Command Centre</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+:root{
+  --green:#2F4A3E; --green-dark:#24382F; --cream:#F5F0E6; --gold:#B08D57;
+  --ink:#2a2a26; --muted:#6b6b62; --card:#ffffff; --line:#e4ddd0;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;}
+header{background:var(--green);color:var(--cream);padding:36px 24px 28px;text-align:center;}
+header .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+header h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:38px;line-height:1.15;}
+header p{max-width:640px;margin:10px auto 0;font-size:14px;color:#d8d2c4;}
+nav{position:sticky;top:0;z-index:50;background:var(--green-dark);display:flex;flex-wrap:wrap;justify-content:center;gap:2px;padding:8px 12px;}
+nav button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.04em;background:transparent;color:#cfc8b8;border:none;padding:9px 16px;cursor:pointer;border-radius:4px;}
+nav button.active{background:var(--gold);color:#fff;}
+nav button:hover{color:#fff;}
+main{max-width:1060px;margin:0 auto;padding:32px 20px 80px;}
+section.tab{display:none;}
+section.tab.active{display:block;}
+h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;color:var(--green);margin:26px 0 6px;}
+h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:22px;color:var(--green);margin:22px 0 6px;}
+.lede{color:var(--muted);font-size:14px;max-width:720px;margin-bottom:18px;}
+table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:13.5px;}
+th{background:var(--green);color:var(--cream);text-align:left;padding:10px 12px;font-weight:500;letter-spacing:.05em;font-size:12px;text-transform:uppercase;}
+td{padding:10px 12px;border-top:1px solid var(--line);vertical-align:top;}
+tr.weekrow td{background:#ece5d6;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);}
+.pill{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;padding:2px 9px;border-radius:20px;white-space:nowrap;}
+.pill.sold{background:#e7d9c2;color:#7a5c2e;}
+.pill.listed{background:#d9e4dc;color:var(--green);}
+.pill.blog{background:#e3e0f0;color:#4c4670;}
+.pill.launch{background:var(--green);color:var(--cream);}
+.pill.reel{background:#f0dede;color:#8a4b4b;}
+.pill.zada{background:#fff;border:1px solid var(--gold);color:var(--gold);}
+.pill.pmm{background:#fff;border:1px solid var(--green);color:var(--green);}
+.pill.both{background:var(--gold);color:#fff;}
+.pill.collab{background:#fff;border:1px solid #7a5c2e;color:#7a5c2e;}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin:16px 0;}
+.card .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px;}
+.card .slug{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
+.copyblock{position:relative;background:#faf7f0;border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:10px 0;}
+.copyblock pre{font-family:'DM Sans',sans-serif;font-size:14px;white-space:pre-wrap;line-height:1.6;}
+.copybtn{position:absolute;top:10px;right:10px;font-size:11px;letter-spacing:.06em;background:var(--green);color:var(--cream);border:none;border-radius:4px;padding:5px 12px;cursor:pointer;}
+.copybtn:hover{background:var(--gold);}
+.label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:14px 0 4px;}
+.vb{font-size:13.5px;color:var(--muted);border-left:3px solid var(--gold);padding:6px 14px;margin:8px 0;background:#fbf9f4;}
+.note{background:#f0ead9;border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 6px 6px 0;font-size:13.5px;margin:16px 0;}
+.check{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:6px 0;margin:14px 0;}
+.check .item{display:flex;gap:12px;padding:12px 20px;border-top:1px solid var(--line);font-size:14px;}
+.check .item:first-child{border-top:none;}
+.check .num{flex:0 0 26px;height:26px;border-radius:50%;background:var(--green);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%);background:var(--green);color:var(--cream);padding:10px 22px;border-radius:30px;font-size:13px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:99;}
+.toast.show{opacity:1;}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Zada Real Estate Group · Port Moody Multiplex</div>
+  <h1>Content Command Centre</h1>
+  <p>The Zada Group agent portal. The posting calendar, live Just Listed and Just Sold posts built from our listings feed, caption templates, and print materials with everything downloadable. Bookmark this page.</p>
+</header>
+<nav>
+  <button class="active" data-tab="calendar">Calendar</button>
+  <button data-tab="justlisted">Just Listed</button>
+  <button data-tab="sold">Sold Posts</button>
+  <button data-tab="templates">Templates</button>
+  <button data-tab="print">Print Materials</button>
+</nav>
+<main>
+
+<!-- ============ CALENDAR ============ -->
+<section class="tab active" id="calendar">
+  <h2>What's posting, and when you collab</h2>
+  <p class="lede">Three posts a week on Zada Real Estate Group, Monday / Wednesday / Friday at 8:30 am. Rows marked Collab land on your own grid too: you'll get an Instagram collaborator invite that morning, and your whole job is to accept it. Everything else, share to your Story when you see it.</p>
+  <table>
+    <tr><th style="width:120px">Date</th><th style="width:105px">Type</th><th style="width:120px">Page</th><th>Post</th></tr>
+    <tr class="weekrow"><td colspan="4">Week 1 · July 20 to 24 · Warm-up</td></tr>
+    <tr><td>Wed Jul 22</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>26 Birchwood Crescent, record #1 &nbsp;<span class="pill collab">Collab</span></td></tr>
+    <tr><td>Fri Jul 24</td><td><span class="pill blog">Blog</span></td><td><span class="pill zada">Zada Group</span></td><td>Blog promo: the data behind two street records</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 2 · July 27 to 31 · SSMUH launch week</td></tr>
+    <tr><td>Mon Jul 27</td><td><span class="pill reel">Reel</span></td><td><span class="pill both">Both pages</span></td><td>Teaser reel: "Quietly under way in Port Moody" &nbsp;<span class="pill collab">Collab</span></td></tr>
+    <tr><td>Wed Jul 29</td><td><span class="pill launch">Launch</span></td><td><span class="pill both">Both pages</span></td><td>The announcement carousel: new SSMUH practice, 20+ homes &nbsp;<span class="pill collab">Collab</span></td></tr>
+    <tr><td>Fri Jul 31</td><td><span class="pill launch">Launch</span></td><td><span class="pill both">Both pages</span></td><td>Follow-up: seminar invite + what happens next</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 3 · August 3 to 7</td></tr>
+    <tr><td>Mon Aug 3</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>Birchwood Crescent, record #2, same street &nbsp;<span class="pill collab">Collab</span></td></tr>
+    <tr><td>Wed Aug 5</td><td><span class="pill listed">Listing</span></td><td><span class="pill zada">Zada Group</span></td><td>218 Seaview Drive, Port Moody · $2,098,000</td></tr>
+    <tr><td>Fri Aug 7</td><td><span class="pill blog">Blog</span></td><td><span class="pill pmm">PMM + Zada</span></td><td>Blog promo: What is SSMUH, plain-language guide</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 4 · August 10 to 14</td></tr>
+    <tr><td>Mon Aug 10</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>1006 Westmount Drive · $363,000 below asking</td></tr>
+    <tr><td>Wed Aug 12</td><td><span class="pill listed">Listing</span></td><td><span class="pill zada">Zada Group</span></td><td>613-721 Anskar Court, Coquitlam · $788,000</td></tr>
+    <tr><td>Fri Aug 14</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>940 Ioco Road · $53,300 below asking</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 5 · August 17 to 21</td></tr>
+    <tr><td>Mon Aug 17</td><td><span class="pill reel">Reel</span></td><td><span class="pill pmm">PMM</span></td><td>Higgsfield reel: one lot, four homes</td></tr>
+    <tr><td>Wed Aug 19</td><td><span class="pill listed">Listing</span></td><td><span class="pill zada">Zada Group</span></td><td>451 E Eighth Avenue, New West · $1,198,000</td></tr>
+    <tr><td>Fri Aug 21</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>201-1210 Pacific Street · $178,000 return in 6 months</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 6 · August 24 to 28</td></tr>
+    <tr><td>Mon Aug 24</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>3143 Robinson Road, North Van · $44,800 below asking</td></tr>
+    <tr><td>Wed Aug 26</td><td><span class="pill listed">Listing</span></td><td><span class="pill zada">Zada Group</span></td><td>119-4363 Halifax Street, Burnaby · $499,000</td></tr>
+    <tr><td>Fri Aug 28</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>111-22275 123 Avenue, Maple Ridge · $97,500 return</td></tr>
+    <tr class="weekrow"><td colspan="4">Week 7 · August 31 · Backlog cleared</td></tr>
+    <tr><td>Mon Aug 31</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>10-1950 Salton Road, Abbotsford · $261,000 return</td></tr>
+    <tr class="weekrow"><td colspan="4">Weeks 8 to 10 · September · myRealPage solds</td></tr>
+    <tr><td>Wed Sep 2</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>317 Gloucester Court, Coquitlam East</td></tr>
+    <tr><td>Fri Sep 4</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>1241 Nestor Street, New Horizons</td></tr>
+    <tr><td>Mon Sep 7</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>29 19141 124 Avenue, Pitt Meadows</td></tr>
+    <tr><td>Wed Sep 9</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>24 19141 124 Avenue, same complex</td></tr>
+    <tr><td>Fri Sep 11</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>211 500 Royal Avenue, Downtown New West</td></tr>
+    <tr><td>Mon Sep 14</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>304 425 Ash Street, Uptown New West</td></tr>
+    <tr><td>Wed Sep 16</td><td><span class="pill sold">Sold</span></td><td><span class="pill zada">Zada Group</span></td><td>13 10151 240 Street, Albion, Maple Ridge</td></tr>
+  </table>
+  <div class="note"><strong>Collab posts:</strong> rows marked Collab get posted from the Instagram app (not scheduled) so collaborators can be invited: Dawar, Randy, Liz, and the PMM page for launch content. Business Suite cannot schedule collab invites, so the assistant posts these manually at 8:30 and invites the team. Everything else stays scheduled.</div>
+  <div class="note"><strong>How to use this:</strong> once the Zada Group page is connected (see Meta Setup tab), open Meta Business Suite → Planner, and schedule each post on its date with the caption copied from this hub. Cross-post FB + Instagram in one step. One sitting of about an hour loads all 18 posts, then nobody thinks about it again until September.</div>
+</section>
+
+<!-- ============ JUST LISTED ============ -->
+<section class="tab" id="justlisted">
+  <h2>Just Listed, ready to post</h2>
+  <p class="lede">Every current listing, pulled live from our feed. Each one comes with the graphic (main photo, badge top left) and a caption built from the listing description. Download the graphic, copy the caption, post. When a new listing goes live, it shows up here on its own.</p>
+  <div id="jl-grid"><div class="note">Listings load when this page is viewed at zadagroup.ca/team.</div></div>
+</section>
+
+<!-- ============ SOLD POSTS ============ -->
+<section class="tab" id="sold">
+  <h2>Sold posts</h2>
+  <p class="lede">Every sold from the feed, already made into a graphic. Grab the one you need, then use the caption builder below: drop in the little details that made the deal (days on market, over asking, the story) and it fills the caption in our voice.</p>
+  <div id="sold-grid"><div class="note">Sold graphics load when this page is viewed at zadagroup.ca/team.</div></div>
+
+  <h2>Caption builder</h2>
+  <div class="card">
+    <div id="live-picker" style="display:none;">
+      <div class="label">Pick from the live feed (auto-fills everything)</div>
+      <select id="g-pick" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';"><option value="">Loading listings...</option></select>
+    </div>
+    <div class="grid2">
+      <div>
+        <div class="label">Template</div>
+        <select id="g-type" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+          <option value="sold">Just Sold (listing side)</option>
+          <option value="bought">Just Bought (buyer side)</option>
+          <option value="listed">Just Listed</option>
+        </select>
+        <div class="label">Agent</div>
+        <select id="g-agent" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+          <option>Dawar Zada PREC</option><option>Randy Quach</option><option>Liz Murphy</option>
+        </select>
+        <div class="label">Address</div>
+        <input id="g-addr" placeholder="613-721 Anskar Court" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <div class="label">Neighbourhood, City</div>
+        <input id="g-hood" placeholder="Coquitlam West, Coquitlam" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <div class="label">Price (as shown, e.g. $788,000)</div>
+        <input id="g-price" placeholder="$788,000" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+      </div>
+      <div>
+        <div class="label">Beds / Baths / Sqft</div>
+        <input id="g-specs" placeholder="2 beds, 2 baths, 925 square feet" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <div class="label">The little info blob that matters</div>
+        <input id="g-hook" placeholder="e.g. Sold in 6 days with multiple offers" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <div class="label">Below asking amount (bought only, optional)</div>
+        <input id="g-below" placeholder="$53,300" style="width:100%;padding:8px;border:1px solid var(--line);border-radius:5px;font-family:'DM Sans';">
+        <button id="g-go" style="margin-top:18px;width:100%;padding:12px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:14px;letter-spacing:.06em;cursor:pointer;">Generate caption</button>
+      </div>
+    </div>
+    <div class="label">Caption</div>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre id="g-out">Pick a listing above or fill the fields, then generate.</pre></div>
+    <div id="graphic-panel" style="display:none;">
+      <div class="label">Graphic</div>
+      <div style="display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap;">
+        <img id="g-preview" style="width:300px;border:1px solid var(--line);border-radius:6px;" alt="Post graphic preview">
+        <div><button id="g-download" style="padding:11px 20px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:13px;letter-spacing:.06em;cursor:pointer;">Download PNG</button></div>
+      </div>
+      <canvas id="g-canvas" width="1080" height="1080" style="display:none;"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEMPLATES ============ -->
+<section class="tab" id="templates">
+  <h2>Just Listed / Just Sold, on demand</h2>
+  <p class="lede">These are the fill-in-the-blank versions the whole team can use. The workflow: whoever has the deal drops the listing sheet (or just the address, price, and one detail worth mentioning) into the shared Dropbox folder or straight into a Claude session, says "just listed" or "just sold," and gets the finished caption back. Nobody writes from scratch again.</p>
+
+  <div class="card">
+    <h3>Just Listed template</h3>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre>On the market. [ADDRESS], [NEIGHBOURHOOD], [CITY].
+
+[BEDS] beds, [BATHS] baths, [SQFT] square feet. [ONE LINE ON THE HOME'S BEST FEATURE, WRITTEN LIKE YOU'D SAY IT TO A FRIEND.]
+
+[ONE LINE ON THE NEIGHBOURHOOD: what's walkable, what locals know.]
+
+$[PRICE]. Full details at zadagroup.ca or on REW.[ IF OPEN HOUSE: Open house [DAY] [TIME].]
+
+[AGENT NAME] · Zada Group · Stonehaus Realty Corp
+
+#[city] #[neighbourhood] #zadagroup #forsale #tricitiesrealestate #metrovancouver</pre></div>
+  </div>
+
+  <div class="card">
+    <h3>Just Sold template (listing side)</h3>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre>Sold. [ADDRESS], [NEIGHBOURHOOD], [CITY].
+
+[THE ONE NUMBER OR FACT THAT MATTERS: days on market, over asking, a record, multiple offers. One sentence.]
+
+[OPTIONAL SECOND BEAT: what made it work, one sentence, no adjectives.]
+
+Congratulations to our sellers on the next chapter.
+
+[AGENT NAME] · Zada Group · Stonehaus Realty Corp
+
+#justsold #[city] #[neighbourhood] #zadagroup #tricitiesrealestate</pre></div>
+  </div>
+
+  <div class="card">
+    <h3>Just Bought template (buyer side)</h3>
+    <div class="copyblock"><button class="copybtn">Copy</button><pre>Bought. [ADDRESS], [NEIGHBOURHOOD], [CITY].
+
+Secured for our buyers at $[PRICE][ IF BELOW ASKING: , which is $[AMOUNT] below asking].
+
+[ONE LINE ON THE STORY: the negotiation, the timing, the thing that almost didn't happen.]
+
+Welcome home to our clients.
+
+[AGENT NAME] · Zada Group · Stonehaus Realty Corp
+
+#[city] #zadagroup #buyersagent #tricitiesrealestate #metrovancouver</pre></div>
+  </div>
+
+  <div class="note">
+    <strong>Template rules, so every post sounds like us:</strong> numbers over adjectives, always. No "stunning," "dream home," "must-see," "luxurious," or "act now." No em dashes. Canadian spelling. One exclamation mark maximum, and only on celebration posts. Hashtags lowercase. Every post names the agent, Zada Group, and Stonehaus Realty Corp.
+  </div>
+
+  <div class="card">
+    <h3>The Dropbox trigger, phased honestly</h3>
+    <p style="font-size:14px;margin-bottom:10px;"><strong>Phase 1 (works today):</strong> the team drops a listing sheet or MLS data sheet into the Dropbox folder, then whoever's posting opens a Claude session, attaches it, and says "just listed" or "just sold." The templates above plus your voice rules produce the finished caption in one pass. Total human effort: one drag, two words.</p>
+    <p style="font-size:14px;margin-bottom:10px;"><strong>Phase 2 (worth building once posting is habitual):</strong> a Make.com or Zapier scenario watches two Dropbox folders, "01 Just Listed" and "02 Just Sold." A new file triggers a draft: the automation reads the sheet, fills the template, and creates a scheduled draft in Meta Business Suite via the Facebook Pages connection. You approve drafts in the Planner rather than writing anything.</p>
+    <p style="font-size:14px;"><strong>My suggestion:</strong> run Phase 1 for a month. If the team actually uses the folders, Phase 2 is a one-afternoon build and I can spec the whole scenario with you.</p>
+  </div>
+</section>
+
+<!-- ============ PRINT MATERIALS ============ -->
+<section class="tab" id="print">
+  <h2>Print materials</h2>
+  <div class="note"><strong>Need more printed?</strong> Westwood Printing has all our files on hand. Email <strong>sales@westwoodprinting.com</strong> with the subject <strong>Zada Group | what you need | your name</strong> and say how many. They print, charge the Zada account, and you pick up directly. No need to ever wait for Sheri.</div>
+  <p class="lede">Current versions of everything, for reference and download. Cards and the postcard are print-ready PDFs with bleed; signs and riders are final size.</p>
+  <div class="grid2" id="print-grid">
+    <div class="card"><h3>For Sale sign · 36 x 24</h3><img src="print/previews/sign-for-sale.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/sign-for-sale.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Rider · Sold · 24 x 6</h3><img src="print/previews/rider-sold.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/rider-sold.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Rider · Just Listed · 24 x 6</h3><img src="print/previews/rider-just-listed.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/rider-just-listed.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Rider · Open House · 24 x 6</h3><img src="print/previews/rider-open-house.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/rider-open-house.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Rider · Coming Soon · 24 x 6</h3><img src="print/previews/rider-coming-soon.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/rider-coming-soon.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Rider · Multiplex Potential · 24 x 6</h3><img src="print/previews/rider-multiplex.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/rider-multiplex.pdf" download style="color:var(--gold);font-weight:700;">Download PDF</a></p></div>
+    <div class="card"><h3>Business card · Liz Murphy</h3><img src="print/previews/card-liz-p2.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/card-liz.pdf" download style="color:var(--gold);font-weight:700;">Download PDF (front + back)</a></p></div>
+    <div class="card"><h3>Business card · Randy Quach</h3><img src="print/previews/card-randy-p2.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/card-randy.pdf" download style="color:var(--gold);font-weight:700;">Download PDF (front + back)</a></p></div>
+    <div class="card"><h3>Multiplex door-knock postcard · 7 x 5</h3><img src="print/previews/postcard-multiplex-p1.png" style="width:100%;border:1px solid var(--line);border-radius:6px;"><p style="margin-top:10px;"><a href="print/postcard-multiplex.pdf" download style="color:var(--gold);font-weight:700;">Download PDF (front + back)</a></p></div>
+  </div>
+</section>
+
+</main>
+
+<div class="toast" id="toast">Copied</div>
+<script>
+document.querySelectorAll('nav button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('section.tab').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('active');
+    window.scrollTo({top:0});
+  });
+});
+function wireCopy(scope){
+  (scope||document).querySelectorAll('.copybtn').forEach(btn=>{
+    if(btn.dataset.wired)return;btn.dataset.wired=1;
+    btn.addEventListener('click',()=>{
+      const txt=btn.parentElement.querySelector('pre').innerText;
+      navigator.clipboard.writeText(txt).then(()=>{
+        const t=document.getElementById('toast');
+        t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1200);
+      });
+    });
+  });
+}
+wireCopy();
+const SIG='Zada Group · Stonehaus Realty Corp';
+const CITY_TAGS={"port moody":"#portmoody","coquitlam":"#coquitlam","burnaby":"#burnaby","new westminster":"#newwestminster","maple ridge":"#mapleridge","pitt meadows":"#pittmeadows","north vancouver":"#northvancouver","abbotsford":"#abbotsford"};
+const cityTag=c=>CITY_TAGS[(c||'').toLowerCase()]||'#metrovancouver';
+
+async function graphicURL(l,label){
+  const r=await fetch('/.netlify/functions/listings?img='+encodeURIComponent(l.photo));
+  if(!r.ok)throw 0;
+  const bmp=await createImageBitmap(await r.blob());
+  const c=document.createElement('canvas');c.width=1080;c.height=1080;
+  const x=c.getContext('2d');
+  const s=Math.min(bmp.width,bmp.height);
+  x.imageSmoothingQuality='high';
+  x.drawImage(bmp,(bmp.width-s)/2,(bmp.height-s)/2,s,s,0,0,1080,1080);
+  x.font='500 30px "DM Sans", sans-serif';
+  if('letterSpacing' in x)x.letterSpacing='7px';
+  const tw=x.measureText(label).width;
+  const padX=30,padY=19,bx=48,by=48,bw=tw+padX*2,bh=30+padY*2;
+  if(label==='JUST SOLD'||label==='JUST BOUGHT'){
+    x.fillStyle='#9F8163';x.fillRect(bx,by,bw,bh);x.fillStyle='#041A10';
+  }else{
+    x.fillStyle='rgba(10,10,10,0.85)';x.fillRect(bx,by,bw,bh);
+    x.strokeStyle='rgba(159,129,99,0.4)';x.lineWidth=2;x.strokeRect(bx+1,by+1,bw-2,bh-2);
+    x.fillStyle='#9F8163';
+  }
+  x.textBaseline='middle';x.fillText(label,bx+padX,by+bh/2+2);
+  return c.toDataURL('image/png');
+}
+function dl(url,name){const a=document.createElement('a');a.download=name;a.href=url;a.click();}
+
+let LIVE=[];
+fetch('/.netlify/functions/listings').then(r=>r.ok?r.json():Promise.reject()).then(async d=>{
+  LIVE=d.listings||[];
+  if(!LIVE.length)return;
+  // picker
+  const sel=document.getElementById('g-pick');
+  sel.innerHTML='<option value="">Choose a listing...</option>'+LIVE.map((l,i)=>`<option value="${i}">${l.status==='SOLD'?'SOLD':'ACTIVE'} · ${l.addr}, ${l.city} · ${l.price}</option>`).join('');
+  document.getElementById('live-picker').style.display='block';
+  sel.addEventListener('change',()=>{
+    const l=LIVE[sel.value]; if(!l)return;
+    document.getElementById('g-addr').value=l.addr;
+    document.getElementById('g-hood').value=(l.subarea?l.subarea+', ':'')+l.city;
+    document.getElementById('g-price').value=l.price;
+    document.getElementById('g-specs').value=`${l.beds} beds, ${l.baths} baths, ${l.sqft}`.replace(' sq. ft.',' square feet');
+    document.getElementById('g-type').value=l.status==='SOLD'?'sold':'listed';
+    updateGenGraphic(l);
+  });
+  // Just Listed grid
+  const actives=LIVE.filter(l=>l.status==='ACTIVE');
+  const jl=document.getElementById('jl-grid');jl.innerHTML='';
+  for(const l of actives){
+    const cap=`On the market. ${l.addr}, ${l.subarea?l.subarea+', ':''}${l.city}.\n\n${(l.description||'').trim()}\n\n${l.price}. Full details at zadagroup.ca or on REW.\n\nDawar Zada PREC · ${SIG}\n\n${cityTag(l.city)} #zadagroup #forsale #tricitiesrealestate #metrovancouver`.replace(/\n{3,}/g,'\n\n');
+    const card=document.createElement('div');card.className='card';
+    card.innerHTML=`<div class="meta"><span class="pill listed">Just Listed</span><span class="slug">${l.addr} · ${l.city} · ${l.price}</span></div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:flex-start;">
+        <div style="flex:0 0 260px;"><img style="width:260px;border:1px solid var(--line);border-radius:6px;" alt="${l.addr}"><p style="margin-top:8px;"><button class="dlbtn" style="padding:9px 16px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:12px;letter-spacing:.05em;cursor:pointer;">Download graphic</button></p></div>
+        <div style="flex:1;min-width:280px;"><div class="copyblock"><button class="copybtn">Copy</button><pre></pre></div></div>
+      </div>`;
+    card.querySelector('pre').innerText=cap;
+    jl.appendChild(card);
+    graphicURL(l,'JUST LISTED').then(u=>{card.querySelector('img').src=u;card.querySelector('.dlbtn').onclick=()=>dl(u,l.addr.replace(/\s+/g,'-').toLowerCase()+'-just-listed.png');}).catch(()=>{});
+  }
+  wireCopy(jl);
+  // Sold grid
+  const solds=LIVE.filter(l=>l.status==='SOLD');
+  const sg=document.getElementById('sold-grid');sg.innerHTML='<div class="grid2"></div>';
+  const inner=sg.firstChild;
+  for(const l of solds){
+    const card=document.createElement('div');card.className='card';
+    card.innerHTML=`<div class="meta"><span class="pill sold">Sold</span><span class="slug">${l.addr} · ${l.city}</span></div>
+      <img style="width:100%;border:1px solid var(--line);border-radius:6px;" alt="${l.addr}">
+      <p style="margin-top:10px;"><button class="dlbtn" style="padding:9px 16px;background:var(--green);color:var(--cream);border:none;border-radius:5px;font-family:'DM Sans';font-size:12px;letter-spacing:.05em;cursor:pointer;">Download graphic</button></p>`;
+    inner.appendChild(card);
+    graphicURL(l,'JUST SOLD').then(u=>{card.querySelector('img').src=u;card.querySelector('.dlbtn').onclick=()=>dl(u,l.addr.replace(/\s+/g,'-').toLowerCase()+'-just-sold.png');}).catch(()=>{});
+  }
+}).catch(()=>{});
+
+async function updateGenGraphic(l){
+  if(!l||!l.photo){document.getElementById('graphic-panel').style.display='none';return;}
+  const t=document.getElementById('g-type').value;
+  const label=t==='sold'?'JUST SOLD':(t==='bought'?'JUST BOUGHT':'JUST LISTED');
+  try{
+    const u=await graphicURL(l,label);
+    document.getElementById('g-preview').src=u;
+    document.getElementById('graphic-panel').style.display='block';
+    document.getElementById('g-download').onclick=()=>dl(u,l.addr.replace(/\s+/g,'-').toLowerCase()+'-'+label.toLowerCase().replace(' ','-')+'.png');
+  }catch(e){document.getElementById('graphic-panel').style.display='none';}
+}
+
+document.getElementById('g-go').addEventListener('click',()=>{
+  const t=document.getElementById('g-type').value;
+  const agent=document.getElementById('g-agent').value;
+  const addr=document.getElementById('g-addr').value.trim();
+  const hood=document.getElementById('g-hood').value.trim();
+  const price=document.getElementById('g-price').value.trim();
+  const specs=document.getElementById('g-specs').value.trim();
+  const hook=document.getElementById('g-hook').value.trim();
+  const below=document.getElementById('g-below').value.trim();
+  const city=(hood.split(',').pop()||'').trim();
+  const ct=cityTag(city);
+  const sig=`${agent} · ${SIG}`;
+  let out='';
+  if(t==='listed'){
+    out=`On the market. ${addr}, ${hood}.\n\n${specs?specs+'. ':''}${hook?hook+'.':''}\n\n${price}. Full details at zadagroup.ca or on REW.\n\n${sig}\n\n${ct} #zadagroup #forsale #tricitiesrealestate #metrovancouver`;
+  }else if(t==='sold'){
+    out=`Sold. ${addr}, ${hood}.\n\n${hook?hook+'.':''}${!hook&&specs?specs+'.':''}\n\nCongratulations to our clients on the next chapter.\n\n${sig}\n\n#justsold ${ct} #zadagroup #tricitiesrealestate`;
+  }else{
+    out=`Bought. ${addr}, ${hood}.\n\nSecured for our buyers at ${price}${below?', which is '+below+' below asking':''}.\n\n${hook?hook+'.':''}\n\nWelcome home to our clients.\n\n${sig}\n\n${ct} #zadagroup #buyersagent #tricitiesrealestate #metrovancouver`;
+  }
+  document.getElementById('g-out').innerText=out.replace(/\n{3,}/g,'\n\n');
+  const sel=document.getElementById('g-pick');
+  if(LIVE.length&&sel&&LIVE[sel.value])updateGenGraphic(LIVE[sel.value]);
+});
+</script>
+</body>
+</html>
