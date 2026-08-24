@@ -98,8 +98,8 @@
   .hero-poster, .hero-media { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
   .hero-media { opacity: 0; transition: opacity 1.4s ease; }
   .hero-media.playing { opacity: 1; }
-  .hero-shade { position: absolute; inset: 0; background:
-    linear-gradient(to bottom, rgba(4,26,16,0.28) 0%, rgba(4,26,16,0) 22%, rgba(4,26,16,0) 55%, rgba(4,26,16,0.62) 100%); }
+  .hero-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.18) 22%, rgba(0,0,0,0) 38%); }
+  .hero-shade::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 110px; background: linear-gradient(to bottom, rgba(0,0,0,0.28), rgba(0,0,0,0)); }
   .hero-inner { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 0 var(--gutter); }
   .hero-id { max-width: var(--max); margin: 0 auto; padding-bottom: clamp(2rem, 4vh, 3.5rem); }
   .hero-id h1 { font-size: clamp(2.1rem, 5.6vw, 5rem); line-height: 1; letter-spacing: -0.015em; white-space: nowrap; text-shadow: 0 2px 34px rgba(0,0,0,0.45); }
@@ -185,7 +185,8 @@
   .film .sec-inner { grid-template-columns: var(--rail) minmax(0, 1fr); }
   .film-embed { width: 100%; }
   .film-ratio { position: relative; width: 100%; padding-top: 56.25%; background: #000; }
-  .film-ratio iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .film-ratio iframe, .film-ratio video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .film-ratio video { object-fit: contain; }
   .film-note { text-align: center; font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-on-dark-faint); margin-top: 1.4rem; }
 
   /* Neighbourhood + map */
@@ -404,9 +405,15 @@
     <div>
       <h2 class="sec-title rv">The film.</h2>
       <div class="film-embed rv d1">
-        <!-- Upload the listing film to YouTube (unlisted is fine), then replace VIDEO_ID_HERE below with the id from the video URL (youtube.com/watch?v=THIS_PART) -->
+        <!-- To switch to YouTube: upload the film (unlisted is fine), then delete the <video> block below,
+             uncomment the iframe, and replace VIDEO_ID_HERE with the id from the video URL (youtube.com/watch?v=THIS_PART) -->
         <div class="film-ratio">
+          <video controls playsinline preload="metadata" poster="video/hero-poster-portrait.jpg">
+            <source src="video/film.mp4" type="video/mp4">
+          </video>
+          <!--
           <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID_HERE?rel=0&modestbranding=1" title="158 West 14th Avenue property film" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          -->
         </div>
         <p class="film-note rv">Filmed at 158 West 14th Avenue by Valley Creative Media</p>
       </div>
