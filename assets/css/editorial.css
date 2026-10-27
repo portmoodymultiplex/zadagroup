@@ -348,8 +348,13 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pp-portrait span { font-family: var(--serif); font-size: 5.5rem; color: var(--gold); letter-spacing: 0.04em; }
 .pp-portrait img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .pp-hero h1 { font-size: clamp(3rem, 7vw, 5.4rem); line-height: 1; margin: 0.2rem 0 1.4rem; }
+.pp-hero__grid { align-items: start; }
+.pp-portrait { margin-top: 8px; }
 .pp-hero .eyebrow { margin-left: 0; }
-.pmr .pp-lede { font-family: var(--serif); font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.4; color: var(--text); max-width: 30ch; }
+.pmr .pp-kicker { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.6rem); color: var(--gold); margin: 0 0 0.2rem; }
+.pmr .pp-desig { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-soft); margin: -0.4rem 0 1.8rem; }
+.pmr .pp-lede { font-family: var(--serif); font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.35; color: var(--text); max-width: 32ch; margin-bottom: 1rem; }
+.pmr .pp-sub { max-width: 52ch; }
 
 .pp-creds { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--panel); }
 .pp-creds > div { padding: 34px 24px 30px; text-align: center; position: relative; }
@@ -411,4 +416,16 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   .pp-life__row img { height: 200px; }
   .pp-life__shade { background: linear-gradient(180deg, rgba(11,12,14,0.2) 0%, rgba(11,12,14,0.35) 180px, rgba(11,12,14,0.92) 360px, #0b0c0e 440px); }
   .pmr .pp-life__inner { padding-top: 300px; padding-bottom: 80px; }
+}
+
+/* ---------- Credentials list ---------- */
+.pp-cv { border: 1px solid var(--line); background: var(--panel); padding: 40px 44px 36px; }
+.pp-cv .eyebrow { margin-left: 0; }
+.pp-cv ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.pp-cv li { position: relative; padding: 18px 0 18px 26px; border-top: 1px solid var(--line); font-size: 0.98rem; line-height: 1.7; color: var(--text-soft); }
+.pp-cv li::before { content: ''; position: absolute; left: 0; top: 30px; width: 12px; height: 1px; background: var(--gold); }
+.pp-cv li b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--text); margin-bottom: 2px; }
+@media (max-width: 860px) {
+  .pp-cv { padding: 28px 20px 20px; }
+  .pp-cv ul { grid-template-columns: 1fr; }
 }
