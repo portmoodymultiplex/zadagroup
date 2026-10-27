@@ -424,7 +424,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pp-cv ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
 .pp-cv li { padding: 22px 0 24px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; }
 .pp-cv li b { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; line-height: 1.2; color: var(--text); text-wrap: balance; }
-.pp-cv li span { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; line-height: 1.7; color: var(--gold); }
+.pp-cv li span { font-size: 0.92rem; line-height: 1.55; color: var(--gold); }
 @media (max-width: 960px) { .pp-cv ul { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 600px) {
   .pp-cv { padding: 26px 20px 4px; }
