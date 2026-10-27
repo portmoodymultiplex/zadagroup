@@ -439,3 +439,12 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pp-hero h1 { margin-bottom: 0.5rem; }
 .pmr .pp-kicker { margin: 0 0 0.9rem; }
 .pmr .pp-desig { margin: 0 0 1.8rem; }
+
+/* Clickable pull quote */
+.pp-quote-link { display: block; text-decoration: none; color: inherit; }
+.pmr .pp-quote-by { text-align: center; margin-top: 1.4rem; font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+.pmr .pp-quote-by span { display: inline-block; margin-left: 14px; letter-spacing: 0.14em; text-transform: none; font-size: 0.85rem; color: var(--text-soft); border-bottom: 1px solid rgba(168,140,108,0.45); transition: color .2s; }
+.pp-quote-link:hover .pp-quote { color: var(--gold-bright); }
+.pp-quote-link:hover .pp-quote-by span, .pp-quote-link:focus-visible .pp-quote-by span { color: var(--gold); }
+.pp-quote-link:focus-visible { outline: 1px solid var(--gold); outline-offset: 12px; }
+.pmr .pp-quote { transition: color .25s; }
