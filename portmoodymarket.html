@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Port Moody Market Report, October 2026 | Zada Group</title>
+<link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+<meta name="description" content="Port Moody detached prices are down 8.4% in a year, listings are up, and both City Hall and Victoria just changed hands. What it means if you have been waiting to upsize." />
+<link rel="canonical" href="https://zadagroup.ca/portmoodymarket" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The move-up window is open. Port Moody Market Report | Zada Group" />
+<meta property="og:description" content="The real numbers on Port Moody prices and listings, plus what the new council and new provincial government mean for buyers." />
+<meta property="og:url" content="https://zadagroup.ca/portmoodymarket" />
+<meta property="og:image" content="https://zadagroup.ca/assets/images/pm-market-inlet.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/tokens.css" />
+<link rel="stylesheet" href="/assets/css/base.css" />
+<link rel="stylesheet" href="/assets/css/components.css" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+<style>
+/* ==========================================================================
+   Port Moody Market Report (page-scoped). Matches the Oct 2026 FB ad:
+   near-black, warm gold, Cormorant headlines with gold italic accents,
+   wide-tracked Sweet Sans caps.
+   ========================================================================== */
+.pmr {
+  --ink: #0b0c0e;
+  --ink-2: #111316;
+  --panel: #07080a;
+  --gold: #a88c6c;
+  --gold-bright: #c2a582;
+  --line: rgba(232, 229, 226, 0.12);
+  --text: #ece8e2;
+  --text-soft: rgba(236, 232, 226, 0.72);
+  --text-faint: rgba(236, 232, 226, 0.48);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Sweet Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--sans);
+}
+body.pmr-body { background: #0b0c0e; }
+body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
+
+.pmr * { box-sizing: border-box; }
+.pmr .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.pmr .narrow { max-width: 720px; margin: 0 auto; }
+
+.pmr .eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  max-width: none;
+  margin: 0 auto 1.2rem;
+}
+.pmr h1, .pmr h2, .pmr h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: -0.005em;
+  margin: 0;
+}
+.pmr h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.1; margin-bottom: 1.4rem; }
+.pmr h3 { font-size: 1.6rem; line-height: 1.2; margin-bottom: 0.6rem; }
+.pmr em, .pmr .gold { font-style: italic; color: var(--gold); }
+.pmr p { max-width: none; color: var(--text-soft); font-size: 1.06rem; line-height: 1.75; margin: 0 0 1.1rem; }
+.pmr p strong { color: var(--text); font-weight: 500; }
+.pmr .rule { width: 180px; height: 1px; background: var(--gold); opacity: 0.6; margin: 1.6rem auto; border: 0; }
+
+/* ---------- Hero ---------- */
+.pmr-hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  background: linear-gradient(180deg, #0b0c0e 0%, #0d0f12 45%, #0b0c0e 100%);
+  overflow: hidden;
+  padding: 170px 0 0;
+}
+.pmr-hero__photo {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 62%;
+  background: url('/assets/images/pm-market-inlet.jpg') center 40% / cover no-repeat;
+}
+.pmr-hero__photo::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, #0b0c0e 0%, rgba(11,12,14,0.35) 30%, rgba(11,12,14,0.25) 60%, #0b0c0e 100%);
+}
+.pmr-hero__inner { position: relative; z-index: 2; }
+.pmr-hero h1 {
+  font-size: clamp(2.6rem, 6.4vw, 5rem);
+  line-height: 1.05;
+}
+.pmr-hero .sub {
+  font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase;
+  color: var(--text-soft); margin: 0 auto; max-width: 52ch; line-height: 1.9;
+}
+.pmr-hero .scroll {
+  display: none;
+  position: absolute; z-index: 2; bottom: 34px; left: 50%; transform: translateX(-50%);
+  font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--text);
+  text-decoration: none; opacity: 0.85;
+}
+.pmr-hero .scroll::after { content: ''; display: block; width: 1px; height: 34px; background: var(--gold); margin: 12px auto 0; }
+
+/* ---------- Stat panel (mirrors the ad) ---------- */
+.pmr-panel {
+  position: relative; z-index: 3;
+  margin: -90px auto 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  max-width: 980px;
+}
+.pmr-panel__grid { display: grid; grid-template-columns: 1fr 1fr; }
+.pmr-stat { padding: 44px 24px 38px; text-align: center; position: relative; }
+.pmr-stat:nth-child(odd)::after {
+  content: ''; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: var(--line);
+}
+.pmr-stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+.pmr-stat .num { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; color: var(--text); }
+.pmr-stat .lbl {
+  margin-top: 18px; font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; line-height: 1.9;
+  color: var(--text-soft);
+}
+.pmr-stat .lbl.gold { font-style: normal; color: var(--gold); }
+.pmr-panel__foot {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line); margin: 0 40px; padding: 26px 0 30px;
+}
+.pmr-panel__foot div { text-align: center; font-size: 0.88rem; line-height: 1.6; color: var(--text-soft); padding: 0 10px; }
+.pmr-panel__foot div + div { border-left: 1px solid var(--line); }
+.pmr .pmr-panel__src { text-align: center; font-size: 0.75rem; color: var(--text-faint); padding: 0 24px 22px; margin: 0; }
+
+/* ---------- Sections ---------- */
+.pmr-sec { padding: 120px 0; border-top: 1px solid var(--line); }
+.pmr-sec.first { border-top: 0; padding-top: 110px; }
+.pmr-sec.alt { background: var(--ink-2); }
+.pmr-head { text-align: center; margin-bottom: 3rem; }
+.pmr-head p { max-width: 640px; margin-left: auto; margin-right: auto; }
+
+.pmr-short { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.pmr-short > div { background: var(--ink); padding: 36px 30px; }
+.pmr-short .n { font-family: var(--serif); color: var(--gold); font-size: 1.1rem; font-style: italic; margin-bottom: 0.8rem; }
+.pmr-short p { font-size: 1rem; margin: 0; }
+
+/* Chart card */
+.pmr-chart {
+  background: var(--panel); border: 1px solid var(--line); padding: 28px 28px 22px;
+}
+.pmr-chart__top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.pmr-chart__read { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--text); }
+.pmr-chart__read small { display: block; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-faint); margin-top: 10px; }
+.pmr-chart__box { position: relative; height: 340px; }
+.pmr .pmr-chart__note { font-size: 0.78rem; color: var(--text-faint); margin: 18px 0 0; line-height: 1.6; }
+
+.pmr-tabs { display: inline-flex; border: 1px solid var(--line); }
+.pmr-tabs button {
+  background: transparent; color: var(--text-soft); border: 0; cursor: pointer;
+  font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 11px 16px; min-height: 40px;
+}
+.pmr-tabs button + button { border-left: 1px solid var(--line); }
+.pmr-tabs button[aria-pressed="true"] { background: var(--gold); color: #0b0c0e; }
+.pmr-tabs button:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+
+.pmr-explain { margin-top: 2.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.pmr-define {
+  border-left: 1px solid var(--gold); padding: 4px 0 4px 22px; margin-top: 2rem;
+}
+.pmr-define p { font-size: 0.95rem; margin: 0; }
+.pmr-define b { color: var(--gold); font-weight: 500; letter-spacing: 0.04em; }
+
+/* Upsize gap */
+.pmr-gap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: stretch; }
+.pmr-gap__big { font-family: var(--serif); font-size: clamp(3.4rem, 7vw, 5rem); line-height: 1; color: var(--gold); margin: 0.4rem 0 0.6rem; }
+.pmr-gap__rows { margin-top: 1.6rem; border-top: 1px solid var(--line); }
+.pmr-gap__rows div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--text-soft); }
+.pmr-gap__rows div span:last-child { color: var(--text); font-variant-numeric: tabular-nums; }
+
+.pmr-legend { display: flex; gap: 20px; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-soft); }
+.pmr-legend i { display: inline-block; width: 10px; height: 10px; margin-right: 8px; vertical-align: -1px; }
+
+/* Neighbourhood list */
+.pmr-hoods { display: flex; flex-wrap: wrap; gap: 10px; margin: 1.6rem 0 0; padding: 0; list-style: none; }
+.pmr-hoods li {
+  border: 1px solid var(--line); padding: 9px 16px; font-size: 0.72rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--text-soft);
+}
+
+/* Government */
+.pmr-gov { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.pmr-gov > div { background: var(--ink); padding: 44px 40px; }
+.pmr-gov .facts { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; }
+.pmr-gov .facts li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 0.97rem; line-height: 1.6; color: var(--text-soft); }
+.pmr-gov .facts li:first-child { border-top: 1px solid var(--line); }
+.pmr-gov .facts b { color: var(--text); font-weight: 500; }
+.pmr-gov .read { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.6rem; }
+
+/* Perspective */
+.pmr-take { counter-reset: t; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.pmr-take > div { background: var(--ink-2); padding: 34px 36px 30px 96px; position: relative; }
+.pmr-take > div::before {
+  counter-increment: t; content: counter(t, decimal-leading-zero);
+  position: absolute; left: 34px; top: 30px; font-family: var(--serif); font-style: italic; font-size: 1.8rem; color: var(--gold);
+}
+.pmr-take h3 { font-size: 1.5rem; }
+.pmr-take p { margin: 0; font-size: 1rem; }
+
+/* Forms */
+.pmr-sign {
+  position: relative; text-align: center; overflow: hidden;
+  background: #0b0c0e;
+}
+.pmr-sign__photo { position: absolute; inset: 0; background: url('/assets/images/pm-market-inlet.jpg') center 60% / cover no-repeat; opacity: 0.32; }
+.pmr-sign__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #0b0c0e 0%, rgba(11,12,14,0.55) 50%, #0b0c0e 100%); }
+.pmr-sign .wrap { position: relative; z-index: 2; }
+.pmr-form { max-width: 560px; margin: 2.2rem auto 0; text-align: left; }
+.pmr-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.pmr-form label { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-soft); margin: 0 0 8px; }
+.pmr-form .field { margin-bottom: 16px; }
+.pmr-form input, .pmr-form select, .pmr-form textarea {
+  width: 100%; background: rgba(7, 8, 10, 0.75); border: 1px solid rgba(232,229,226,0.22); color: var(--text);
+  font-family: var(--sans); font-size: 1rem; padding: 14px 14px; border-radius: 0; min-height: 48px;
+  -webkit-appearance: none; appearance: none;
+}
+.pmr-form select { background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
+.pmr-form textarea { min-height: 120px; resize: vertical; }
+.pmr-form input:focus, .pmr-form select:focus, .pmr-form textarea:focus { outline: none; border-color: var(--gold); }
+.pmr-form .hp { position: absolute; left: -9999px; }
+.pmr-btn {
+  display: inline-block; width: 100%; margin-top: 6px; background: var(--gold); color: #0b0c0e; border: 0; cursor: pointer;
+  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;
+  padding: 18px 20px; min-height: 52px; transition: background 0.25s ease;
+}
+.pmr-btn:hover, .pmr-btn:focus-visible { background: var(--gold-bright); }
+.pmr-btn[disabled] { opacity: 0.6; cursor: wait; }
+.pmr .pmr-fine { font-size: 0.78rem; color: var(--text-faint); text-align: center; margin-top: 14px; line-height: 1.6; }
+.pmr .pmr-err { display: none; color: #e4a58f; font-size: 0.9rem; text-align: center; margin-top: 12px; }
+.pmr .pmr-err.show { display: block; }
+
+.pmr-thanks { display: none; max-width: 560px; margin: 2.4rem auto 0; padding: 48px 36px; border: 1px solid var(--line); background: rgba(7,8,10,0.8); }
+.pmr-thanks.show { display: block; }
+.pmr-thanks h3 { font-size: 2.2rem; margin-bottom: 0.8rem; }
+.pmr-thanks p { margin: 0 auto; max-width: 42ch; }
+.is-hidden { display: none !important; }
+
+.pmr-ask { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
+.pmr-ask .pmr-form { margin: 0; max-width: none; }
+.pmr-ask .pmr-thanks { margin: 0; text-align: center; }
+.pmr-ask a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(168,140,108,0.4); }
+
+/* Sources */
+.pmr-sources { padding: 70px 0 90px; border-top: 1px solid var(--line); }
+.pmr-sources ol { margin: 0; padding-left: 1.2rem; color: var(--text-faint); font-size: 0.82rem; line-height: 1.8; columns: 2; column-gap: 48px; }
+.pmr-sources li { break-inside: avoid; margin-bottom: 6px; }
+.pmr-sources a { color: var(--text-soft); text-decoration: none; border-bottom: 1px solid var(--line); word-break: break-word; }
+.pmr .pmr-sources p { font-size: 0.82rem; color: var(--text-faint); }
+
+/* Reveal */
+.pmr .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; }
+.pmr .rv.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .pmr .rv { opacity: 1; transform: none; transition: none; } }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .pmr-sec { padding: 84px 0; }
+  .pmr-short, .pmr-gov, .pmr-gap, .pmr-explain, .pmr-ask { grid-template-columns: 1fr; }
+  .pmr-gov > div { padding: 36px 26px; }
+  .pmr-sources ol { columns: 1; }
+}
+@media (max-width: 600px) {
+  .pmr .wrap { padding: 0 16px; }
+  .pmr-hero { padding-top: 130px; }
+  .pmr-hero .sub { font-size: 0.68rem; letter-spacing: 0.2em; }
+  .pmr-panel { margin-top: -60px; }
+  .pmr-stat { padding: 30px 12px 26px; }
+  .pmr-stat .lbl { font-size: 0.62rem; letter-spacing: 0.18em; }
+  .pmr-panel__foot { grid-template-columns: 1fr; margin: 0 20px; padding: 6px 0 14px; }
+  .pmr-panel__foot div { padding: 14px 0; }
+  .pmr-panel__foot div + div { border-left: 0; border-top: 1px solid var(--line); }
+  .pmr-chart { padding: 20px 16px 16px; }
+  .pmr-chart__box { height: 280px; }
+  .pmr-tabs { width: 100%; }
+  .pmr-tabs button { flex: 1; padding: 11px 6px; letter-spacing: 0.12em; }
+  .pmr-take > div { padding: 30px 22px 26px 22px; }
+  .pmr-take > div::before { position: static; display: block; margin-bottom: 8px; }
+  .pmr-form .row { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The move-up window is open: Port Moody Market Report, October 2026",
+  "datePublished": "2026-10-26",
+  "author": { "@type": "Organization", "name": "Zada Group" },
+  "publisher": { "@id": "https://zadagroup.ca/#organization" },
+  "about": { "@type": "City", "name": "Port Moody" },
+  "mainEntityOfPage": "https://zadagroup.ca/portmoodymarket"
+}
+</script>
+</head>
+<body class="pmr-body">
+
+<nav class="nav">
+  <a class='nav-logo' href='/'><img src="/assets/images/logo-white.png" alt="Zada Group" /></a>
+  <button class="nav-toggle" aria-label="Menu">☰</button>
+  <ul class="nav-menu">
+    <li><a href='/buyers'>For Buyers</a></li>
+    <li><a href='/sellers'>For Sellers</a></li>
+    <li><a href='/sales'>Sales</a></li>
+    <li class="has-dropdown"><a href='/ssmuh'>Resources</a>
+      <ul class="dropdown">
+        <li><a href='/portmoodymarket'>Port Moody Market Report</a></li>
+        <li><a href='/port-moody-real-estate'>Port Moody Real Estate</a></li>
+        <li><a href='/ssmuh'>SSMUH</a></li>
+        <li><a href='/port-moody'>Port Moody Multiplex</a></li>
+        <li><a href='/blog/'>Blog</a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown"><a href='/about/zada-group'>About</a>
+      <ul class="dropdown">
+        <li><a href='/about/zada-group'>Zada Group</a></li>
+        <li><a href='/about/dawar'>Dawar Zada</a></li>
+        <li><a href='/about/randy'>Randy Quach</a></li>
+        <li><a href='/about/liz'>Liz Murphy</a></li>
+        <li><a href='/marketing'>Marketing</a></li>
+        <li><a href='/testimonials'>Testimonials</a></li>
+      </ul>
+    </li>
+    <li><a href="#newsletter">Monthly Report</a></li>
+  </ul>
+</nav>
+
+<main class="pmr">
+
+  <!-- ======================= HERO ======================= -->
+  <header class="pmr-hero">
+    <div class="pmr-hero__photo" aria-hidden="true"></div>
+    <div class="pmr-hero__inner wrap">
+      <p class="eyebrow">Port Moody Market Report · October 2026</p>
+      <h1>The move-up window <em>is open.</em></h1>
+      <hr class="rule" />
+      <p class="sub">What the numbers, the new council and the new provincial government mean if you have been waiting to upsize.</p>
+    </div>
+    <a class="scroll" href="#numbers">The numbers</a>
+  </header>
+
+  <!-- ======================= STAT PANEL ======================= -->
+  <section class="wrap" id="numbers" aria-label="Key numbers">
+    <div class="pmr-panel rv">
+      <div class="pmr-panel__grid">
+        <div class="pmr-stat">
+          <div class="num">$1.90M</div>
+          <div class="lbl gold">Typical detached home<br/>Port Moody, Sept 2026</div>
+        </div>
+        <div class="pmr-stat">
+          <div class="num">-8.4%</div>
+          <div class="lbl">Detached price<br/>change in one year</div>
+        </div>
+        <div class="pmr-stat">
+          <div class="num">$177K</div>
+          <div class="lbl gold">Less than the same<br/>home a year ago</div>
+        </div>
+        <div class="pmr-stat">
+          <div class="num">53 <span class="gold" style="font-size:0.5em">vs</span> 16</div>
+          <div class="lbl">New detached listings<br/>vs sales in September</div>
+        </div>
+      </div>
+      <div class="pmr-panel__foot">
+        <div>Townhouses<br/>-5.2% in a year</div>
+        <div>Condos<br/>-4.9% in a year</div>
+        <div>Detached gap to a townhouse<br/>$94,100 smaller</div>
+      </div>
+      <p class="pmr-panel__src">MLS® Home Price Index benchmarks and MLS® listing data for Port Moody, Greater Vancouver REALTORS®, September 2026.</p>
+    </div>
+  </section>
+
+  <!-- ======================= SHORT VERSION ======================= -->
+  <section class="pmr-sec first">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">The short version</p>
+        <h2>Three things worth <em>knowing</em></h2>
+      </div>
+      <div class="pmr-short rv">
+        <div>
+          <p class="n">One</p>
+          <p><strong>Bigger homes got cheaper faster.</strong> A typical Port Moody detached home dropped 8.4% in a year. Townhouses dropped 5.2%. That difference is the whole story for anyone moving up.</p>
+        </div>
+        <div>
+          <p class="n">Two</p>
+          <p><strong>Sellers are listing, buyers are slow.</strong> In September, 53 detached homes came on the market in Port Moody and Belcarra. 16 sold. You get to choose, and you get time to think.</p>
+        </div>
+        <div>
+          <p class="n">Three</p>
+          <p><strong>Both governments just changed.</strong> Port Moody elected a new mayor on October 17. BC elected a new government on October 24. Neither changes your purchase this fall, but both shape what gets built next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PRICES ======================= -->
+  <section class="pmr-sec alt" id="prices">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">Prices</p>
+        <h2>What a typical Port Moody home <em>costs now</em></h2>
+        <p>Thirteen months of the benchmark price, September 2025 to September 2026. Pick a home type, then hover or tap any month.</p>
+      </div>
+
+      <div class="pmr-chart rv">
+        <div class="pmr-chart__top">
+          <div class="pmr-chart__read" id="priceRead">$1,903,500<small>Detached · September 2026</small></div>
+          <div class="pmr-tabs" role="group" aria-label="Home type">
+            <button type="button" data-type="det" aria-pressed="true">Detached</button>
+            <button type="button" data-type="th" aria-pressed="false">Townhouse</button>
+            <button type="button" data-type="apt" aria-pressed="false">Condo</button>
+          </div>
+        </div>
+        <div class="pmr-chart__box"><canvas id="priceChart" role="img" aria-label="Line chart of Port Moody benchmark prices by month"></canvas></div>
+        <p class="pmr-chart__note" id="priceNote">Detached: $2,080,500 in September 2025, $1,903,500 in September 2026. GVR reports that as an 8.4% decline.</p>
+      </div>
+
+      <div class="pmr-explain">
+        <div class="rv">
+          <h3>Why September matters</h3>
+          <p>The detached benchmark held between $1.94M and $1.98M from February through August, then dropped 3.0% in a single month. Townhouses did the same thing, down 4.7% in September alone. A drop like that after a flat spring and summer usually means sellers who waited all year are now pricing to sell.</p>
+        </div>
+        <div class="rv">
+          <h3>How this compares</h3>
+          <p>Port Moody detached fell 8.4% over the year. Across Greater Vancouver, the detached benchmark fell 7.3%. Coquitlam fell 6.6%. Port Moody is the most expensive detached market in the Tri-Cities, and right now it is correcting a little harder than its neighbours.</p>
+          <div class="pmr-define">
+            <p><b>Benchmark price.</b> The price GVR estimates for a typical home in an area, built from actual sales. It stays steady when one mansion or one teardown sells, which is why we use it instead of averages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= UPSIZE GAP ======================= -->
+  <section class="pmr-sec" id="upsize">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">The upsize math</p>
+        <h2>The step up got <em>smaller</em></h2>
+        <p>If you own now, the number that matters is not the price of the house you want. It is the gap between what yours sells for and what the next one costs. That gap shrank.</p>
+      </div>
+
+      <div class="pmr-gap">
+        <div class="pmr-chart rv">
+          <div class="pmr-chart__top">
+            <div class="pmr-tabs" role="group" aria-label="What you own now">
+              <button type="button" data-own="th" aria-pressed="true">I own a townhouse</button>
+              <button type="button" data-own="apt" aria-pressed="false">I own a condo</button>
+            </div>
+          </div>
+          <div class="pmr-chart__box"><canvas id="gapChart" role="img" aria-label="Bar chart comparing the cost to move up to a detached home, September 2025 versus September 2026"></canvas></div>
+          <p class="pmr-chart__note">Gap = Port Moody detached benchmark minus the benchmark for your current home type. Before transaction costs.</p>
+        </div>
+
+        <div class="rv">
+          <p class="eyebrow" id="gapEyebrow">Townhouse to detached</p>
+          <h3>Moving up costs this much less than it did a year ago</h3>
+          <div class="pmr-gap__big" id="gapBig">$94,100</div>
+          <div class="pmr-gap__rows" id="gapRows"></div>
+          <p style="margin-top:1.6rem">Here is the plain version. Your home lost value this year too, but the house you want lost more. Because you sell and buy in the same market, the drop works in your favour. A buyer stepping from a typical townhouse into a typical detached home needs about <strong>$94,100 less</strong> than last September.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SUPPLY ======================= -->
+  <section class="pmr-sec alt" id="listings">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">Choice</p>
+        <h2>The streets that never listed <em>are listing</em></h2>
+        <p>Detached homes coming on the market each month in Port Moody and Belcarra, against how many actually sold.</p>
+      </div>
+
+      <div class="pmr-chart rv">
+        <div class="pmr-chart__top">
+          <div class="pmr-chart__read">403 <span class="gold" style="font-size:0.5em">vs</span> 112<small>New detached listings vs sales · Jan to Sept 2026</small></div>
+          <div class="pmr-legend"><span><i style="background:rgba(236,232,226,0.28)"></i>New listings</span><span><i style="background:#a88c6c"></i>Sales</span></div>
+        </div>
+        <div class="pmr-chart__box"><canvas id="supplyChart" role="img" aria-label="Bar chart of monthly detached new listings and sales in Port Moody and Belcarra"></canvas></div>
+        <p class="pmr-chart__note">GVR reports this area as Port Moody/Belcarra. New listings are homes added to MLS® that month, not total homes for sale.</p>
+      </div>
+
+      <div class="pmr-explain">
+        <div class="rv">
+          <h3>What we are seeing on the ground</h3>
+          <p>For years, the family neighbourhoods up the hill and along the water were the hardest places in Port Moody to buy into. A house would come up, draw a crowd, and be gone. If you missed it, you waited a year for the next one.</p>
+          <p>That has changed. In the first nine months of 2026, 403 detached homes were listed in Port Moody and Belcarra, up from 372 in the same stretch of 2025. Only 112 sold. Buyers are seeing homes on streets that rarely come up, and they are seeing more than one at a time.</p>
+          <ul class="pmr-hoods" aria-label="Neighbourhoods">
+            <li>Heritage Woods</li><li>Heritage Mountain</li><li>College Park</li><li>Glenayre</li><li>North Shore</li><li>Belcarra</li><li>Anmore</li>
+          </ul>
+        </div>
+        <div class="rv">
+          <h3>What that means for you</h3>
+          <p>Across Greater Vancouver, detached homes are selling at a rate GVR's own research links to falling prices. Their sales-to-active ratio for detached homes was 9.7% in September. Prices tend to come under pressure when that number stays below 12%, and rise when it stays above 20%.</p>
+          <p>In plain terms: more homes than buyers. That is when conditions, inspections and a real negotiation are back on the table, and when the price on the listing is a starting point.</p>
+          <div class="pmr-define">
+            <p><b>Want the numbers for one neighbourhood?</b> We pull them straight from MLS®, street by street. Ask us below.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= GOVERNMENT ======================= -->
+  <section class="pmr-sec" id="government">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">Policy</p>
+        <h2>Two elections in <em>eight days</em></h2>
+        <p>What actually changed, and what it means for someone buying a home this fall.</p>
+      </div>
+
+      <div class="pmr-gov rv">
+        <div>
+          <p class="eyebrow">City of Port Moody · October 17</p>
+          <h3>A new mayor and three new councillors</h3>
+          <ul class="facts">
+            <li><b>Haven Lurbiecki</b> of Port Moody Voice was elected mayor, 5,400 votes to 4,854 for incumbent Meghan Lahti in the City's preliminary count. Turnout was about 39%.</li>
+            <li>Port Moody Voice is the first municipal party in the city's history. As a councillor, Lurbiecki was the only member of council to vote against the city's Official Community Plan.</li>
+            <li>Council: incumbents <b>Callan Morrison, Amy Lubik and Kyla Knowles</b>, plus newcomers <b>Paul Lambert, Peter Thomasen and Alexandra Chan</b>.</li>
+          </ul>
+          <p class="read">Our read</p>
+          <p>Expect the pace and shape of new development to be debated again, including the tower sites near SkyTrain. That affects what gets built years from now, not the homes on the market today. If new supply slows, established detached neighbourhoods do not get any bigger. That has historically worked in favour of people who own in them.</p>
+        </div>
+        <div>
+          <p class="eyebrow">Province of BC · October 24</p>
+          <h3>A new government in Victoria</h3>
+          <ul class="facts">
+            <li>The <b>BC Conservatives</b> won a majority. <b>Lorne Doerkson</b> is premier-designate, ending nine years of NDP government.</li>
+            <li>Locally, <b>John McEwen</b> (Conservative) won Port Moody-Burquitlam, 10,712 votes to 9,634 for NDP incumbent Rick Glumac in the preliminary count.</li>
+            <li>The housing platform promises faster approvals and puts density decisions back with local Official Community Plans. At the October 14 debate, Doerkson said he would keep the foreign buyers tax and the speculation and vacancy tax.</li>
+            <li>The province's multiplex zoning law (Bill 44) stays in force unless the legislature changes it. The platform does not name a change.</li>
+          </ul>
+          <p class="read">Our read</p>
+          <p>Nothing here changes the cost of buying a home this fall. If the change brings buyers back off the sidelines, today's selection is the first thing that disappears.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= PERSPECTIVE ======================= -->
+  <section class="pmr-sec alt" id="perspective">
+    <div class="wrap narrow">
+      <div class="pmr-head rv">
+        <p class="eyebrow">Our perspective</p>
+        <h2>If you have been waiting to upsize, <em>this is the window</em></h2>
+      </div>
+      <div class="pmr-take rv">
+        <div>
+          <h3>The gap is the number to watch</h3>
+          <p>Detached prices fell further than townhouse and condo prices. For a move-up buyer, that is the best version of a down market: you give up less on your sale than you save on your purchase.</p>
+        </div>
+        <div>
+          <h3>Choice like this does not usually last</h3>
+          <p>Neighbourhoods that used to see one or two listings a season have several at once. Buyers who move while inventory is high pick the house. Buyers who move after it clears take what is left.</p>
+        </div>
+        <div>
+          <h3>You can negotiate again</h3>
+          <p>With more listings than sales, conditions on financing and inspection are workable, and list price is a conversation. The work is knowing which homes are priced right and which are priced hopeful. That is what we do every day in Port Moody.</p>
+        </div>
+        <div>
+          <h3>Sell and buy as one plan</h3>
+          <p>Timing two transactions is the part that scares people. We map both sides together, so you know what yours will likely sell for before you write an offer on the next one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ZOOM OUT ======================= -->
+  <section class="pmr-sec" id="long-view">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <p class="eyebrow">The long view</p>
+        <h2>Zoom out and it looks <em>different</em></h2>
+        <p>Change in the Port Moody detached benchmark over different time frames, to September 2026.</p>
+      </div>
+      <div class="pmr-chart rv">
+        <div class="pmr-chart__box" style="height:300px"><canvas id="longChart" role="img" aria-label="Bar chart of Port Moody detached price change over 1, 3, 5 and 10 years"></canvas></div>
+        <p class="pmr-chart__note">One year: -8.4%. Three years: -7.8%. Five years: +3.5%. Ten years: +37.1%. Past performance is not a forecast.</p>
+      </div>
+      <p class="narrow rv" style="text-align:center;margin-top:2.2rem">Port Moody detached homes are worth less than they were three years ago and more than they were ten years ago. Buying in a dip does not guarantee anything. It does mean you are buying at a price that has already come down, in a city where the supply of family homes on real lots is not growing.</p>
+    </div>
+  </section>
+
+  <!-- ======================= NEWSLETTER ======================= -->
+  <section class="pmr-sec pmr-sign" id="newsletter">
+    <div class="pmr-sign__photo" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="eyebrow rv">Monthly Port Moody Market Report</p>
+      <h2 class="rv">Get the numbers <em>every month.</em></h2>
+      <p class="rv" style="max-width:560px;margin:0 auto">One short email when GVR releases its numbers. Port Moody prices, listings and what we are seeing on the ground, explained simply. No spam, unsubscribe anytime.</p>
+
+      <form class="pmr-form rv" id="newsForm" name="pm-market-newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/portmoodymarket?subscribed=1#newsletter">
+        <input type="hidden" name="form-name" value="pm-market-newsletter" />
+        <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="row">
+          <div class="field">
+            <label for="nl-name">First name</label>
+            <input id="nl-name" name="first-name" type="text" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="nl-email">Email</label>
+            <input id="nl-email" name="email" type="email" autocomplete="email" required />
+          </div>
+        </div>
+        <div class="field">
+          <label for="nl-interest">I am</label>
+          <select id="nl-interest" name="interest">
+            <option>Thinking about upsizing</option>
+            <option>Thinking about buying</option>
+            <option>Thinking about selling</option>
+            <option>Just keeping an eye on the market</option>
+          </select>
+        </div>
+        <button class="pmr-btn" type="submit">Send me the monthly report</button>
+        <p class="pmr-err" role="alert">That did not go through. Try again, or email us at admin@zadagroup.ca.</p>
+        <p class="pmr-fine">By subscribing you agree to receive the monthly Port Moody market email from Zada Group. You can unsubscribe at any time.</p>
+      </form>
+
+      <div class="pmr-thanks" id="newsThanks" tabindex="-1" aria-live="polite">
+        <p class="eyebrow">You are on the list</p>
+        <h3>Thank you<span class="gold" id="newsThanksName"></span>.</h3>
+        <hr class="rule" />
+        <p>Your first Port Moody Market Report lands when GVR releases the October numbers in early November. Have a question before then? Ask us below, or email <a href="mailto:admin@zadagroup.ca" style="color:var(--gold)">admin@zadagroup.ca</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= INQUIRY ======================= -->
+  <section class="pmr-sec alt" id="ask">
+    <div class="wrap pmr-ask">
+      <div class="rv">
+        <p class="eyebrow">Thinking of buying or selling in Port Moody?</p>
+        <h2>Ask us <em>anything.</em></h2>
+        <p>What is my place worth right now? What would the move up actually cost? What is listed on the street we have been watching? Send it over and Dawar or someone on our team will get back to you directly.</p>
+        <p>Prefer email? <a href="mailto:admin@zadagroup.ca?subject=Port%20Moody%20Market%20Report">admin@zadagroup.ca</a><br/>Or call <a href="tel:+16048083797">604.808.3797</a></p>
+      </div>
+      <div class="rv">
+        <form class="pmr-form" id="askForm" name="pm-market-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/portmoodymarket?asked=1#ask">
+          <input type="hidden" name="form-name" value="pm-market-inquiry" />
+          <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="row">
+            <div class="field">
+              <label for="q-name">Name</label>
+              <input id="q-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone (optional)</label>
+              <input id="q-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="q-email">Email</label>
+            <input id="q-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="q-msg">Your question</label>
+            <textarea id="q-msg" name="message" required></textarea>
+          </div>
+          <button class="pmr-btn" type="submit">Send</button>
+          <p class="pmr-err" role="alert">That did not go through. Try again, or email us at admin@zadagroup.ca.</p>
+        </form>
+        <div class="pmr-thanks" id="askThanks" tabindex="-1" aria-live="polite">
+          <p class="eyebrow">Message received</p>
+          <h3>Thank you.</h3>
+          <hr class="rule" />
+          <p>We read every one of these ourselves. Expect a reply within one business day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= SOURCES ======================= -->
+  <section class="pmr-sources">
+    <div class="wrap">
+      <p class="eyebrow">Sources</p>
+      <ol>
+        <li>Greater Vancouver REALTORS®, <a href="https://members.gvrealtors.ca/news/GVR-Stats-Package-September-2026.pdf" rel="noopener">MLS® Residential Market Report and Stats Package, September 2026</a> (released October 2, 2026). Port Moody benchmarks, 1 to 10 year changes, Port Moody/Belcarra listings and sales, Metro Vancouver sales-to-active ratios.</li>
+        <li>Greater Vancouver REALTORS®, monthly Stats Packages, September 2025 to August 2026. Monthly Port Moody benchmarks and Port Moody/Belcarra listings and sales used in the charts.</li>
+        <li>City of Port Moody, <a href="https://www.portmoody.ca/news-notices-and-community-matters/posts/2026-general-local-election-complete-preliminary-results-are-available-at-portmoodycavote/" rel="noopener">2026 General Local Election preliminary results</a>, October 17, 2026.</li>
+        <li>The Tyee, <a href="https://thetyee.ca/News/2026/06/24/Port-Moody-Split-Pro-Anti-Growth-Politics/" rel="noopener">Port Moody Is Again Split Between Pro- and Anti-Growth Politics</a>, June 24, 2026.</li>
+        <li>Inlet Current, <a href="https://inletcurrent.ca/election-2026/2026/10/18/lurbiecki-projected-to-unseat-lahti-as-port-moody-mayor/" rel="noopener">Lurbiecki projected to unseat Lahti as Port Moody mayor</a>, October 18, 2026.</li>
+        <li>The Narwhal, <a href="https://thenarwhal.ca/bc-election-2026-result/" rel="noopener">What the B.C. election results mean</a>, October 2026.</li>
+        <li>Victoria Times Colonist, <a href="https://www.timescolonist.com/2026-bc-votes/british-columbians-vote-in-early-election-with-david-ebys-job-on-the-line-12935161" rel="noopener">B.C. turns blue: Conservatives win majority</a>, October 2026.</li>
+        <li>Conservative Party of BC, <a href="https://conservativebc.ca/wp-content/uploads/2026/10/20261016_BCC_Platform2026_8-5x11-Draft-18_compressed.pdf" rel="noopener">Lorne Doerkson's Plan for a Stronger BC</a>, 2026 platform. Debate commitments as reported by <a href="https://bcballot.ca/platforms/conservative-party/" rel="noopener">BC Ballot</a>.</li>
+        <li>Port Moody-Burquitlam result: preliminary count as reported October 25, 2026. Final results are certified by Elections BC.</li>
+      </ol>
+      <p style="margin-top:1.6rem">Dollar figures in the upsize section are calculated by Zada Group from GVR benchmark prices and do not include commissions, taxes or moving costs. Election results shown are preliminary counts. This page is for general information and is not financial or legal advice. Data deemed reliable but not guaranteed.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <img src="/assets/images/logo-white.png" alt="Zada Group" />
+        <p style="font-size:0.9rem; opacity:0.7; max-width: 32ch;">Boutique real estate across Metro Vancouver. Licensed with Stonehaus Realty Corp.</p>
+      </div>
+      <div class="footer-col"><h5>About</h5><ul>
+        <li><a href='/about/zada-group'>Zada Group</a></li>
+        <li><a href='/about/dawar'>Dawar Zada</a></li>
+        <li><a href='/about/randy'>Randy Quach</a></li>
+        <li><a href='/about/liz'>Liz Murphy</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul>
+        <li><a href='/portmoodymarket'>Port Moody Market Report</a></li>
+        <li><a href='/port-moody-real-estate'>Port Moody Real Estate</a></li>
+        <li><a href='/buyers'>Buyer's Guide</a></li>
+        <li><a href='/sellers'>Seller's Guide</a></li>
+        <li><a href='/ssmuh'>SSMUH</a></li>
+        <li><a href='/blog/'>Blog</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul>
+        <li><a href="mailto:admin@zadagroup.ca">admin@zadagroup.ca</a></li>
+        <li><a href="tel:+16048083797">604.808.3797</a></li>
+        <li>Stonehaus Realty Corp</li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Zada Group</span><span>PREC (Personal Real Estate Corporation)</span></div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/vendor/chart.umd.min.js"></script>
+<script>
+(function () {
+  /* ---------- Data: GVR monthly Stats Packages, Port Moody ---------- */
+  var months = ['Sep 2025','Oct 2025','Nov 2025','Dec 2025','Jan 2026','Feb 2026','Mar 2026','Apr 2026','May 2026','Jun 2026','Jul 2026','Aug 2026','Sep 2026'];
+  var bench = {
+    det: [2080500,2081500,2089600,2001800,1997100,1965200,1976600,1936100,1939400,1947300,1967700,1962100,1903500],
+    th:  [1023800,1014600, 986400, 981800, 982900, 967700, 961100, 961400, 982200, 993800, 983400, 986900, 940900],
+    apt: [ 711100, 727900, 703900, 710000, 695100, 695700, 702100, 703400, 703000, 698300, 688300, 680200, 676200]
+  };
+  var yoy = { det: '8.4%', th: '5.2%', apt: '4.9%' };   // GVR-reported 1-year change, Sep 2026
+  var names = { det: 'Detached', th: 'Townhouse', apt: 'Condo' };
+  // Port Moody/Belcarra detached, Listing & Sales Activity Summary (col 3 / col 7)
+  var supply = {
+    labels: ["Sep '25","Oct","Nov","Dec","Jan '26","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep '26"],
+    listed: [47,44,29,10,34,29,58,44,48,42,53,42,53],
+    sold:   [15,20, 7,11, 4, 7,12,16,13, 9,16,12,16]
+  };
+
+  var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-CA'); };
+  var fmtK = function (n) { return n >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M' : '$' + Math.round(n / 1000) + 'K'; };
+
+  /* ---------- Reveal on scroll ---------- */
+  var rv = document.querySelectorAll('.pmr .rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    rv.forEach(function (el) { io.observe(el); });
+  } else { rv.forEach(function (el) { el.classList.add('in'); }); }
+
+  /* ---------- Charts ---------- */
+  if (window.Chart) {
+    var GOLD = '#a88c6c', GOLD_SOFT = 'rgba(168,140,108,0.18)', IVORY = '#ece8e2',
+        GRID = 'rgba(232,229,226,0.08)', TICK = 'rgba(236,232,226,0.55)', MUTED = 'rgba(236,232,226,0.28)';
+    Chart.defaults.font.family = "'Sweet Sans Pro', 'Helvetica Neue', Arial, sans-serif";
+    Chart.defaults.font.size = 12;
+    Chart.defaults.color = TICK;
+    var tip = {
+      backgroundColor: '#07080a', borderColor: 'rgba(168,140,108,0.5)', borderWidth: 1,
+      titleColor: GOLD, bodyColor: IVORY, padding: 12, cornerRadius: 0, displayColors: false,
+      titleFont: { size: 11, weight: '500' }, bodyFont: { size: 14 }
+    };
+    var scaleX = { grid: { display: false }, border: { color: GRID }, ticks: { color: TICK, maxRotation: 0, autoSkip: true, autoSkipPadding: 14 } };
+
+    /* Price chart */
+    var priceRead = document.getElementById('priceRead'), priceNote = document.getElementById('priceNote');
+    var ctx = document.getElementById('priceChart').getContext('2d');
+    var grad = ctx.createLinearGradient(0, 0, 0, 340);
+    grad.addColorStop(0, 'rgba(168,140,108,0.32)'); grad.addColorStop(1, 'rgba(168,140,108,0)');
+    var price = new Chart(ctx, {
+      type: 'line',
+      data: { labels: months, datasets: [{ data: bench.det.slice(), borderColor: GOLD, backgroundColor: grad, fill: true, tension: 0.32,
+        borderWidth: 2, pointRadius: 3, pointHoverRadius: 6, pointBackgroundColor: '#07080a', pointBorderColor: GOLD, pointBorderWidth: 2 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+        animation: { duration: 700 },
+        plugins: { legend: { display: false }, tooltip: Object.assign({}, tip, {
+          callbacks: { label: function (c) { return fmt(c.parsed.y); } } }) },
+        scales: { x: scaleX, y: { grid: { color: GRID }, border: { display: false },
+          ticks: { color: TICK, maxTicksLimit: 5, callback: function (v) { return fmtK(v); } } } },
+        onHover: function (e, els) {
+          if (els.length) { var i = els[0].index; setRead(i); }
+        }
+      }
+    });
+    var curType = 'det';
+    function setRead(i) {
+      priceRead.innerHTML = fmt(bench[curType][i]) + '<small>' + names[curType] + ' · ' + months[i] + '</small>';
+    }
+    document.getElementById('priceChart').addEventListener('mouseleave', function () { setRead(12); });
+    function showType(t) {
+      curType = t;
+      price.data.datasets[0].data = bench[t].slice();
+      price.update();
+      setRead(12);
+      var a = bench[t][0], b = bench[t][12];
+      priceNote.textContent = names[t] + ': ' + fmt(a) + ' in September 2025, ' + fmt(b) + ' in September 2026. GVR reports that as a ' + yoy[t] + ' decline.';
+    }
+    document.querySelectorAll('#prices .pmr-tabs button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#prices .pmr-tabs button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        showType(btn.getAttribute('data-type'));
+      });
+    });
+
+    /* Upsize gap chart */
+    var gapOf = function (own, i) { return bench.det[i] - bench[own][i]; };
+    var gap = new Chart(document.getElementById('gapChart'), {
+      type: 'bar',
+      data: { labels: ['September 2025', 'September 2026'],
+        datasets: [{ data: [gapOf('th', 0), gapOf('th', 12)], backgroundColor: [MUTED, GOLD], hoverBackgroundColor: [MUTED, '#c2a582'], borderRadius: 0, maxBarThickness: 120 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, animation: { duration: 700 },
+        plugins: { legend: { display: false }, tooltip: Object.assign({}, tip, {
+          callbacks: { label: function (c) { return 'Gap to detached: ' + fmt(c.parsed.y); } } }) },
+        scales: { x: scaleX, y: { beginAtZero: true, grid: { color: GRID }, border: { display: false },
+          ticks: { color: TICK, maxTicksLimit: 5, callback: function (v) { return fmtK(v); } } } }
+      }
+    });
+    var gapBig = document.getElementById('gapBig'), gapRows = document.getElementById('gapRows'), gapEyebrow = document.getElementById('gapEyebrow');
+    function showGap(own) {
+      var g0 = gapOf(own, 0), g1 = gapOf(own, 12);
+      gap.data.datasets[0].data = [g0, g1]; gap.update();
+      gapBig.textContent = fmt(g0 - g1);
+      gapEyebrow.textContent = names[own] + ' to detached';
+      gapRows.innerHTML =
+        '<div><span>Typical ' + names[own].toLowerCase() + ', Sept 2026</span><span>' + fmt(bench[own][12]) + '</span></div>' +
+        '<div><span>Typical detached, Sept 2026</span><span>' + fmt(bench.det[12]) + '</span></div>' +
+        '<div><span>Gap last September</span><span>' + fmt(g0) + '</span></div>' +
+        '<div><span>Gap this September</span><span>' + fmt(g1) + '</span></div>';
+    }
+    showGap('th');
+    document.querySelectorAll('#upsize .pmr-tabs button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('#upsize .pmr-tabs button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+        btn.setAttribute('aria-pressed', 'true');
+        showGap(btn.getAttribute('data-own'));
+      });
+    });
+
+    /* Supply chart */
+    new Chart(document.getElementById('supplyChart'), {
+      type: 'bar',
+      data: { labels: supply.labels,
+        datasets: [
+          { label: 'New listings', data: supply.listed, backgroundColor: MUTED, hoverBackgroundColor: 'rgba(236,232,226,0.45)', borderRadius: 0, barPercentage: 0.85, categoryPercentage: 0.7 },
+          { label: 'Sales', data: supply.sold, backgroundColor: GOLD, hoverBackgroundColor: '#c2a582', borderRadius: 0, barPercentage: 0.85, categoryPercentage: 0.7 }
+        ] },
+      options: {
+        responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, animation: { duration: 700 },
+        plugins: {
+          legend: { display: false },
+          tooltip: Object.assign({}, tip, { displayColors: true, boxPadding: 4,
+            callbacks: { title: function (c) { return months[c[0].dataIndex]; }, label: function (c) { return c.dataset.label + ': ' + c.parsed.y; } } })
+        },
+        scales: { x: scaleX, y: { beginAtZero: true, grid: { color: GRID }, border: { display: false }, ticks: { color: TICK, maxTicksLimit: 5 } } }
+      }
+    });
+
+    /* Long view chart */
+    var lv = [-8.4, -7.8, 3.5, 37.1];
+    new Chart(document.getElementById('longChart'), {
+      type: 'bar',
+      data: { labels: ['1 year', '3 years', '5 years', '10 years'],
+        datasets: [{ data: lv, backgroundColor: lv.map(function (v) { return v < 0 ? MUTED : GOLD; }), borderRadius: 0, maxBarThickness: 110 }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, animation: { duration: 700 },
+        plugins: { legend: { display: false }, tooltip: Object.assign({}, tip, {
+          callbacks: { label: function (c) { var v = c.parsed.y; return (v > 0 ? '+' : '') + v + '% to Sept 2026'; } } }) },
+        scales: { x: scaleX, y: { grid: { color: GRID }, border: { display: false },
+          ticks: { color: TICK, maxTicksLimit: 6, callback: function (v) { return v + '%'; } } } }
+      }
+    });
+  }
+
+  /* ---------- Forms: Netlify Forms via fetch, with in-page thank you ---------- */
+  function wire(formId, thanksId, nameField, nameOut) {
+    var form = document.getElementById(formId), thanks = document.getElementById(thanksId);
+    if (!form) return;
+    var err = form.querySelector('.pmr-err'), btn = form.querySelector('button[type="submit"]');
+    function done() {
+      if (nameField && nameOut) {
+        var v = (form.querySelector('[name="' + nameField + '"]') || {}).value;
+        if (v) document.getElementById(nameOut).textContent = ', ' + v.trim().split(' ')[0];
+      }
+      form.classList.add('is-hidden'); thanks.classList.add('show'); thanks.focus({ preventScroll: true });
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      err.classList.remove('show'); btn.disabled = true;
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: body })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); done(); })
+        .catch(function () { err.classList.add('show'); btn.disabled = false; });
+    });
+    return done;
+  }
+  wire('newsForm', 'newsThanks', 'first-name', 'newsThanksName');
+  wire('askForm', 'askThanks');
+  // No-JS fallback lands back here with a flag
+  var q = new URLSearchParams(location.search);
+  if (q.get('subscribed')) { document.getElementById('newsForm').classList.add('is-hidden'); document.getElementById('newsThanks').classList.add('show'); }
+  if (q.get('asked')) { document.getElementById('askForm').classList.add('is-hidden'); document.getElementById('askThanks').classList.add('show'); }
+})();
+</script>
+</body>
+</html>
