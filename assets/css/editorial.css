@@ -432,3 +432,10 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   .pp-cv li { padding: 18px 0 20px; }
 }
 
+
+/* Sheri page: single-column body sections, no side labels */
+.pp-body { display: block; max-width: 760px; margin-left: auto; margin-right: auto; }
+.pp-cv { padding-top: 12px; }
+.pp-hero h1 { margin-bottom: 0.5rem; }
+.pmr .pp-kicker { margin: 0 0 0.9rem; }
+.pmr .pp-desig { margin: 0 0 1.8rem; }
