@@ -7,6 +7,10 @@
 /port-moody-market       /portmoodymarket  301!
 /port-moody-market.html  /portmoodymarket  301!
 
+# --- 512 Garrett listing (dashed variants) ---
+/512-garrett         /512garrett  301!
+/512-garrett-street  /512garrett  301!
+
 # --- Port Moody (old hub children -> new hub page) ---
 /port-moody-real-estate/port-moody-houses-for-sale/*     /port-moody-real-estate  301!
 /port-moody-real-estate/port-moody-townhouses-for-sale/* /port-moody-real-estate  301!
