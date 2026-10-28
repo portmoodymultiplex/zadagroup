@@ -549,3 +549,4 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr .pp-flip__sub { color: rgba(236,232,226,.86); }
 .pmr .pp-flip:hover .pp-flip__img { transform: scale(1.05); }
 @media (max-width: 600px) { .pmr .pp-flip { height: 340px; } }
+.pmr .pp-not a { color: var(--gold-bright); text-decoration: none; border-bottom: 1px solid currentColor; }

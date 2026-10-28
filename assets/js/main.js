@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Designer's mark - appended to every footer, quiet by design
 document.addEventListener('DOMContentLoaded', function () {
   var fb = document.querySelector('.footer-bottom');
-  if (fb && !document.querySelector('.site-credit')) {
+  if (fb && !document.querySelector('.site-credit, .site-credit-inline')) {
     var s = document.createElement('span');
     s.className = 'site-credit';
     s.innerHTML = 'Site by <span class="name">Sheri Zada</span>';

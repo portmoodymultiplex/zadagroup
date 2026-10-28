@@ -2602,3 +2602,4 @@ footer .container { padding: 0; }
 .site-credit { display: block; width: 100%; margin-top: 1.25rem; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; opacity: 0.32; transition: opacity 0.5s ease; text-align: center; }
 .site-credit:hover { opacity: 0.9; }
 .site-credit .name { font-family: var(--serif-text); font-style: italic; text-transform: none; font-size: 0.95rem; letter-spacing: 0.03em; color: var(--brown-warm); }
+.site-credit-inline .name { font-family: var(--serif-text); font-style: italic; font-size: 1.05em; color: var(--brown-warm); }
