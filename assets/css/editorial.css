@@ -510,7 +510,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 
 /* flippable info bites */
 .pmr .pp-life + .pp-bites { border-top: 0; }
-.pmr .pp-flips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; }
+.pmr .pp-flips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
 .pmr .pp-flip { all: unset; box-sizing: border-box; display: block; cursor: pointer; perspective: 1200px; height: 330px; -webkit-tap-highlight-color: transparent; }
 .pmr .pp-flip:focus-visible .pp-flip__in { outline: 2px solid var(--gold-bright); outline-offset: 4px; }
 .pmr .pp-flip__in { position: relative; display: block; width: 100%; height: 100%; transition: transform .7s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; }
@@ -528,7 +528,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr .pp-outro__in { max-width: 640px; margin: 0 auto; text-align: center; }
 .pmr .pp-outro__in p { color: var(--text-soft); font-size: 1.1rem; }
 .pmr .pp-outro .pp-actions { justify-content: center; }
-@media (max-width: 960px) { .pmr .pp-flips { grid-template-columns: repeat(2, 1fr); } }
+
 @media (max-width: 600px) { .pmr .pp-flips { grid-template-columns: 1fr; } .pmr .pp-flip { height: 300px; } }
 @media (prefers-reduced-motion: reduce) { .pmr .pp-flip__in { transition: none; } }
 .pmr .pp-bear { margin: 30px auto 34px; max-width: 340px; }
