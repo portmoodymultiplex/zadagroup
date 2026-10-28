@@ -533,3 +533,10 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 @media (prefers-reduced-motion: reduce) { .pmr .pp-flip__in { transition: none; } }
 .pmr .pp-bear { margin: 30px auto 34px; max-width: 340px; }
 .pmr .pp-bear img { width: 100%; height: auto; display: block; border: 1px solid var(--line); transform: rotate(-2deg); box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+.pmr .pp-dog { position: relative; overflow: hidden; margin-top: 1.6rem; padding: 44px 32px 30px; border: 1px solid var(--line); background: var(--ink-2); }
+.pmr .pp-dog[hidden] { display: none; }
+.pmr .pp-dog__ribbon { position: absolute; top: 30px; right: -58px; width: 220px; transform: rotate(35deg); background: var(--gold-bright); color: #0b0c0e; text-align: center; font-size: .66rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; padding: 7px 0; box-shadow: 0 6px 16px rgba(0,0,0,.4); }
+.pmr .pp-dog input[type="file"] { padding: 12px; cursor: pointer; color: var(--text-soft); }
+.pmr .pp-dog input[type="file"]::file-selector-button { margin-right: 14px; padding: 8px 14px; border: 1px solid var(--gold); background: transparent; color: var(--gold-bright); font: inherit; font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; }
+.pmr .pp-dog .pmr-btn { width: 100%; }
+.pmr .pp-dog__thanks { text-align: center; }

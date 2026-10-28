@@ -162,7 +162,37 @@
         <p>Email her a picture of your dog. She will reply. Probably with a picture of her dog (actually, see below).</p>
         <figure class="pp-bear"><img src="/assets/images/bear.jpg" alt="Bear, Sheri's white Samoyed, grinning on a suspension bridge strung with lights" loading="lazy" width="894" height="1200" /></figure>
         <div class="pp-actions">
-          <a class="fill" href="mailto:sheri@zadagroup.ca?subject=A%20picture%20of%20my%20dog">Send Sheri your dog</a>
+          <a class="fill" href="#dogForm" id="dogOpen" aria-expanded="false" aria-controls="dogForm">Send Sheri your dog</a>
+        </div>
+
+        <form class="pmr-form pp-dog" id="dogForm" name="sheri-dog-photo" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/about/sheri?dog=1" hidden>
+          <span class="pp-dog__ribbon">Cats accepted</span>
+          <input type="hidden" name="form-name" value="sheri-dog-photo" />
+          <p class="hp"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="row">
+            <div class="field">
+              <label for="dog-you">Your name</label>
+              <input id="dog-you" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="dog-email">Your email</label>
+              <input id="dog-email" name="email" type="email" autocomplete="email" required />
+            </div>
+          </div>
+          <div class="field">
+            <label for="dog-name">Name of dog</label>
+            <input id="dog-name" name="dog-name" type="text" required />
+          </div>
+          <div class="field">
+            <label for="dog-photo">Upload photo</label>
+            <input id="dog-photo" name="photo" type="file" accept="image/*" required />
+          </div>
+          <button class="pmr-btn" type="submit">Send it to Sheri</button>
+          <p class="pmr-err" role="alert">That didn't go through. Try a smaller photo (under 8 MB), or email it to sheri@zadagroup.ca.</p>
+        </form>
+        <div class="pmr-thanks pp-dog__thanks" id="dogThanks" tabindex="-1">
+          <h3>Received. <em>Very good boy.</em></h3>
+          <p>Or girl. Or cat. Sheri will be in touch, probably with Bear.</p>
         </div>
       </div>
     </div>
@@ -205,6 +235,24 @@
 <script src="/assets/js/main.js"></script>
 <script>
 document.querySelectorAll('.pp-flip').forEach(function(c){c.addEventListener('click',function(e){if(e.target.closest('a'))return;var on=c.classList.toggle('is-flipped');c.setAttribute('aria-pressed',on?'true':'false');});});
+(function(){
+  var open=document.getElementById('dogOpen'),f=document.getElementById('dogForm'),t=document.getElementById('dogThanks');
+  if(!open||!f)return;
+  open.addEventListener('click',function(e){e.preventDefault();f.hidden=false;open.setAttribute('aria-expanded','true');open.parentNode.style.display='none';var i=f.querySelector('#dog-you');if(i)i.focus({preventScroll:true});f.scrollIntoView({behavior:'smooth',block:'center'});});
+  var err=f.querySelector('.pmr-err'),btn=f.querySelector('button[type="submit"]');
+  var live=/zadagroup\.ca$|netlify\.app$/.test(location.hostname);
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.checkValidity()){f.reportValidity();return;}
+    var file=f.querySelector('#dog-photo').files[0];
+    if(file&&file.size>8*1024*1024){err.classList.add('show');return;}
+    err.classList.remove('show');btn.disabled=true;btn.textContent='Sending...';
+    var send=live?fetch('/',{method:'POST',body:new FormData(f)}):Promise.resolve({ok:true});
+    send.then(function(r){if(!r.ok)throw new Error(r.status);f.hidden=true;t.classList.add('show');t.focus({preventScroll:true});})
+      .catch(function(){err.classList.add('show');btn.disabled=false;btn.textContent='Send it to Sheri';});
+  });
+  if(new URLSearchParams(location.search).get('dog')){open.parentNode.style.display='none';t.classList.add('show');}
+})();
 </script>
 
 <script>
