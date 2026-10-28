@@ -550,3 +550,22 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr .pp-flip:hover .pp-flip__img { transform: scale(1.05); }
 @media (max-width: 600px) { .pmr .pp-flip { height: 340px; } }
 .pmr .pp-not a { color: var(--gold-bright); text-decoration: none; border-bottom: 1px solid currentColor; }
+
+/* flip cards: Safari-safe flip (no backface-visibility / preserve-3d) */
+.pmr .pp-flip__in { transform: none !important; transform-style: flat; }
+.pmr .pp-flip__face { backface-visibility: visible; -webkit-backface-visibility: visible; transition: transform .6s cubic-bezier(.3,.7,.3,1), opacity 0s linear .3s; transform: perspective(1400px) rotateY(0deg); opacity: 1; }
+.pmr .pp-flip__back { transform: perspective(1400px) rotateY(-180deg); opacity: 0; pointer-events: none; }
+.pmr .pp-flip.is-flipped .pp-flip__front { transform: perspective(1400px) rotateY(180deg); opacity: 0; pointer-events: none; }
+.pmr .pp-flip.is-flipped .pp-flip__back { transform: perspective(1400px) rotateY(0deg); opacity: 1; pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) { .pmr .pp-flip__face { transition: opacity .2s; transform: none !important; } }
+
+/* mobile hero */
+@media (max-width: 600px) {
+  .pp-hero { padding: 104px 0 56px; }
+  .pp-hero__grid { gap: 26px; justify-items: center; text-align: center; }
+  .pp-portrait { width: 200px; max-width: 200px; margin: 0 auto; }
+  .pp-hero h1 { font-size: 3.2rem; }
+  .pp-hero .pp-kicker { font-size: 1.15rem; line-height: 1.45; max-width: 30ch; margin-left: auto; margin-right: auto; }
+  .pp-hero .pp-desig { letter-spacing: .2em; font-size: .64rem; }
+  .pp-hero .pp-lede { max-width: 28ch; margin-left: auto; margin-right: auto; }
+}
