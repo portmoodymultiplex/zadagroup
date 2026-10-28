@@ -21,281 +21,7 @@
 <link rel="stylesheet" href="/assets/css/components.css" />
 <link rel="stylesheet" href="/assets/css/style.css" />
 
-<style>
-/* ==========================================================================
-   Port Moody Market Report (page-scoped). Matches the Oct 2026 FB ad:
-   near-black, warm gold, Cormorant headlines with gold italic accents,
-   wide-tracked Sweet Sans caps.
-   ========================================================================== */
-.pmr {
-  --ink: #0b0c0e;
-  --ink-2: #111316;
-  --panel: #07080a;
-  --gold: #a88c6c;
-  --gold-bright: #c2a582;
-  --line: rgba(232, 229, 226, 0.12);
-  --text: #ece8e2;
-  --text-soft: rgba(236, 232, 226, 0.72);
-  --text-faint: rgba(236, 232, 226, 0.48);
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Sweet Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-  background: var(--ink);
-  color: var(--text);
-  font-family: var(--sans);
-}
-body.pmr-body { background: #0b0c0e; }
-body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
-
-.pmr * { box-sizing: border-box; }
-.pmr .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-.pmr .narrow { max-width: 720px; margin: 0 auto; }
-
-.pmr .eyebrow {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  max-width: none;
-  margin: 0 auto 1.2rem;
-}
-.pmr h1, .pmr h2, .pmr h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.005em;
-  margin: 0;
-}
-.pmr h2 { font-size: clamp(2rem, 4.4vw, 3.1rem); line-height: 1.1; margin-bottom: 1.4rem; }
-.pmr h3 { font-size: 1.6rem; line-height: 1.2; margin-bottom: 0.6rem; }
-.pmr em, .pmr .gold { font-style: italic; color: var(--gold); }
-.pmr p { max-width: none; color: var(--text-soft); font-size: 1.06rem; line-height: 1.75; margin: 0 0 1.1rem; }
-.pmr p strong { color: var(--text); font-weight: 500; }
-.pmr .rule { width: 180px; height: 1px; background: var(--gold); opacity: 0.6; margin: 1.6rem auto; border: 0; }
-
-/* ---------- Hero ---------- */
-.pmr-hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: center;
-  background: linear-gradient(180deg, #0b0c0e 0%, #0d0f12 45%, #0b0c0e 100%);
-  overflow: hidden;
-  padding: 170px 0 0;
-}
-.pmr-hero__photo {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  height: 62%;
-  background: url('/assets/images/pm-market-inlet.jpg') center 40% / cover no-repeat;
-}
-.pmr-hero__photo::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(180deg, #0b0c0e 0%, rgba(11,12,14,0.35) 30%, rgba(11,12,14,0.25) 60%, #0b0c0e 100%);
-}
-.pmr-hero__inner { position: relative; z-index: 2; }
-.pmr-hero h1 {
-  font-size: clamp(2.6rem, 6.4vw, 5rem);
-  line-height: 1.05;
-}
-.pmr-hero .sub {
-  font-size: 0.78rem; letter-spacing: 0.28em; text-transform: uppercase;
-  color: var(--text-soft); margin: 0 auto; max-width: 52ch; line-height: 1.9;
-}
-.pmr-hero .scroll {
-  display: none;
-  position: absolute; z-index: 2; bottom: 34px; left: 50%; transform: translateX(-50%);
-  font-size: 0.7rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--text);
-  text-decoration: none; opacity: 0.85;
-}
-.pmr-hero .scroll::after { content: ''; display: block; width: 1px; height: 34px; background: var(--gold); margin: 12px auto 0; }
-
-/* ---------- Stat panel (mirrors the ad) ---------- */
-.pmr-panel {
-  position: relative; z-index: 3;
-  margin: -90px auto 0;
-  background: var(--panel);
-  border: 1px solid var(--line);
-  max-width: 980px;
-}
-.pmr-panel__grid { display: grid; grid-template-columns: 1fr 1fr; }
-.pmr-stat { padding: 44px 24px 38px; text-align: center; position: relative; }
-.pmr-stat:nth-child(odd)::after {
-  content: ''; position: absolute; right: 0; top: 28px; bottom: 28px; width: 1px; background: var(--line);
-}
-.pmr-stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-.pmr-stat .num { font-family: var(--serif); font-size: clamp(2.6rem, 5vw, 3.6rem); line-height: 1; color: var(--text); }
-.pmr-stat .lbl {
-  margin-top: 18px; font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; line-height: 1.9;
-  color: var(--text-soft);
-}
-.pmr-stat .lbl.gold { font-style: normal; color: var(--gold); }
-.pmr-panel__foot {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line); margin: 0 40px; padding: 26px 0 30px;
-}
-.pmr-panel__foot div { text-align: center; font-size: 0.88rem; line-height: 1.6; color: var(--text-soft); padding: 0 10px; }
-.pmr-panel__foot div + div { border-left: 1px solid var(--line); }
-.pmr .pmr-panel__src { text-align: center; font-size: 0.75rem; color: var(--text-faint); padding: 0 24px 22px; margin: 0; }
-
-/* ---------- Sections ---------- */
-.pmr-sec { padding: 120px 0; border-top: 1px solid var(--line); }
-.pmr-sec.first { border-top: 0; padding-top: 110px; }
-.pmr-sec.alt { background: var(--ink-2); }
-.pmr-head { text-align: center; margin-bottom: 3rem; }
-.pmr-head p { max-width: 640px; margin-left: auto; margin-right: auto; }
-
-.pmr-short { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.pmr-short > div { background: var(--ink); padding: 36px 30px; }
-.pmr-short .n { font-family: var(--serif); color: var(--gold); font-size: 1.1rem; font-style: italic; margin-bottom: 0.8rem; }
-.pmr-short p { font-size: 1rem; margin: 0; }
-
-/* Chart card */
-.pmr-chart {
-  background: var(--panel); border: 1px solid var(--line); padding: 28px 28px 22px;
-}
-.pmr-chart__top { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
-.pmr-chart__read { font-family: var(--serif); font-size: 2.2rem; line-height: 1; color: var(--text); }
-.pmr-chart__read small { display: block; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-faint); margin-top: 10px; }
-.pmr-chart__box { position: relative; height: 340px; }
-.pmr .pmr-chart__note { font-size: 0.78rem; color: var(--text-faint); margin: 18px 0 0; line-height: 1.6; }
-
-.pmr-tabs { display: inline-flex; border: 1px solid var(--line); }
-.pmr-tabs button {
-  background: transparent; color: var(--text-soft); border: 0; cursor: pointer;
-  font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 11px 16px; min-height: 40px;
-}
-.pmr-tabs button + button { border-left: 1px solid var(--line); }
-.pmr-tabs button[aria-pressed="true"] { background: var(--gold); color: #0b0c0e; }
-.pmr-tabs button:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
-
-.pmr-explain { margin-top: 2.4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.pmr-define {
-  border-left: 1px solid var(--gold); padding: 4px 0 4px 22px; margin-top: 2rem;
-}
-.pmr-define p { font-size: 0.95rem; margin: 0; }
-.pmr-define b { color: var(--gold); font-weight: 500; letter-spacing: 0.04em; }
-
-/* Upsize gap */
-.pmr-gap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: stretch; }
-.pmr-gap__big { font-family: var(--serif); font-size: clamp(3.4rem, 7vw, 5rem); line-height: 1; color: var(--gold); margin: 0.4rem 0 0.6rem; }
-.pmr-gap__rows { margin-top: 1.6rem; border-top: 1px solid var(--line); }
-.pmr-gap__rows div { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; color: var(--text-soft); }
-.pmr-gap__rows div span:last-child { color: var(--text); font-variant-numeric: tabular-nums; }
-
-.pmr-legend { display: flex; gap: 20px; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-soft); }
-.pmr-legend i { display: inline-block; width: 10px; height: 10px; margin-right: 8px; vertical-align: -1px; }
-
-/* Neighbourhood list */
-.pmr-hoods { display: flex; flex-wrap: wrap; gap: 10px; margin: 1.6rem 0 0; padding: 0; list-style: none; }
-.pmr-hoods li {
-  border: 1px solid var(--line); padding: 9px 16px; font-size: 0.72rem; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--text-soft);
-}
-
-/* Government */
-.pmr-gov { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.pmr-gov > div { background: var(--ink); padding: 44px 40px; }
-.pmr-gov .facts { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; }
-.pmr-gov .facts li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 0.97rem; line-height: 1.6; color: var(--text-soft); }
-.pmr-gov .facts li:first-child { border-top: 1px solid var(--line); }
-.pmr-gov .facts b { color: var(--text); font-weight: 500; }
-.pmr-gov .read { font-size: 0.72rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.6rem; }
-
-/* Perspective */
-.pmr-take { counter-reset: t; display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
-.pmr-take > div { background: var(--ink-2); padding: 34px 36px 30px 96px; position: relative; }
-.pmr-take > div::before {
-  counter-increment: t; content: counter(t, decimal-leading-zero);
-  position: absolute; left: 34px; top: 30px; font-family: var(--serif); font-style: italic; font-size: 1.8rem; color: var(--gold);
-}
-.pmr-take h3 { font-size: 1.5rem; }
-.pmr-take p { margin: 0; font-size: 1rem; }
-
-/* Forms */
-.pmr-sign {
-  position: relative; text-align: center; overflow: hidden;
-  background: #0b0c0e;
-}
-.pmr-sign__photo { position: absolute; inset: 0; background: url('/assets/images/pm-market-inlet.jpg') center 60% / cover no-repeat; opacity: 0.32; }
-.pmr-sign__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #0b0c0e 0%, rgba(11,12,14,0.55) 50%, #0b0c0e 100%); }
-.pmr-sign .wrap { position: relative; z-index: 2; }
-.pmr-form { max-width: 560px; margin: 2.2rem auto 0; text-align: left; }
-.pmr-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.pmr-form label { display: block; font-size: 0.68rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--text-soft); margin: 0 0 8px; }
-.pmr-form .field { margin-bottom: 16px; }
-.pmr-form input, .pmr-form select, .pmr-form textarea {
-  width: 100%; background: rgba(7, 8, 10, 0.75); border: 1px solid rgba(232,229,226,0.22); color: var(--text);
-  font-family: var(--sans); font-size: 1rem; padding: 14px 14px; border-radius: 0; min-height: 48px;
-  -webkit-appearance: none; appearance: none;
-}
-.pmr-form select { background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 15px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
-.pmr-form textarea { min-height: 120px; resize: vertical; }
-.pmr-form input:focus, .pmr-form select:focus, .pmr-form textarea:focus { outline: none; border-color: var(--gold); }
-.pmr-form .hp { position: absolute; left: -9999px; }
-.pmr-btn {
-  display: inline-block; width: 100%; margin-top: 6px; background: var(--gold); color: #0b0c0e; border: 0; cursor: pointer;
-  font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;
-  padding: 18px 20px; min-height: 52px; transition: background 0.25s ease;
-}
-.pmr-btn:hover, .pmr-btn:focus-visible { background: var(--gold-bright); }
-.pmr-btn[disabled] { opacity: 0.6; cursor: wait; }
-.pmr .pmr-fine { font-size: 0.78rem; color: var(--text-faint); text-align: center; margin-top: 14px; line-height: 1.6; }
-.pmr .pmr-err { display: none; color: #e4a58f; font-size: 0.9rem; text-align: center; margin-top: 12px; }
-.pmr .pmr-err.show { display: block; }
-
-.pmr-thanks { display: none; max-width: 560px; margin: 2.4rem auto 0; padding: 48px 36px; border: 1px solid var(--line); background: rgba(7,8,10,0.8); }
-.pmr-thanks.show { display: block; }
-.pmr-thanks h3 { font-size: 2.2rem; margin-bottom: 0.8rem; }
-.pmr-thanks p { margin: 0 auto; max-width: 42ch; }
-.is-hidden { display: none !important; }
-
-.pmr-ask { display: grid; grid-template-columns: 1fr 1.2fr; gap: 56px; align-items: start; }
-.pmr-ask .pmr-form { margin: 0; max-width: none; }
-.pmr-ask .pmr-thanks { margin: 0; text-align: center; }
-.pmr-ask a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(168,140,108,0.4); }
-
-/* Sources */
-.pmr-sources { padding: 70px 0 90px; border-top: 1px solid var(--line); }
-.pmr-sources ol { margin: 0; padding-left: 1.2rem; color: var(--text-faint); font-size: 0.82rem; line-height: 1.8; columns: 2; column-gap: 48px; }
-.pmr-sources li { break-inside: avoid; margin-bottom: 6px; }
-.pmr-sources a { color: var(--text-soft); text-decoration: none; border-bottom: 1px solid var(--line); word-break: break-word; }
-.pmr .pmr-sources p { font-size: 0.82rem; color: var(--text-faint); }
-
-/* Reveal */
-.pmr .rv { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; }
-.pmr .rv.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .pmr .rv { opacity: 1; transform: none; transition: none; } }
-
-/* ---------- Responsive ---------- */
-@media (max-width: 860px) {
-  .pmr-sec { padding: 84px 0; }
-  .pmr-short, .pmr-gov, .pmr-gap, .pmr-explain, .pmr-ask { grid-template-columns: 1fr; }
-  .pmr-gov > div { padding: 36px 26px; }
-  .pmr-sources ol { columns: 1; }
-}
-@media (max-width: 600px) {
-  .pmr .wrap { padding: 0 16px; }
-  .pmr-hero { padding-top: 130px; }
-  .pmr-hero .sub { font-size: 0.68rem; letter-spacing: 0.2em; }
-  .pmr-panel { margin-top: -60px; }
-  .pmr-stat { padding: 30px 12px 26px; }
-  .pmr-stat .lbl { font-size: 0.62rem; letter-spacing: 0.18em; }
-  .pmr-panel__foot { grid-template-columns: 1fr; margin: 0 20px; padding: 6px 0 14px; }
-  .pmr-panel__foot div { padding: 14px 0; }
-  .pmr-panel__foot div + div { border-left: 0; border-top: 1px solid var(--line); }
-  .pmr-chart { padding: 20px 16px 16px; }
-  .pmr-chart__box { height: 280px; }
-  .pmr-tabs { width: 100%; }
-  .pmr-tabs button { flex: 1; padding: 11px 6px; letter-spacing: 0.12em; }
-  .pmr-take > div { padding: 30px 22px 26px 22px; }
-  .pmr-take > div::before { position: static; display: block; margin-bottom: 8px; }
-  .pmr-form .row { grid-template-columns: 1fr; gap: 0; }
-}
-</style>
+<link rel="stylesheet" href="/assets/css/editorial.css" />
 
 <script type="application/ld+json">
 {
@@ -303,7 +29,8 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   "@type": "Article",
   "headline": "The move-up window is open: Port Moody Market Report, October 2026",
   "datePublished": "2026-10-26",
-  "author": { "@type": "Organization", "name": "Zada Group" },
+  "author": { "@type": "Person", "name": "Sheri Zada", "url": "https://zadagroup.ca/about/sheri", "jobTitle": "Marketing Director", "worksFor": { "@type": "Organization", "name": "Zada Group" } },
+  "dateModified": "2026-10-27",
   "publisher": { "@id": "https://zadagroup.ca/#organization" },
   "about": { "@type": "City", "name": "Port Moody" },
   "mainEntityOfPage": "https://zadagroup.ca/portmoodymarket"
@@ -334,6 +61,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
         <li><a href='/about/dawar'>Dawar Zada</a></li>
         <li><a href='/about/randy'>Randy Quach</a></li>
         <li><a href='/about/liz'>Liz Murphy</a></li>
+        <li><a href='/about/sheri'>Sheri Zada</a></li>
         <li><a href='/marketing'>Marketing</a></li>
         <li><a href='/testimonials'>Testimonials</a></li>
       </ul>
@@ -352,6 +80,24 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
       <h1>The move-up window <em>is open.</em></h1>
       <hr class="rule" />
       <p class="sub">What the numbers, the new council and the new provincial government mean if you have been waiting to upsize.</p>
+      <div class="pmr-byline">
+        <a class="pmr-avatar" href="/about/sheri" aria-label="About Sheri Zada">SZ<img src="/assets/images/sheri.jpg" alt="" onerror="this.remove()" /></a>
+        <div class="pmr-byline__who">
+          <div class="pmr-byline__by">Written by: <a href="/about/sheri" rel="author">Sheri Zada</a></div>
+          <div class="pmr-byline__rant">Translated from a very long, very loud rant by <a href="/about/dawar">Dawar Zada</a></div>
+        </div>
+        <div class="pmr-byline__meta">
+          <span>Published Oct 26, 2026</span><span>Updated Oct 27, 2026</span><span>7 minute read</span>
+        </div>
+      </div>
+      <div class="pmr-share" aria-label="Share this report">
+        <a href="mailto:?subject=Port%20Moody%20Market%20Report&amp;body=https%3A%2F%2Fzadagroup.ca%2Fportmoodymarket" aria-label="Share by email"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3V5zm2 2v.4l7 4.6 7-4.6V7H5zm14 2.8-7 4.6-7-4.6V17h14V9.8z"/></svg></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fzadagroup.ca%2Fportmoodymarket" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8.1v3h2.5V21h2.9z"/></svg></a>
+        <a href="https://x.com/intent/post?url=https%3A%2F%2Fzadagroup.ca%2Fportmoodymarket&amp;text=Port%20Moody%20Market%20Report" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.9 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fzadagroup.ca%2Fportmoodymarket" target="_blank" rel="noopener" aria-label="Share on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3V9.5zm6.5 0h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4V9.5z"/></svg></a>
+        <button type="button" id="copyLink" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l3.5-3.5a1 1 0 1 1 1.4 1.4L12 13.4a1 1 0 0 1-1.4 0zM8.5 19.5a4 4 0 0 1-2.8-6.8l2.1-2.1 1.4 1.4-2.1 2.1a2 2 0 1 0 2.8 2.8l2.1-2.1 1.4 1.4-2.1 2.1a4 4 0 0 1-2.8 1.2zm7.7-5.9-1.4-1.4 2.1-2.1a2 2 0 1 0-2.8-2.8L12 9.4 10.6 8l2.1-2.1a4 4 0 0 1 5.7 5.7l-2.2 2z"/></svg></button>
+        <span class="copied" id="copiedMsg" aria-live="polite">Link copied</span>
+      </div>
     </div>
     <a class="scroll" href="#numbers">The numbers</a>
   </header>
@@ -527,6 +273,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
         <h2>Two elections in <em>eight days</em></h2>
         <p>What actually changed, and what it means for someone buying a home this fall.</p>
       </div>
+      <p class="pmr-note rv" style="margin-bottom:2.4rem"><b>Disclosure.</b> I managed Meghan Lahti's 2026 campaign for re-election as mayor. The results below are the City's numbers, not mine, and the read on each one is about what it means for buyers.</p>
 
       <div class="pmr-gov rv">
         <div>
@@ -547,10 +294,10 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
             <li>The <b>BC Conservatives</b> won a majority. <b>Lorne Doerkson</b> is premier-designate, ending nine years of NDP government.</li>
             <li>Locally, <b>John McEwen</b> (Conservative) won Port Moody-Burquitlam, 10,712 votes to 9,634 for NDP incumbent Rick Glumac in the preliminary count.</li>
             <li>The housing platform promises faster approvals and puts density decisions back with local Official Community Plans. At the October 14 debate, Doerkson said he would keep the foreign buyers tax and the speculation and vacancy tax.</li>
-            <li>The province's multiplex zoning law (Bill 44) stays in force unless the legislature changes it. The platform does not name a change.</li>
+            <li>The province's multiplex zoning law (Bill 44) stays in force unless the legislature changes it. The party promised to repeal it in 2024, and Doerkson was reported committing to repeal at an October 20 campaign event, but the 2026 platform does not include repeal.</li>
           </ul>
           <p class="read">Our read</p>
-          <p>Nothing here changes the cost of buying a home this fall. If the change brings buyers back off the sidelines, today's selection is the first thing that disappears.</p>
+          <p>We don't think Bill 44 gets repealed outright. The platform's own language is that density decisions belong to local governments and residents, which points to more power for municipalities, not a reset. And even a full repeal wouldn't erase the zoning bylaws cities have already passed. Nothing here changes the cost of buying a home this fall, and if the change brings buyers back off the sidelines, today's selection is the first thing that disappears.</p>
         </div>
       </div>
     </div>
@@ -597,6 +344,22 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
         <p class="pmr-chart__note">One year: -8.4%. Three years: -7.8%. Five years: +3.5%. Ten years: +37.1%. Past performance is not a forecast.</p>
       </div>
       <p class="narrow rv" style="text-align:center;margin-top:2.2rem">Port Moody detached homes are worth less than they were three years ago and more than they were ten years ago. Buying in a dip does not guarantee anything. It does mean you are buying at a price that has already come down, in a city where the supply of family homes on real lots is not growing.</p>
+    </div>
+  </section>
+
+  <!-- ======================= AUTHOR ======================= -->
+  <section class="pmr-author">
+    <div class="wrap">
+      <div class="pmr-author__card rv">
+        <a class="pmr-avatar lg" href="/about/sheri" aria-label="About Sheri Zada">SZ<img src="/assets/images/sheri.jpg" alt="Sheri Zada" onerror="this.remove()" /></a>
+        <div>
+          <p class="eyebrow" style="margin-left:0">About the author</p>
+          <h3>Sheri Zada</h3>
+          <span class="pmr-byline__role">Marketing Director · Zada Group</span>
+          <p>Sheri Zada has spent 14 years listening to her husband explain the ins and outs of real estate, usually at length and often at volume. Eventually she realized she could take his ramblings and translate them into regular human words for the rest of the world to understand.</p>
+          <a class="more" href="/about/sheri">More about Sheri</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -701,6 +464,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
         <li>The Narwhal, <a href="https://thenarwhal.ca/bc-election-2026-result/" rel="noopener">What the B.C. election results mean</a>, October 2026.</li>
         <li>Victoria Times Colonist, <a href="https://www.timescolonist.com/2026-bc-votes/british-columbians-vote-in-early-election-with-david-ebys-job-on-the-line-12935161" rel="noopener">B.C. turns blue: Conservatives win majority</a>, October 2026.</li>
         <li>Conservative Party of BC, <a href="https://conservativebc.ca/wp-content/uploads/2026/10/20261016_BCC_Platform2026_8-5x11-Draft-18_compressed.pdf" rel="noopener">Lorne Doerkson's Plan for a Stronger BC</a>, 2026 platform. Debate commitments as reported by <a href="https://bcballot.ca/platforms/conservative-party/" rel="noopener">BC Ballot</a>.</li>
+        <li>Repeal reporting: BC NDP, <a href="https://www.bcndp.ca/releases/doerkson-makes-private-promises-max-donors-instead-answering-media-questions" rel="noopener">release on Doerkson's October 20 Victoria event</a>; 2024 platform position as summarized by <a href="https://www.kelownarealestate.com/blog-posts/can-bcs-next-government-actually-undo-bill-44" rel="noopener">Kelowna Real Estate</a>; local-control quote via <a href="https://www.vanplex.ca/blog/bc-conservatives-win-multiplex-builders-2026/" rel="noopener">VanPlex</a>.</li>
         <li>Port Moody-Burquitlam result: preliminary count as reported October 25, 2026. Final results are certified by Elections BC.</li>
       </ol>
       <p style="margin-top:1.6rem">Dollar figures in the upsize section are calculated by Zada Group from GVR benchmark prices and do not include commissions, taxes or moving costs. Election results shown are preliminary counts. This page is for general information and is not financial or legal advice. Data deemed reliable but not guaranteed.</p>
@@ -721,6 +485,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
         <li><a href='/about/dawar'>Dawar Zada</a></li>
         <li><a href='/about/randy'>Randy Quach</a></li>
         <li><a href='/about/liz'>Liz Murphy</a></li>
+        <li><a href='/about/sheri'>Sheri Zada</a></li>
       </ul></div>
       <div class="footer-col"><h5>Resources</h5><ul>
         <li><a href='/portmoodymarket'>Port Moody Market Report</a></li>
@@ -923,6 +688,15 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   }
   wire('newsForm', 'newsThanks', 'first-name', 'newsThanksName');
   wire('askForm', 'askThanks');
+
+  /* ---------- Copy link ---------- */
+  var cl = document.getElementById('copyLink'), cm = document.getElementById('copiedMsg');
+  if (cl) cl.addEventListener('click', function () {
+    var url = 'https://zadagroup.ca/portmoodymarket';
+    var ok = function () { cm.classList.add('show'); setTimeout(function () { cm.classList.remove('show'); }, 1800); };
+    if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, function () { window.prompt('Copy this link:', url); });
+    else window.prompt('Copy this link:', url);
+  });
   // No-JS fallback lands back here with a flag
   var q = new URLSearchParams(location.search);
   if (q.get('subscribed')) { document.getElementById('newsForm').classList.add('is-hidden'); document.getElementById('newsThanks').classList.add('show'); }
