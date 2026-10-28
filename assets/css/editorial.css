@@ -452,3 +452,5 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr-sec.pp-brings { border-top: 0; padding-top: 30px; }
 .pmr-sec.pp-brings { padding-bottom: 40px; }
 .pmr-sec.pp-brings + .pmr-sec { padding-top: 70px; }
+.pmr-sec.pp-mkt { border-top: 0; padding-top: 70px; }
+.pmr-sec.pp-mkt + .pmr-sec { padding-top: 70px; }
