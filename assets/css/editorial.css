@@ -454,3 +454,5 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr-sec.pp-brings + .pmr-sec { padding-top: 70px; }
 .pmr-sec.pp-mkt { border-top: 0; padding-top: 70px; }
 .pmr-sec.pp-mkt + .pmr-sec { padding-top: 70px; }
+.pmr-byline__rant { font-family: var(--serif); font-style: italic; font-size: 0.98rem; color: var(--text-soft); margin: 5px 0 0; }
+.pmr-byline__rant a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(168,140,108,0.45); }
