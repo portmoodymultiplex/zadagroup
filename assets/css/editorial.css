@@ -448,3 +448,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pp-quote-link:hover .pp-quote-by span, .pp-quote-link:focus-visible .pp-quote-by span { color: var(--gold); }
 .pp-quote-link:focus-visible { outline: 1px solid var(--gold); outline-offset: 12px; }
 .pmr .pp-quote { transition: color .25s; }
+
+.pmr-sec.pp-brings { border-top: 0; padding-top: 30px; }
+.pmr-sec.pp-brings { padding-bottom: 40px; }
+.pmr-sec.pp-brings + .pmr-sec { padding-top: 70px; }
