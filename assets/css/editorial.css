@@ -569,3 +569,19 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   .pp-hero .pp-desig { letter-spacing: .2em; font-size: .64rem; }
   .pp-hero .pp-lede { max-width: 28ch; margin-left: auto; margin-right: auto; }
 }
+
+/* blog post intro + tighter hero */
+.pmr-hero { min-height: 86svh; }
+.pmr-hero__photo { height: 56%; }
+.pmr-hero .rule { margin-bottom: 2.2rem; }
+.pmr-intro { padding: 10px 0 70px; }
+.pmr-intro__in { max-width: 680px; margin: 0 auto; }
+.pmr .pmr-intro__in p { font-family: var(--serif); font-size: clamp(1.3rem, 2.1vw, 1.6rem); line-height: 1.55; color: var(--text); margin: 0 0 1.2rem; }
+.pmr .pmr-intro__in p:last-child { margin-bottom: 0; }
+.pmr-intro + .wrap .pmr-panel, .pmr-intro + section .pmr-panel { margin-top: 0; }
+@media (max-width: 600px) {
+  .pmr-hero { min-height: 0; padding-top: 110px; padding-bottom: 46vw; }
+  .pmr-hero__photo { height: 44%; }
+  .pmr-intro { padding: 0 0 50px; }
+  .pmr .pmr-intro__in p { font-size: 1.22rem; }
+}
