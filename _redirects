@@ -3,9 +3,11 @@
 # Drop this file in the site root (same level as index.html). One rule per line.
 # Netlify handles trailing-slash variants automatically.
 
-# --- Port Moody Market Report (ad link without dashes) ---
-/port-moody-market       /portmoodymarket  301!
-/port-moody-market.html  /portmoodymarket  301!
+# --- Port Moody upsize blog post (Facebook ad links to /portmoodymarket) ---
+/portmoodymarket         /blog/port-moody-upsize-market  301!
+/portmoodymarket.html    /blog/port-moody-upsize-market  301!
+/port-moody-market       /blog/port-moody-upsize-market  301!
+/port-moody-market.html  /blog/port-moody-upsize-market  301!
 
 # --- 512 Garrett listing (dashed variants) ---
 /512-garrett         /512garrett  301!
