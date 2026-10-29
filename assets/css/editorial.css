@@ -585,3 +585,6 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   .pmr-intro { padding: 0 0 50px; }
   .pmr .pmr-intro__in p { font-size: 1.22rem; }
 }
+/* intro matches body copy */
+.pmr .pmr-intro__in p { font-family: var(--sans); font-size: 1.06rem; line-height: 1.75; color: var(--text); }
+@media (max-width: 600px) { .pmr .pmr-intro__in p { font-size: 1rem; } }
