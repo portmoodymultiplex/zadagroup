@@ -17,7 +17,7 @@
 <meta property="og:image:type"       content="image/jpeg">
 <meta property="og:image:width"      content="1200">
 <meta property="og:image:height"     content="630">
-<meta property="og:image:alt"        content="Orchid, 2465 Wilson Avenue, Port Coquitlam">
+<meta property="og:image:alt"        content="Top floor balcony over fall trees at Orchid, 2465 Wilson Avenue, Port Coquitlam">
 
 <meta name="twitter:card"        content="summary_large_image">
 <meta name="twitter:title"       content="Two Residences at Orchid, 2465 Wilson Avenue, Port Coquitlam">
@@ -306,6 +306,8 @@
       <div>Guest Suite<small>For visiting family and friends</small></div>
       <div>Landscaped Gardens<small>Green space on site</small></div>
     </div>
+    <div class="gal reveal d1" id="galbldg"></div>
+    <div class="gal-foot reveal d1" id="footbldg"></div>
   </div>
 </section>
 
@@ -381,7 +383,7 @@
     </div>
     <div class="res-body">
       <div class="reveal">
-        <p>Top floor, with a large private balcony over the greenbelt and the Coquitlam River. Two bedrooms and two full bathrooms across 840 square feet, with room to work from home, host, or grow into.</p>
+        <p>Top floor, with tall ceilings, clerestory windows and a large private balcony over the greenbelt and the Coquitlam River. Two bedrooms and two full bathrooms across 840 square feet, with room to work from home, host, or grow into.</p>
         <p>In-suite laundry, underground parking and a storage locker are all included.</p>
         <div class="res-oh">Open Saturday, November 14 &middot; 1:00 to 3:00 PM</div>
       </div>
@@ -526,8 +528,9 @@
   // Drop numbered JPGs (01.jpg, 02.jpg ...) into assets/photos/210/ and assets/photos/607/
   // then set the counts below. 0 shows a "photos coming soon" panel.
   var RES = {
-    '210': { count: 0, preview: [0,1,2,3,4,5,6,7] },
-    '607': { count: 0, preview: [0,1,2,3,4,5,6,7] }
+    'bldg': { count: 16, preview: [0,1,2,3,4,5,6,7] },
+    '210':  { count: 28, preview: [0,1,2,3,4,5,6,7] },
+    '607':  { count: 22, preview: [0,1,2,3,4,5,6,7] }
   };
 
   var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbCount = document.getElementById('lbCount');
@@ -552,7 +555,7 @@
       if (layout[n]) fig.className = layout[n];
       var img = document.createElement('img');
       img.loading = 'lazy'; img.src = photos[idx];
-      img.alt = 'Residence ' + key + ', 2465 Wilson Avenue, photo ' + (idx + 1);
+      img.alt = (key === 'bldg' ? 'Orchid' : 'Residence ' + key) + ', 2465 Wilson Avenue, photo ' + (idx + 1);
       fig.appendChild(img);
       var extra = r.count - preview.length;
       if (n === preview.length - 1 && extra > 0) { fig.className = (fig.className + ' more').trim(); fig.setAttribute('data-more', '+' + extra + ' more'); }
@@ -561,7 +564,7 @@
     });
     var b = document.createElement('button');
     b.className = 'btn ' + (key === '607' ? 'btn-ghost-dark' : 'btn-ghost-light') + ' btn-lg';
-    b.textContent = 'View All ' + r.count + ' Photos';
+    b.textContent = key === 'bldg' ? 'View the Building' : 'View All ' + r.count + ' Photos';
     b.addEventListener('click', function(){ openLb(photos, 0); });
     foot.appendChild(b);
   });
