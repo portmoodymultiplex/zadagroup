@@ -2603,3 +2603,12 @@ footer .container { padding: 0; }
 .site-credit:hover { opacity: 0.9; }
 .site-credit .name { font-family: var(--serif-text); font-style: italic; text-transform: none; font-size: 0.95rem; letter-spacing: 0.03em; color: var(--brown-warm); }
 .site-credit-inline .name { font-family: var(--serif-text); font-style: italic; font-size: 1.05em; color: var(--brown-warm); }
+
+/* Journal post byline (page-header posts) ------------------------------ */
+.post-byline { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 1.8rem auto 0; text-align: left; }
+.post-byline__img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; display: block; }
+.post-byline__by { font-family: var(--serif, 'Cormorant Garamond', serif); font-size: 1.1rem; color: var(--off-white); }
+.post-byline__rant { font-family: var(--serif, 'Cormorant Garamond', serif); font-style: italic; font-size: 0.95rem; color: var(--ink-on-dark-soft); }
+.post-byline a { color: var(--brown-warm); text-decoration: none; border-bottom: 1px solid rgba(168,140,108,0.4); }
+.post-byline__meta { margin: 1.1rem auto 0; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--ink-on-dark-soft); }
+.post-byline a.post-byline__avatar { border-bottom: 0; }
