@@ -3,11 +3,15 @@
 # Drop this file in the site root (same level as index.html). One rule per line.
 # Netlify handles trailing-slash variants automatically.
 
+# --- Blog moved to /journal (Nov 2026). Keeps every old /blog link and Google result working. ---
+/blog          /journal/          301!
+/blog/*        /journal/:splat    301!
+
 # --- Port Moody upsize blog post (Facebook ad links to /portmoodymarket) ---
-/portmoodymarket         /blog/port-moody-upsize-market  301!
-/portmoodymarket.html    /blog/port-moody-upsize-market  301!
-/port-moody-market       /blog/port-moody-upsize-market  301!
-/port-moody-market.html  /blog/port-moody-upsize-market  301!
+/portmoodymarket         /journal/port-moody-upsize-market  301!
+/portmoodymarket.html    /journal/port-moody-upsize-market  301!
+/port-moody-market       /journal/port-moody-upsize-market  301!
+/port-moody-market.html  /journal/port-moody-upsize-market  301!
 
 # --- 512 Garrett listing (dashed variants) ---
 /512-garrett         /512garrett  301!
@@ -35,12 +39,12 @@
 /acreages/*             /sales  301!
 
 # --- Old blog posts and WordPress taxonomy pages ---
-/real-estate/*  /blog/  301!
-/category/*     /blog/  301!
-/tag/*          /blog/  301!
-/author/*       /blog/  301!
+/real-estate/*  /journal/  301!
+/category/*     /journal/  301!
+/tag/*          /journal/  301!
+/author/*       /journal/  301!
 
 # --- WordPress leftovers ---
 /wp-content/*  /  301!
 /wp-json/*     /  301!
-/feed/*        /blog/  301!
+/feed/*        /journal/  301!
