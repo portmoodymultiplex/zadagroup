@@ -592,3 +592,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr-hero__photo--aerial { background-image: url('/assets/images/pm-aerial-inlet.jpg'); background-position: center 60%; filter: brightness(.75) saturate(.9); -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 40%, #000 78%, transparent 100%); mask-image: linear-gradient(180deg, transparent 0%, #000 40%, #000 78%, transparent 100%); }
 .pmr .pmr-footnote { margin-top: 1.2rem; font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: var(--gold-bright); }
 .pmr-byline__note { font-family: var(--serif); font-style: italic; font-size: 0.86rem; color: var(--text-faint); margin: 4px 0 0; }
+
+/* unlicensed disclosure (BCFSA: unlicensed team members must be identified as unlicensed) */
+.pmr-byline__lic { font-size: 0.78rem; color: var(--text-soft); margin: 3px 0 0; }
+.pmr-author__card .pmr-byline__lic { display: block; margin: -0.6rem 0 1rem; font-family: var(--serif); font-style: italic; font-size: 0.98rem; }
