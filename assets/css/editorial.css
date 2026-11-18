@@ -620,3 +620,13 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 .pmr-byline--row .pmr-byline__who { text-align: left; }
 .pmr-byline--row .pmr-byline__top { justify-content: flex-start; }
 .pmr-byline--row .pmr-byline__names .pmr-byline__rant { margin-top: 2px; }
+/* byline v4: Written by and Reviewed by on one line beside the photo */
+.pmr-byline--row .pmr-byline__by { white-space: nowrap; font-size: 1.05rem; }
+.pmr-byline--row .pmr-byline__sep { color: var(--text-faint); margin: 0 0.25em; }
+.pmr-byline--row .pmr-byline__rev { font-style: italic; color: var(--text-soft); }
+.pmr-byline--row .pmr-byline__rev a { color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(168,140,108,0.45); }
+@media (max-width: 600px) {
+  .pmr-byline--row .pmr-byline__by { font-size: clamp(0.66rem, 3.15vw, 1.05rem); }
+  .pmr-byline--row .pmr-avatar { width: 44px; height: 44px; }
+  .pmr-byline--row .pmr-byline__top { gap: 10px; }
+}
