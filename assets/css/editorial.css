@@ -596,3 +596,6 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
 /* unlicensed disclosure (BCFSA: unlicensed team members must be identified as unlicensed) */
 .pmr-byline__lic { font-size: 0.78rem; color: var(--text-soft); margin: 3px 0 0; }
 .pmr-author__card .pmr-byline__lic { display: block; margin: -0.6rem 0 1rem; font-family: var(--serif); font-style: italic; font-size: 0.98rem; }
+
+/* rate hike post cover */
+.pmr-hero__photo--dining { background-image: url('/assets/images/journal/rate-hike-dining.jpg'); background-position: center 46%; filter: brightness(.72); }
