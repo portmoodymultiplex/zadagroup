@@ -616,3 +616,7 @@ body.pmr-body .nav.scrolled { background: rgba(7, 8, 10, 0.94); }
   .pmr-byline--row .pmr-byline__lic { font-size: clamp(0.56rem, 2.6vw, 0.78rem); }
   .pmr-byline--row .pmr-byline__rant { font-size: 0.95rem; }
 }
+/* byline v3: photo + names on top, designation underneath, all left-aligned to the designation line */
+.pmr-byline--row .pmr-byline__who { text-align: left; }
+.pmr-byline--row .pmr-byline__top { justify-content: flex-start; }
+.pmr-byline--row .pmr-byline__names .pmr-byline__rant { margin-top: 2px; }
