@@ -22,7 +22,59 @@
 <link rel="stylesheet" href="/assets/css/style.css" />
 
 <link rel="stylesheet" href="/assets/css/editorial.css" />
-<style>.pmr-take p + p { margin-top: 0.9rem; }</style>
+<style>.pmr-take p + p { margin-top: 0.9rem; }
+/* Mandate letters post: scroll effects, timeline, calculator */
+.zprog { position: fixed; top: 0; left: 0; height: 2px; width: 100%; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, #8a6f50, #c2a582); z-index: 1000; pointer-events: none; }
+.pmr .rv { transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+.zs > div { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.zs.in > div { opacity: 1; transform: none; }
+.zs.in > div:nth-child(2) { transition-delay: .15s; } .zs.in > div:nth-child(3) { transition-delay: .3s; }
+.pmr-hero__photo--video { overflow: hidden; }
+.pmr-hero__photo--video video { transform: scale(var(--hz, 1.06)); transition: transform .1s linear; will-change: transform; }
+/* timeline */
+.zt { margin-top: 4.2rem; padding: 3rem 2.4rem 2.2rem; border: 1px solid rgba(168,140,108,.25); background: rgba(14,47,36,.18); position: relative; }
+.zt__eyebrow { text-align: center; margin-bottom: 2.4rem; }
+.zt__track { position: absolute; left: 3.35rem; top: 7.2rem; bottom: 3rem; width: 1px; background: rgba(236,232,226,.14); }
+.zt__fill { position: absolute; left: 0; top: 0; width: 1px; height: 100%; background: var(--gold); transform-origin: top; transform: scaleY(var(--zt, 0)); }
+.zt__list { list-style: none; margin: 0; padding: 0; }
+.zt__list li { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 1.4rem; padding: 0 0 1.9rem 3rem; opacity: .28; transform: translateX(-8px); transition: opacity .6s ease, transform .6s ease; }
+.zt__list li::before { content: ''; position: absolute; left: .62rem; top: .45rem; width: 9px; height: 9px; border-radius: 50%; background: #0b0c0e; border: 1px solid var(--gold); transition: background .4s ease, box-shadow .4s ease; }
+.zt__list li.on { opacity: 1; transform: none; }
+.zt__list li.on::before { background: var(--gold); }
+.zt__list li.zt__us.on::before, .zt__list li.zt__now.on::before { box-shadow: 0 0 0 6px rgba(168,140,108,.22); }
+.zt__date { font-family: var(--serif); font-size: 1.35rem; color: var(--gold); line-height: 1.2; }
+.zt__what { color: var(--text-soft); font-size: 1rem; line-height: 1.65; }
+.zt__us .zt__what, .zt__now .zt__what { color: var(--text); }
+/* results */
+.zr__big { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(168,140,108,.35); border-bottom: 1px solid rgba(168,140,108,.35); margin-bottom: 2.6rem; }
+.zr__big > div { text-align: center; padding: 2.6rem 1.4rem 2.2rem; }
+.zr__big > div + div { border-left: 1px solid rgba(168,140,108,.35); }
+.zr__num { font-family: var(--serif); font-size: clamp(3.4rem, 8vw, 6rem); line-height: 1; color: var(--gold-bright, #c2a582); }
+.zr__big p { margin: .9rem auto 0; max-width: 28ch; font-size: .95rem; }
+.zcalc__ctl { min-width: 280px; flex: 1; max-width: 420px; }
+.zcalc__ctl label { display: block; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--text-faint); margin-bottom: 12px; }
+.zcalc__ctl label b { color: var(--text); font-weight: 500; letter-spacing: .04em; font-size: 1rem; text-transform: none; margin-left: 4px; }
+.zcalc__ctl input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 2px; background: linear-gradient(90deg, var(--gold) var(--p, 15%), rgba(236,232,226,.18) var(--p, 15%)); outline: none; }
+.zcalc__ctl input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #0b0c0e; border: 2px solid var(--gold); cursor: grab; }
+.zcalc__ctl input[type=range]::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #0b0c0e; border: 2px solid var(--gold); cursor: grab; }
+/* divider */
+.zdiv { padding: 70px 0 10px; text-align: center; }
+.zdiv__t { font-family: var(--serif); font-size: clamp(2rem, 4.4vw, 3rem); color: var(--text); margin: 1.2rem 0 .4rem !important; }
+.zdiv__s { color: var(--text-faint) !important; font-size: .95rem !important; }
+@media (max-width: 700px) {
+  .zt { padding: 2.2rem 1.2rem 1.4rem; }
+  .zt__track { left: calc(1.35rem + 5px); top: 6rem; }
+  .zt__list li { grid-template-columns: 1fr; gap: .2rem; padding-left: 2.4rem; }
+  .zt__list li::before { left: .15rem; }
+  .zr__big { grid-template-columns: 1fr; }
+  .zr__big > div + div { border-left: 0; border-top: 1px solid rgba(168,140,108,.35); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zs > div, .zt__list li { opacity: 1 !important; transform: none !important; transition: none; }
+  .zt__fill { transform: none; }
+  .pmr-hero__photo--video { background: url('/assets/images/journal/mandate-letters-cover-v2.jpg') center 40% / cover no-repeat !important; }
+}
+</style>
 
 <script type="application/ld+json">
 {
@@ -77,8 +129,8 @@
   <!-- ======================= HERO ======================= -->
   <header class="pmr-hero">
     <div class="pmr-hero__photo pmr-hero__photo--video" aria-hidden="true">
-      <video autoplay muted loop playsinline preload="auto" poster="/assets/images/journal/mandate-letters-cover-poster.jpg" disablepictureinpicture>
-        <source src="/assets/video/journal/mandate-letters-cover.mp4" type="video/mp4" />
+      <video autoplay muted loop playsinline preload="auto" poster="/assets/images/journal/mandate-letters-cover-v2.jpg" disablepictureinpicture>
+        <source src="/assets/video/journal/mandate-letters-cover-v2.mp4" type="video/mp4" />
       </video>
     </div>
     <div class="pmr-hero__inner wrap">
@@ -95,7 +147,7 @@
           <div class="pmr-byline__lic"><em>Not a licensed REALTOR®</em> | Communications and Community Relations</div>
         </div>
         <div class="pmr-byline__meta">
-          <span>Published Nov 26, 2026</span><span>9 minute read</span>
+          <span>Published Nov 26, 2026</span><span>10 minute read</span>
         </div>
       </div>
       <div class="pmr-share" aria-label="Get in touch with Zada Group">
@@ -108,16 +160,18 @@
     <a class="scroll" href="#numbers">The numbers</a>
   </header>
 
+
   <!-- ======================= INTRO ======================= -->
   <section class="pmr-intro">
     <div class="wrap">
       <div class="pmr-intro__in rv">
         <p>On November 24, Premier Lorne Doerkson issued mandate letters to every cabinet minister and minister of state. These letters are the new government's to-do list: what each minister is expected to deliver, how they'll be measured, and what they're not allowed to spend money on without a fight.</p>
         <p>The headline for anyone who owns, buys or builds in Metro Vancouver is in the housing letters. The Province is telling its housing ministers to restore municipal control over the "location, form and character of housing." In plain terms, the era of Victoria setting the rules for what gets built on your street is ending, and the decisions are going back to city hall.</p>
-        <p>Below: what the letters say about housing, what they leave out, the tax changes most families will feel first, and what it means if you own, buy or invest.</p>
+        <p>Below: what the letters mean for small-scale housing and the multiplex window in Port Moody, how our clients got ahead of it and what that earned them, and then the rest of the letters, from income tax to TransLink.</p>
       </div>
     </div>
   </section>
+
 
   <!-- ======================= STAT PANEL ======================= -->
   <section class="wrap" id="numbers" aria-label="Key numbers">
@@ -125,27 +179,27 @@
       <div class="pmr-panel__grid">
         <div class="pmr-stat">
           <div class="num">Nov 24</div>
-          <div class="lbl gold">Mandate letters issued<br/>To every minister</div>
+          <div class="lbl gold">Letters issued. Port Coquitlam<br/>pauses new multiplex applications.</div>
         </div>
         <div class="pmr-stat">
-          <div class="num">$32,000</div>
-          <div class="lbl">New basic personal amount<br/>Up from $13,216 for 2027</div>
+          <div class="num"><span class="zc" data-to="70">70</span>%</div>
+          <div class="lbl">Drop in Port Moody units<br/>at the rezoning stage</div>
         </div>
         <div class="pmr-stat">
-          <div class="num">$1,000</div>
-          <div class="lbl gold">Income tax relief per person<br/>About $2,000 per couple</div>
+          <div class="num"><span class="zc" data-to="60">60</span>%</div>
+          <div class="lbl gold">Average return for our investor<br/>clients, over about two years</div>
         </div>
         <div class="pmr-stat">
-          <div class="num">None</div>
-          <div class="lbl">Changes to real estate taxes<br/>PTT, spec tax, flipping tax</div>
+          <div class="num">$<span class="zc" data-to="1" data-dec="0">1</span>M+</div>
+          <div class="lbl">Average profit on our clients'<br/>small-scale projects</div>
         </div>
       </div>
       <div class="pmr-panel__foot">
         <div>Approval timelines<br/>"From years to months"</div>
-        <div>Tax review panel<br/>Reports within 180 days</div>
-        <div>Regulation target<br/>Back to 2017 levels by end of term</div>
+        <div>Basic personal amount<br/>$32,000 for 2027</div>
+        <div>Real estate taxes<br/>Unchanged</div>
       </div>
-      <p class="pmr-panel__src">Office of the Premier, November 24, 2026; ministerial mandate letters to the Ministers of Local Government, Housing, Sport and Culture; State for Housing; Finance; Transportation and Infrastructure; and State for Red Tape Reduction.</p>
+      <p class="pmr-panel__src">Office of the Premier and ministerial mandate letters, November 24, 2026; Port Coquitlam council, November 24, 2026; City of Port Moody staff report, November 2025, as reported by Tri-Cities Dispatch. Client figures are averages across Zada Group client projects.</p>
     </div>
   </section>
 
@@ -155,25 +209,25 @@
       <div class="pmr-head rv">
         <h2>If you read nothing else, <em>read this</em></h2>
       </div>
-      <div class="pmr-short rv">
+      <div class="pmr-short rv zs">
         <div>
           <p class="n">One</p>
           <p><strong>Zoning power is moving back to cities.</strong> The letters don't name Bill 44 or SSMUH, but the direction to restore local control over the form and character of housing points one way. What your lot allows will depend more on your council than on Victoria.</p>
         </div>
         <div>
           <p class="n">Two</p>
-          <p><strong>Approvals and building costs are the target.</strong> Ministers are told to cut approvals from years to months, overhaul the Step Code, stop cities adding requirements beyond the B.C. Building Code, and scrap charges that push up construction costs.</p>
+          <p><strong>The multiplex window is closing.</strong> Port Coquitlam stopped taking new Bill 44 applications the same day the letters went out. Projects already approved keep their approvals, which is why the ones our clients hold are worth so much.</p>
         </div>
         <div>
           <p class="n">Three</p>
-          <p><strong>None of the big real estate taxes were touched.</strong> The property transfer tax, the speculation and vacancy tax, the home flipping tax and the 20% foreign buyer tax aren't mentioned in any letter we read. For now, the rules you buy and sell under haven't changed.</p>
+          <p><strong>The rest is smaller, for now.</strong> Approvals and building costs are being targeted, income tax is coming down in 2027, and the property transfer, speculation, flipping and foreign buyer taxes weren't touched.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======================= HOUSING ======================= -->
-  <section class="pmr-sec alt" id="housing">
+  <section class="pmr-sec" id="housing">
     <div class="wrap">
       <div class="pmr-head rv">
         <h2>What the letters actually <em>say about housing</em></h2>
@@ -200,8 +254,106 @@
     </div>
   </section>
 
+
+  <!-- ======================= MOVED EARLY ======================= -->
+  <section class="pmr-sec alt" id="early">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <h2>We moved early. <em>Our clients did too.</em></h2>
+        <p>When Bill 44 passed in late 2023, most people in Port Moody read it as a headline. We read it as a deadline.</p>
+      </div>
+      <div class="pmr-explain">
+        <div class="rv">
+          <h3>How we got there first</h3>
+          <p>Dawar was one of the first homeowners in Port Moody to move a multiplex application forward under the new rules, and Zada Group has been involved in almost every small-scale multi-unit application in the city since.</p>
+          <p>Going first meant learning the process while the city was still writing it. Setbacks, servicing reviews, access and driveway questions, water flow tests, variances. Every one of those lessons went straight to the clients who came after us, so they didn't have to learn them the expensive way.</p>
+          <p>We train our agents on legislation and bylaws city by city, and we read council agendas the way most people read the news. That's how a small group of our consulting clients had applications in while the rules were still wide open.</p>
+        </div>
+        <div class="rv">
+          <h3>Most owners never moved</h3>
+          <p>Port Moody staff told council in November 2025 that units at the rezoning stage had dropped 70 percent from the year before, part of a slowdown across the region. The rules allowed it. Most people just didn't act.</p>
+          <p>Now the door is closing. Port Coquitlam has stopped taking new applications. Port Moody's new mayor, Haven Lurbiecki, was the only councillor last term to vote against the city's Official Community Plan. Port Moody hasn't acted yet, and Bill 44 is still the law there, but the direction is hard to miss.</p>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="zt rv" id="window" aria-label="Timeline of the small-scale housing window">
+        <p class="eyebrow zt__eyebrow">The window, start to finish</p>
+        <div class="zt__track"><div class="zt__fill"></div></div>
+        <ol class="zt__list">
+          <li><span class="zt__date">Nov 2023</span><span class="zt__what">The Province passes Bill 44. Three to six homes become legal on most single-family lots.</span></li>
+          <li><span class="zt__date">Jun 25, 2024</span><span class="zt__what">Port Moody finishes rewriting its zoning to allow small-scale multi-unit housing.</span></li>
+          <li class="zt__us"><span class="zt__date">Right after</span><span class="zt__what">Dawar files one of the first multiplex applications in the city. Our clients follow.</span></li>
+          <li><span class="zt__date">Nov 2025</span><span class="zt__what">Port Moody reports units at the rezoning stage down 70 percent. Most owners are sitting it out.</span></li>
+          <li><span class="zt__date">Oct 2026</span><span class="zt__what">Port Moody elects a new mayor. B.C. elects a new government that campaigned on rolling the rules back.</span></li>
+          <li class="zt__now"><span class="zt__date">Nov 24, 2026</span><span class="zt__what">Mandate letters hand housing decisions back to cities. Port Coquitlam pauses new applications the same day.</span></li>
+          <li><span class="zt__date">Spring 2027</span><span class="zt__what">The legislature returns. Any change to Bill 44 itself has to pass there.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CLIENT RESULTS ======================= -->
+  <section class="pmr-sec" id="results">
+    <div class="wrap">
+      <div class="pmr-head rv">
+        <h2>What moving early <em>meant for our clients</em></h2>
+        <p>Across the small-scale projects our clients moved forward, the numbers speak for themselves.</p>
+      </div>
+
+      <div class="zr rv">
+        <div class="zr__big">
+          <div>
+            <div class="zr__num">$<span class="zc" data-to="1">1</span>M+</div>
+            <p>Average profit on our clients' small-scale projects</p>
+          </div>
+          <div>
+            <div class="zr__num"><span class="zc" data-to="60">60</span>%</div>
+            <p>Average return for our investor clients, over about two years</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pmr-chart zcalc rv">
+        <div class="pmr-chart__top">
+          <div class="pmr-chart__read"><span id="calcOut">$160,000</span><small>What your money became</small></div>
+          <div class="zcalc__ctl">
+            <label for="calcIn">If you had invested <b id="calcInLbl">$100,000</b></label>
+            <input id="calcIn" type="range" min="25000" max="500000" step="25000" value="100000" />
+          </div>
+        </div>
+        <div class="pmr-chart__box"><canvas id="calcChart" role="img" aria-label="Bar chart comparing the amount invested with its value after about two years at a 60 percent return"></canvas></div>
+        <p class="pmr-chart__note">At our clients' average 60% return over about two years. Every project is different, and past results don't guarantee future results.</p>
+      </div>
+
+      <div class="pmr-explain" style="margin-top:3.2rem">
+        <div class="rv">
+          <h3>Why they may be the only ones</h3>
+          <p>Approvals already granted under the current rules stay in place. Port Coquitlam's pause only covers new applications, and nothing in the mandate letters reaches back to projects already in the system.</p>
+          <p>That means the multiplex homes our clients are building could be some of the last ones Port Moody gets. If the rules tighten, nobody new can make more of them on a standard lot, and the families who want that kind of home will have a very short list to choose from.</p>
+        </div>
+        <div class="rv">
+          <h3>What made the difference</h3>
+          <p>It wasn't luck, and it wasn't a hot market. Prices fell this year. Our clients made their money because they had an application in while the rules were open and a team that already knew how the city would review it.</p>
+          <div class="pmr-define">
+            <p><b>The plain version.</b> The people who acted on Bill 44 early made real money. The people who waited are about to find out whether they still can.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= THE REST ======================= -->
+  <section class="zdiv">
+    <div class="wrap rv">
+      <hr class="rule" />
+      <p class="zdiv__t">The rest of <em>the letters</em></p>
+      <p class="zdiv__s">Taxes, building costs, TransLink, and what Victoria left out.</p>
+    </div>
+  </section>
+
   <!-- ======================= LEFT OUT ======================= -->
-  <section class="pmr-sec" id="left-out">
+  <section class="pmr-sec alt" id="left-out">
     <div class="wrap">
       <div class="pmr-head rv">
         <h2>What the letters <em>leave out</em></h2>
@@ -231,64 +383,9 @@
     </div>
   </section>
 
-  <!-- ======================= MOVED EARLY ======================= -->
-  <section class="pmr-sec alt" id="early">
-    <div class="wrap">
-      <div class="pmr-head rv">
-        <h2>We moved early. <em>Our clients did too.</em></h2>
-        <p>When Bill 44 passed in late 2023, most people in Port Moody read it as a headline. We read it as a deadline.</p>
-      </div>
-      <div class="pmr-explain">
-        <div class="rv">
-          <h3>How we got there first</h3>
-          <p>Dawar was one of the first homeowners in Port Moody to move a multiplex application forward under the new rules, and Zada Group has been involved in almost every small-scale multi-unit application in the city since.</p>
-          <p>Going first meant learning the process while the city was still writing it. Setbacks, servicing reviews, access and driveway questions, water flow tests, variances. Every one of those lessons went straight to the clients who came after us, so they didn't have to learn them the expensive way.</p>
-          <p>We train our agents on legislation and bylaws city by city, and we read council agendas the way most people read the news. That's how a small group of our consulting clients had applications in while the rules were still wide open.</p>
-        </div>
-        <div class="rv">
-          <h3>Why it matters now</h3>
-          <p>Most owners never moved. Port Moody staff told council in November 2025 that units at the rezoning stage had dropped 70 percent from the year before, part of a slowdown across the region.</p>
-          <p>Now the door is closing. On November 24, Port Coquitlam council voted unanimously to suspend new applications that rely on Bill 44's small-scale densities. Port Moody's new mayor, Haven Lurbiecki, was the only councillor last term to vote against the city's Official Community Plan. Port Moody hasn't acted yet, and Bill 44 is still the law there, but the direction is hard to miss.</p>
-          <div class="pmr-define">
-            <p><b>The plain version.</b> If the rules tighten, the multiplex homes already approved or in the system could be some of the only ones Port Moody gets. Most of them have our fingerprints on them.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENT NUMBERS: hidden until Sheri sends the proforma. Unhide and fill in.
-   ======================= CLIENT NUMBERS (PENDING PROFORMA) ======================= --
-  <section class="pmr-sec" id="results">
-    <div class="wrap">
-      <div class="pmr-head rv">
-        <h2>What moving early <em>meant for our clients</em></h2>
-        <p>[PENDING: Sheri is sending a real client proforma. Replace the rows below before publishing. Do not publish with placeholder figures.]</p>
-      </div>
-      <div class="pmr-explain">
-        <div class="rv">
-          <h3>A Port Moody lot, before and after</h3>
-          <div class="pmr-gap__big">[$ gain]</div>
-          <div class="pmr-gap__rows">
-            <div><span>What the lot was worth as a single house</span><span>[$]</span></div>
-            <div><span>Homes approved on the lot</span><span>[#]</span></div>
-            <div><span>Total cost to design, permit and build</span><span>[$]</span></div>
-            <div><span>Projected value of the finished homes</span><span>[$]</span></div>
-            <div><span>Projected gain over selling as a house</span><span>[$]</span></div>
-          </div>
-        </div>
-        <div class="rv">
-          <h3>What made the difference</h3>
-          <p>[Two or three short paragraphs from the proforma: when the client applied, what it cost to hold the lot while approvals came through, and what the same owner would have had if they'd sold as a single house or waited until this month.]</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  END CLIENT NUMBERS -->
 
   <!-- ======================= MONEY ======================= -->
-  <section class="pmr-sec alt" id="money">
+  <section class="pmr-sec" id="money">
     <div class="wrap">
       <div class="pmr-head rv">
         <h2>Money back <em>in your pocket</em></h2>
@@ -319,8 +416,9 @@
     </div>
   </section>
 
+
   <!-- ======================= TRANSPORT ======================= -->
-  <section class="pmr-sec" id="transit">
+  <section class="pmr-sec alt" id="transit">
     <div class="wrap narrow">
       <div class="pmr-head rv">
         <h2>Getting around <em>the Lower Mainland</em></h2>
@@ -338,8 +436,9 @@
     </div>
   </section>
 
+
   <!-- ======================= WHAT TO DO ======================= -->
-  <section class="pmr-sec alt" id="perspective">
+  <section class="pmr-sec" id="perspective">
     <div class="wrap narrow">
       <div class="pmr-head rv">
         <h2>What we'd do <em>right now</em></h2>
@@ -363,20 +462,22 @@
     </div>
   </section>
 
+
   <!-- ======================= OUR READ ======================= -->
-  <section class="pmr-sec" id="our-read">
+  <section class="pmr-sec alt" id="our-read">
     <div class="wrap narrow">
       <div class="pmr-head rv">
         <h2>Paying attention <em>pays.</em></h2>
       </div>
       <div class="rv">
-        <p>We didn't get into SSMUH early by luck. We got in early because we watch Victoria and city hall as closely as we watch the market, and we act on what we see. Our clients who listened are holding approvals that may be hard to get again. A lot of owners who planned to look into it someday are about to find out someday has passed.</p>
+        <p>We didn't get into SSMUH early by luck. We got in early because we watch Victoria and city hall as closely as we watch the market, and we act on what we see. Our clients who listened earned an average 60% return and are holding approvals that may be hard to get again. A lot of owners who planned to look into it someday are about to find out someday has passed.</p>
         <p>We said in October that we expected this government to give cities more power rather than simply tear the rules up, and these letters read that way. The language is about restoring local control and lining zoning up with each city's plan, which means the answer for your lot will depend on which city you're in.</p>
         <p>For most of our clients, this doesn't change the plan. People moving for a growing family, a parent, a school or a commute are making the same move they were last week. The one thing it does change is the case for paying a premium for density on its own. That's a conversation worth having before you buy, not after.</p>
         <p>If you own a lot in Port Moody or Coquitlam and you've been meaning to find out what it allows, find out now, while Bill 44 is still the law there. Once a council acts, that conversation is over. <a href="/about/zada-group#team">Ask one of our agents</a>, and we'll tell you where your lot stands and what we'd do with it.</p>
       </div>
     </div>
   </section>
+
 
 
 
@@ -498,9 +599,11 @@
         <li>CTV News Vancouver, <a href="https://www.ctvnews.ca/vancouver/article/premier-designates-housing-plans-prompt-support-and-backlash/" rel="noopener">Premier designate's housing plans prompt support and backlash</a>. Doerkson's stated plan to end housing targets and roll back the multiplex rules.</li>
         <li>Daily Hive, <a href="https://dailyhive.com/vancouver/bc-government-housing-directives-mandate-conservative-november-2026" rel="noopener">B.C. government's housing policies overhaul restores municipal control</a>, November 2026; and City Hall Watch, <a href="https://cityhallwatch.wordpress.com/2026/11/26/metro-vancouver-councils-rollback-bc-ndp-housing-laws-bill-44-vancouver/" rel="noopener">B.C. Mayors Push Back on Bill 44 and Restore Local Control</a>, November 26, 2026. Port Coquitlam's November 24 vote.</li>
         <li>Tri-Cities Dispatch, <a href="https://tricitiesdispatch.com/housing-targets-moody-report/" rel="noopener">Port Moody surpassing provincial housing targets for now, but new applications fall by 70 percent</a>, November 16, 2025.</li>
+        <li>City of Port Moody, <a href="https://www.portmoody.ca/home-and-property/housing/provincial-housing-legislation/small-scale-multi-unit-housing-ssmuh/" rel="noopener">Small-Scale, Multi-Unit Housing</a> and <a href="https://engage.portmoody.ca/portmoody-2050/news_feed/provincial-housing-legislation-and-the-ocp" rel="noopener">Provincial housing legislation and the OCP</a>: zoning updates completed June 25, 2024.</li>
+        <li>CTV News via News Minimalist, <a href="https://www.newsminimalist.com/articles/port-coquitlam-mayor-seeks-pause-on-bill-44-housing-applications-69c66b05" rel="noopener">Port Coquitlam mayor seeks pause on Bill 44 housing applications</a>, November 24, 2026: the spring legislative session.</li>
         <li>The Tyee, <a href="https://thetyee.ca/News/2026/06/24/Port-Moody-Split-Pro-Anti-Growth-Politics/" rel="noopener">Port Moody Is Again Split Between Pro- and Anti-Growth Politics</a>, June 24, 2026.</li>
       </ol>
-      <p style="margin-top:1.6rem">*PREC: Personal Real Estate Corporation. Summaries of the mandate letters are Zada Group's reading of the published documents. Mandate letters set direction and are not law; nothing changes until legislation or regulation is passed. Tax relief figures are the Province's estimates. Zada Group's involvement in Port Moody small-scale housing applications is based on our own records. Past results don't guarantee future results. This page is for general information and is not financial, tax or legal advice. Data deemed reliable but not guaranteed.</p>
+      <p style="margin-top:1.6rem">*PREC: Personal Real Estate Corporation. Summaries of the mandate letters are Zada Group's reading of the published documents. Mandate letters set direction and are not law; nothing changes until legislation or regulation is passed. Tax relief figures are the Province's estimates. Zada Group's involvement in Port Moody small-scale housing applications, and the average profit and return figures, are based on our own records of client projects. Returns are averages across those projects over about two years and are not a forecast. Past results don't guarantee future results. This page is for general information and is not financial, tax or legal advice. Data deemed reliable but not guaranteed.</p>
     </div>
   </section>
 
@@ -541,6 +644,81 @@
 </footer>
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/vendor/chart.umd.min.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* hero video: make sure it plays where the browser allows it */
+  var hv = document.querySelector('.pmr-hero__photo--video video');
+  if (hv && !reduce) {
+    hv.muted = true; hv.defaultMuted = true; hv.setAttribute('muted', '');
+    var kick = function () { var p = hv.play(); if (p && p.catch) p.catch(function () {}); };
+    kick(); hv.addEventListener('canplay', kick, { once: true });
+    document.addEventListener('touchstart', kick, { once: true, passive: true });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) kick(); });
+  }
+  /* progress bar, hero zoom, timeline fill */
+  var bar = document.createElement('div'); bar.className = 'zprog'; document.body.appendChild(bar);
+  var hero = document.querySelector('.pmr-hero__photo--video');
+  var tl = document.getElementById('window'), items = tl ? tl.querySelectorAll('.zt__list li') : [];
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    var h = document.documentElement, max = h.scrollHeight - innerHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+    if (reduce) return;
+    if (hero) hero.style.setProperty('--hz', (1.06 - Math.min(scrollY / innerHeight, 1) * 0.06).toFixed(4));
+    if (tl) {
+      var r = tl.getBoundingClientRect(), mid = innerHeight * 0.62;
+      var p = Math.max(0, Math.min(1, (mid - r.top - 100) / (r.height - 140)));
+      tl.style.setProperty('--zt', p.toFixed(3));
+      items.forEach(function (li) { var b = li.getBoundingClientRect(); li.classList.toggle('on', b.top < mid); });
+    }
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+  addEventListener('resize', frame); frame();
+  if (reduce && items.length) items.forEach(function (li) { li.classList.add('on'); });
+  /* staggered blocks + count-up */
+  var counted = new WeakSet();
+  function countUp(el) {
+    if (counted.has(el)) return; counted.add(el);
+    var to = +el.dataset.to; if (reduce) { el.textContent = to; return; }
+    var t0 = null, d = 1400;
+    function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / d), e = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * e); if (k < 1) requestAnimationFrame(step); }
+    el.textContent = '0'; requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll && e.target.querySelectorAll('.zc').forEach(countUp); io.unobserve(e.target); } });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('.zs, .pmr-panel, .zr').forEach(function (el) { io.observe(el); });
+  } else { document.querySelectorAll('.zs').forEach(function (el) { el.classList.add('in'); }); }
+  /* investment calculator */
+  var inp = document.getElementById('calcIn'); if (!inp || !window.Chart) return;
+  var fmt = function (n) { return '$' + Math.round(n).toLocaleString('en-CA'); };
+  var gold = '#a88c6c', goldB = '#c2a582', faint = 'rgba(236,232,226,0.48)', line = 'rgba(236,232,226,0.10)';
+  var chart = new Chart(document.getElementById('calcChart'), {
+    type: 'bar',
+    data: { labels: ['You put in', 'About two years later'], datasets: [
+      { label: 'Your money', data: [100000, 100000], backgroundColor: ['rgba(236,232,226,0.22)', 'rgba(168,140,108,0.55)'], borderRadius: 2, stack: 's', maxBarThickness: 140 },
+      { label: 'Return', data: [0, 60000], backgroundColor: goldB, borderRadius: 2, stack: 's', maxBarThickness: 140 } ] },
+    options: { responsive: true, maintainAspectRatio: false, animation: { duration: reduce ? 0 : 700, easing: 'easeOutCubic' },
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: '#0b0c0e', borderColor: gold, borderWidth: 1, titleColor: '#ece8e2', bodyColor: '#ece8e2', padding: 12,
+        callbacks: { label: function (c) { return ' ' + (c.datasetIndex ? 'Return: ' : 'Invested: ') + fmt(c.raw); } } } },
+      scales: { x: { stacked: true, grid: { display: false }, ticks: { color: faint, font: { size: 13 }, maxRotation: 0, autoSkip: false } },
+        y: { stacked: true, beginAtZero: true, grid: { color: line }, border: { display: false }, ticks: { color: faint, callback: function (v) { return v >= 1e6 ? '$' + v / 1e6 + 'M' : '$' + v / 1000 + 'K'; } } } } }
+  });
+  function upd() {
+    var v = +inp.value, g = v * 0.6;
+    document.getElementById('calcInLbl').textContent = fmt(v);
+    document.getElementById('calcOut').textContent = fmt(v + g);
+    inp.style.setProperty('--p', ((v - inp.min) / (inp.max - inp.min) * 100) + '%');
+    chart.data.datasets[0].data = [v, v]; chart.data.datasets[1].data = [0, g]; chart.update();
+  }
+  inp.addEventListener('input', upd); upd();
+})();
+</script>
+
 <script>
 (function () {
   /* ---------- Reveal on scroll ---------- */
