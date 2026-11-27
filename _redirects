@@ -3,6 +3,10 @@
 # Drop this file in the site root (same level as index.html). One rule per line.
 # Netlify handles trailing-slash variants automatically.
 
+# --- Mexico program page renamed to The Second Coast (Nov 2026) ---
+/mexico         /secondcoast  301!
+/mexico.html    /secondcoast  301!
+
 # --- Blog moved to /journal (Nov 2026). Keeps every old /blog link and Google result working. ---
 /blog          /journal/          301!
 /blog/*        /journal/:splat    301!
